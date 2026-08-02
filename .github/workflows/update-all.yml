@@ -1,8 +1,11 @@
 name: 전체 티어표 자동 업데이트
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * 1'
-  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update-nikke:
@@ -21,9 +24,8 @@ jobs:
           pip install requests
           python games/nikke/crawler.py
 
-      - name: 변경사항 커밋
-        run: |
-          git config --global user.name 'tier-bot'
-          git config --global user.email 'bot@factory.com'
-          git add games/nikke/data/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: nikke update" && git push)
+      - name: 자동 커밋
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "auto: nikke update"
+          file_pattern: "games/nikke/data/*"
