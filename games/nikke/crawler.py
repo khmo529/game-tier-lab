@@ -1,4 +1,4 @@
-import json, os, re, requests
+import json, os, requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 
@@ -28,14 +28,12 @@ EN_TO_KO = {
     "Ludmilla": "루드밀라",
     "Privaty": "프리바티",
     "Laplace": "라플라스",
-    "Rapunzel": "라푼젤",
-    "Anis: Sparkling Summer": "수영복 아니스",
 }
 KO_TO_EN = {v:k for k,v in EN_TO_KO.items()}
 TIER_ORDER = {"SSS":0,"SS":1,"S":2,"A":3,"B":4,"C":5}
 PRYDWEN_MAP = {"SSS":"SSS","SS":"SS","S":"S","A":"A","B":"B","C":"C","D":"C","F":"C"}
 
-FALLBACK = [
+FALLBACK_JSON = """[
   {
     "id": 12,
     "name": "홍련",
@@ -1160,7 +1158,8 @@ FALLBACK = [
     ],
     "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Laplace.jpg"
   }
-]
+]"""
+FALLBACK = json.loads(FALLBACK_JSON)
 
 def fetch_prydwen():
     url="https://www.prydwen.gg/nikke/tier-list"
@@ -1189,7 +1188,6 @@ def fetch_prydwen():
 
 def main():
     os.makedirs(DATA_DIR, exist_ok=True)
-    # load chars
     chars=None
     if os.path.exists(CHAR_FILE):
         try:
@@ -1198,7 +1196,8 @@ def main():
                 if isinstance(d,list) and len(d)>=5:
                     chars=d
                     print(f"[INFO] loaded {len(d)} chars")
-        except: pass
+        except Exception as e:
+            print(f"[WARN] load fail {e}")
     if not chars:
         print("[INFO] fallback 21개 복구")
         chars=FALLBACK
@@ -1208,12 +1207,13 @@ def main():
         with open(RAW_FILE,"w",encoding="utf-8") as f: json.dump(raw,f,ensure_ascii=False,indent=2)
     else:
         if os.path.exists(RAW_FILE):
-            with open(RAW_FILE,"r",encoding="utf-8") as f: raw=json.load(f)
+            try:
+                with open(RAW_FILE,"r",encoding="utf-8") as f: raw=json.load(f)
+            except: raw={}
 
     changed=[]
-    import datetime as dt
-    now=dt.datetime.now(dt.timezone.utc)
-    kst=dt.datetime.now().astimezone()
+    now=datetime.now(timezone.utc)
+    kst=datetime.now().astimezone()
     date_str=kst.strftime("%Y-%m-%d")
 
     for c in chars:
