@@ -2,32 +2,109 @@
   "date": "2026-08-02",
   "metaVersion": "2026-08 메타",
   "week": "2026년 08월 02일 기준",
-  "note": "prydwen.gg 기준 자동 업데이트 - 2명 변동",
+  "note": "prydwen.gg 기준 자동 업데이트 - 13명 변동",
   "counts": {
     "new": 0,
     "up": 0,
-    "down": 2,
+    "down": 13,
     "buff": 0,
     "nerf": 0
   },
   "changes": [
     {
-      "id": 1,
-      "name": "도로시",
-      "type": "down",
-      "from": "SSS",
-      "to": "C"
-    },
-    {
-      "id": 3,
+      "id": 12,
       "name": "홍련",
       "type": "down",
       "from": "SSS",
       "to": "A"
+    },
+    {
+      "id": 15,
+      "name": "도로시",
+      "type": "down",
+      "from": "SS",
+      "to": "C"
+    },
+    {
+      "id": 2,
+      "name": "리터",
+      "type": "down",
+      "from": "SSS",
+      "to": "A"
+    },
+    {
+      "id": 4,
+      "name": "모더니아",
+      "type": "down",
+      "from": "S",
+      "to": "A"
+    },
+    {
+      "id": 6,
+      "name": "블랑",
+      "type": "down",
+      "from": "SSS",
+      "to": "A"
+    },
+    {
+      "id": 8,
+      "name": "누아르",
+      "type": "down",
+      "from": "SS",
+      "to": "B"
+    },
+    {
+      "id": 9,
+      "name": "노아",
+      "type": "down",
+      "from": "S",
+      "to": "C"
+    },
+    {
+      "id": 14,
+      "name": "볼륨",
+      "type": "down",
+      "from": "A",
+      "to": "B"
+    },
+    {
+      "id": 16,
+      "name": "센티",
+      "type": "down",
+      "from": "B",
+      "to": "C"
+    },
+    {
+      "id": 18,
+      "name": "아니스",
+      "type": "down",
+      "from": "B",
+      "to": "C"
+    },
+    {
+      "id": 22,
+      "name": "루드밀라",
+      "type": "down",
+      "from": "S",
+      "to": "C"
+    },
+    {
+      "id": 23,
+      "name": "프리바티",
+      "type": "down",
+      "from": "SS",
+      "to": "B"
+    },
+    {
+      "id": 24,
+      "name": "라플라스",
+      "type": "down",
+      "from": "A",
+      "to": "C"
     }
   ],
-  "updated_at": "2026-08-02T08:25:36.878612+00:00",
-  "updated_at_kst": "2026-08-02 08:25:36 KST",
+  "updated_at": "2026-08-02T08:36:01.624038+00:00",
+  "updated_at_kst": "2026-08-02 08:36:01 KST",
   "source": "prydwen.gg",
-  "total": 4
+  "total": 21
 }
