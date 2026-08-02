@@ -14,19 +14,23 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: 니케 크롤러 실행
+
+      - name: 니케 크롤러 실행 (prydwen.gg 연동)
         run: |
-          pip install requests
+          pip install requests beautifulsoup4 lxml
           python games/nikke/crawler.py
-          ls -R games/nikke/data/
+          echo "--- 생성된 파일 확인 ---"
+          ls -lh games/nikke/data/
+          cat games/nikke/data/weekly-update.json
 
       - name: 자동 커밋
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "auto: nikke update"
+          commit_message: "auto: nikke update from prydwen"
           file_pattern: "games/nikke/data/*"
 
       - name: 워드프레스로 SFTP 배포
