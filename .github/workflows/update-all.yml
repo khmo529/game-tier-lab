@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
           source: "games/nikke/data/*"
-          target: "/home/cloudpanel/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/"
+          target: "/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/"
           strip_components: 2
           overwrite: true
-          rm: false
+          debug: true
