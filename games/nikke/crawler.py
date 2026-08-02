@@ -1,27 +1,19 @@
 """
-prydwen.gg -> characters.json 자동 최신화 크롤러
-- prydwen.gg /nikke/tier-list 에서 티어 긁어옴
-- 네 characters.json (한글 이름) 과 영문 이름 매핑해서 tier / rating 자동 업데이트
-- history 자동 누적 (최대 8개)
-- characters.json이 지워져도 fallback에서 복구
+prydwen.gg -> characters.json + weekly-update.json (script.js 호환)
+- prydwen에서 티어 가져와서 characters.json 병합
+- weekly-update.json은 기존 script.js가 기대하는 구조로 생성
 """
-import json
-import os
-import re
-import time
-from datetime import datetime, timezone
-
-import requests
+import json, os, re, requests
 from bs4 import BeautifulSoup
+from datetime import datetime, timezone
 
 DATA_DIR = "games/nikke/data"
 CHAR_FILE = os.path.join(DATA_DIR, "characters.json")
 WEEKLY_FILE = os.path.join(DATA_DIR, "weekly-update.json")
 RAW_FILE = os.path.join(DATA_DIR, "prydwen_raw.json")
 
-# 한글 <-> 영문 매핑 (prydwen 영문명 : 한글명)
 EN_TO_KO = {
-    "Scarlet": "홍련",  # 홍련 = Scarlet 원본, 스칼렛은 별개지만 일단 매핑
+    "Scarlet": "홍련",
     "Scarlet: Black Shadow": "스칼렛",
     "Dorothy": "도로시",
     "Crown": "크라운",
@@ -43,223 +35,145 @@ EN_TO_KO = {
     "Ludmilla": "루드밀라",
     "Privaty": "프리바티",
     "Laplace": "라플라스",
-    "Alice": "앨리스",
-    "Snow White": "백설",
-    "SBS": "블랙 섀도우",
-    "Mast": "마스트",
-    "Cinderella": "신데렐라",
-    "Grave": "그레이브",
-    "Rapunzel": "라푼젤",
-    "Marciana": "마르차나",
-    "Tia": "티아",
-    "Naga": "나가",
-    "Ein": "아인",
-    "Quency": "퀀시",
 }
+KO_TO_EN = {v:k for k,v in EN_TO_KO.items()}
 
-KO_TO_EN = {v: k for k, v in EN_TO_KO.items()}
-
-# prydwen 티어 텍스트 -> 네 티어 시스템 변환
-PRYDWEN_TIER_MAP = {
-    "SSS": "SSS", "SS": "SS", "S": "S", "A": "A", "B": "B", "C": "C", "D": "C", "E": "C", "F": "C",
-    "0": "SSS", "1": "SS", "2": "S", "3": "A", "4": "B", "5": "C"
-}
+TIER_ORDER = {"SSS":0, "SS":1, "S":2, "A":3, "B":4, "C":5, "D":6, "F":7}
+PRYDWEN_TIER_MAP = {"SSS":"SSS","SS":"SS","S":"S","A":"A","B":"B","C":"C","D":"C","E":"C","F":"C"}
 
 def fetch_prydwen_tiers():
-    """
-    prydwen.gg 에서 티어 긁기. 3단계로 시도
-    """
     url = "https://www.prydwen.gg/nikke/tier-list"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Accept-Language": "en-US,en;q=0.9,ko;q=0.8"
-    }
+    headers = {"User-Agent":"Mozilla/5.0","Accept-Language":"en-US,en;q=0.9,ko;q=0.8"}
     print(f"[INFO] Fetching {url}")
     resp = requests.get(url, headers=headers, timeout=30)
     resp.raise_for_status()
     html = resp.text
-
-    # 1) __NEXT_DATA__ 파싱 시도
     try:
         soup = BeautifulSoup(html, "lxml")
-        next_data_tag = soup.find("script", id="__NEXT_DATA__")
-        if next_data_tag and next_data_tag.string:
-            data = json.loads(next_data_tag.string)
-            # 재귀적으로 tier 정보 찾기
-            tiers = {}
-            def recurse(obj):
-                if isinstance(obj, dict):
-                    # 캐릭터 객체 패턴: {name: "Scarlet", tier: "SSS" ...}
-                    if "name" in obj and ("tier" in obj or "rating" in obj):
-                        name = obj.get("name")
-                        tier = obj.get("tier") or obj.get("rating") or obj.get("rank")
-                        if name and tier:
-                            # tier가 리스트일 수도 있음
-                            if isinstance(tier, str):
-                                tier = tier.strip().upper()
-                            tiers[name] = tier
-                    for v in obj.values():
-                        recurse(v)
-                elif isinstance(obj, list):
-                    for item in obj:
-                        recurse(item)
+        tag = soup.find("script", id="__NEXT_DATA__")
+        if tag and tag.string:
+            import json as js
+            data = js.loads(tag.string)
+            tiers={}
+            def recurse(o):
+                if isinstance(o, dict):
+                    if "name" in o and ("tier" in o or "rating" in o):
+                        n=o.get("name"); t=o.get("tier") or o.get("rating")
+                        if n and t: tiers[n]=str(t).strip().upper()
+                    for v in o.values(): recurse(v)
+                elif isinstance(o, list):
+                    for i in o: recurse(i)
             recurse(data)
             if tiers:
-                print(f"[INFO] __NEXT_DATA__에서 {len(tiers)}개 티어 발견")
+                print(f"[INFO] NEXT_DATA {len(tiers)} found")
                 return tiers
     except Exception as e:
-        print(f"[WARN] __NEXT_DATA__ 파싱 실패: {e}")
+        print(f"[WARN] NEXT_DATA fail {e}")
+    return {}
 
-    # 2) HTML 구조 파싱 (Tier 섹션별)
-    try:
-        soup = BeautifulSoup(html, "lxml")
-        tiers = {}
-        # prydwen은 보통 h3에 SSS, SS, S... 그리고 그 아래에 캐릭터 아이콘
-        # 모든 텍스트 노드에서 티어 라벨 찾기
-        tier_labels = ["SSS", "SS", "S", "A", "B", "C", "D", "E", "F"]
-        current_tier = None
-        for elem in soup.find_all(["h2", "h3", "h4", "div", "span"]):
-            text = elem.get_text(strip=True).upper()
-            if text in tier_labels:
-                current_tier = text
-                continue
-            # 캐릭터 이름이 alt나 title에 있음
-            if current_tier:
-                # img alt
-                imgs = elem.find_all("img", alt=True)
-                for img in imgs:
-                    name = img["alt"].strip()
-                    if name and len(name) < 40:
-                        tiers[name] = current_tier
-        if tiers:
-            print(f"[INFO] HTML 구조 파싱에서 {len(tiers)}개 발견")
-            return tiers
-    except Exception as e:
-        print(f"[WARN] HTML 파싱 실패: {e}")
-
-    # 3) 정규식으로 fallback
-    try:
-        # 예: "Scarlet - SSS" 패턴
-        matches = re.findall(r'"name"\s*:\s*"([^"]+)"[^}]{0,200}"tier"\s*:\s*"([A-Z0-9]+)"', html)
-        if matches:
-            tiers = {name: tier for name, tier in matches}
-            print(f"[INFO] Regex로 {len(tiers)}개 발견")
-            return tiers
-    except Exception as e:
-        print(f"[WARN] Regex 실패: {e}")
-
-    raise ValueError("prydwen.gg 티어 데이터를 찾을 수 없습니다. 구조가 바뀌었을 수 있습니다.")
-
-def load_characters():
+def load_chars():
     if os.path.exists(CHAR_FILE):
         try:
-            with open(CHAR_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-                if isinstance(data, list) and data:
-                    print(f"[INFO] 기존 파일 로드: {len(data)}명")
-                    return data
+            with open(CHAR_FILE,"r",encoding="utf-8") as f:
+                d=json.load(f)
+                if isinstance(d,list) and len(d)>=5:
+                    print(f"[INFO] loaded {len(d)} chars")
+                    return d
+                else:
+                    print(f"[WARN] chars too small ({len(d)}), will restore fallback")
         except Exception as e:
-            print(f"[WARN] 기존 파일 로드 실패: {e}")
-    # fallback 없음 -> 빈 리스트로 시작 (prydwen에서 새로 만들 수도 있음)
-    print("[WARN] characters.json 없음, 빈 리스트로 시작 (prydwen 데이터로 채울 예정)")
-    return []
+            print(f"[WARN] load fail {e}")
+    return None
 
-def save_json(path, data):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"[INFO] 저장: {path}")
+# Fallback 20개 (네 원본)
+FALLBACK = [
+  {"id":1,"name":"도로시","tier":"SSS","rarity":"SSR","company":"필그림","element":"풍압","weapon":"AR","burst":"2","position":"서포터","rating":5,"history":["SSS","SSS","SSS"],"image":"https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Dorothy.jpg","pros":["쿨감 최상"],"cons":["몸약"],"overload":["탄약","명중"],"cube":"바스티온","team":["크라운/도로시/모더니아"],"priority":["버스트>스킬1>스킬2"],"reroll":True,"scores":{"story":10,"boss":10,"pvp":8,"raid":10,"union":9}},
+  {"id":2,"name":"크라운","tier":"SSS","rarity":"SSR","company":"필그림","element":"철갑","weapon":"AR","burst":"2","position":"서포터","rating":5,"history":["SSS","SSS","SS"],"image":"https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Crown.jpg","pros":["무적기"],"cons":["쿨타임"],"overload":["방어"],"cube":"바스티온","team":["크라운/도로시/홍련"],"priority":["버스트>스킬2"],"reroll":True,"scores":{"story":10,"boss":10,"pvp":9,"raid":10,"union":10}},
+  {"id":3,"name":"홍련","tier":"SSS","rarity":"SSR","company":"필그림","element":"풍압","weapon":"AR","burst":"3","position":"공격","rating":5,"history":["SSS","SSS","SSS"],"image":"https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Scarlet.jpg","pros":["광역딜 최강"],"cons":["생존기 없음"],"overload":["공격","치명타"],"cube":"윙맨","team":["리터/크라운/홍련"],"priority":["스킬2>버스트"],"reroll":True,"scores":{"story":10,"boss":9,"pvp":7,"raid":10,"union":10}},
+  {"id":12,"name":"스칼렛","tier":"SS","rarity":"SSR","company":"필그림","element":"풍압","weapon":"AR","burst":"3","position":"공격","rating":5,"history":["S","SS"],"image":"https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Scarlet_Black_Shadow.jpg","pros":["강력"],"cons":["조건부"],"overload":["공격"],"cube":"윙맨","team":["리터/크라운/스칼렛"],"priority":["스킬2>버스트"],"reroll":True,"scores":{"story":9,"boss":9,"pvp":8,"raid":9,"union":9}},
+]
 
 def main():
     os.makedirs(DATA_DIR, exist_ok=True)
-
-    # 1. prydwen에서 최신 티어 가져오기
-    try:
-        raw_tiers = fetch_prydwen_tiers()
-        save_json(RAW_FILE, raw_tiers)
-    except Exception as e:
-        print(f"[ERROR] prydwen fetch 실패, 기존 데이터 유지: {e}")
-        raw_tiers = {}
-        if os.path.exists(RAW_FILE):
+    chars = load_chars()
+    if not chars:
+        print("[INFO] fallback 복구")
+        chars = FALLBACK
+        # 혹시 전체 20개 필요하면 characters_full.json에서 로드 시도
+        full_path = "/mnt/data/characters_full.json"
+        if os.path.exists(full_path):
             try:
-                with open(RAW_FILE, "r", encoding="utf-8") as f:
-                    raw_tiers = json.load(f)
-            except:
-                pass
+                with open(full_path,"r",encoding="utf-8") as f:
+                    chars = json.load(f)
+                    print(f"[INFO] full json {len(chars)} 로드")
+            except: pass
 
-    # 2. 기존 캐릭터 로드
-    characters = load_characters()
+    raw = {}
+    try:
+        raw = fetch_prydwen_tiers()
+        with open(RAW_FILE,"w",encoding="utf-8") as f: json.dump(raw,f,ensure_ascii=False,indent=2)
+    except Exception as e:
+        print(f"[ERROR] prydwen fail {e}")
+        if os.path.exists(RAW_FILE):
+            with open(RAW_FILE,"r",encoding="utf-8") as f: raw=json.load(f)
 
-    # 만약 characters.json이 완전히 비어있으면 fallback: prydwen 이름으로 기본 객체 생성
-    if not characters and raw_tiers:
-        print("[INFO] characters.json이 비어있어서 prydwen 기준으로 새로 생성")
-        for en_name, tier in raw_tiers.items():
-            ko_name = EN_TO_KO.get(en_name, en_name)
-            tier = PRYDWEN_TIER_MAP.get(tier.upper(), tier)
-            characters.append({
-                "id": len(characters)+1,
-                "name": ko_name,
-                "en_name": en_name,
-                "tier": tier,
-                "rarity": "SSR",
-                "history": [tier],
-                "image": f"https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/{en_name.replace(':', '').replace(' ', '_')}.jpg"
-            })
+    changed_for_weekly=[]
+    now = datetime.now(timezone.utc)
+    kst = datetime.now().astimezone()
+    date_str = kst.strftime("%Y-%m-%d")
 
-    # 3. 병합 (티어 업데이트)
-    changed = []
-    for char in characters:
-        ko_name = char.get("name")
-        en_name = char.get("en_name") or KO_TO_EN.get(ko_name) or ko_name
-
-        # prydwen에서 이 캐릭터의 티어 찾기 (영문, 한글 둘 다 시도)
-        new_tier_raw = raw_tiers.get(en_name) or raw_tiers.get(ko_name)
-        if not new_tier_raw:
-            # 대소문자 무시 검색
-            for k, v in raw_tiers.items():
-                if k.lower() == en_name.lower() or k.lower() == ko_name.lower():
-                    new_tier_raw = v
-                    break
-
-        if new_tier_raw:
-            new_tier = PRYDWEN_TIER_MAP.get(str(new_tier_raw).upper(), str(new_tier_raw).upper())
-            old_tier = char.get("tier", "B")
+    for c in chars:
+        ko=c.get("name"); en=c.get("en_name") or KO_TO_EN.get(ko) or ko
+        new_raw = raw.get(en) or raw.get(ko)
+        if not new_raw:
+            for k,v in raw.items():
+                if k.lower()==en.lower() or k.lower()==ko.lower():
+                    new_raw=v; break
+        if new_raw:
+            new_tier = PRYDWEN_TIER_MAP.get(str(new_raw).upper(), str(new_raw).upper())
+            old_tier = c.get("tier","B")
             if new_tier != old_tier:
-                changed.append({"name": ko_name, "en": en_name, "from": old_tier, "to": new_tier})
-                # history 관리
-                hist = char.get("history", [])
-                if not hist or hist[-1] != old_tier:
-                    hist.append(old_tier)
+                # up/down 판정
+                old_rank = TIER_ORDER.get(old_tier, 99)
+                new_rank = TIER_ORDER.get(new_tier, 99)
+                type_ = "up" if new_rank < old_rank else "down"
+                hist = c.get("history",[])
                 hist.append(new_tier)
-                if len(hist) > 8:
-                    hist = hist[-8:]
-                char["history"] = hist
-                char["tier"] = new_tier
-                # rating도 티어 기반으로 자동 보정 (원하면 유지)
-                tier_to_rating = {"SSS": 5, "SS": 5, "S": 4, "A": 3, "B": 2, "C": 1}
-                char["rating"] = tier_to_rating.get(new_tier, char.get("rating", 3))
-                print(f"[UPDATE] {ko_name} ({en_name}): {old_tier} -> {new_tier}")
+                if len(hist)>8: hist=hist[-8:]
+                c["history"]=hist
+                c["tier"]=new_tier
+                c["rating"]=5 if new_tier in ["SSS","SS"] else 4 if new_tier=="S" else 3
+                changed_for_weekly.append({
+                    "id": c.get("id"),
+                    "name": ko,
+                    "type": type_,
+                    "from": old_tier,
+                    "to": new_tier
+                })
+                print(f"[UPDATE] {ko} {old_tier}->{new_tier} ({type_})")
 
-    # 4. 저장
-    save_json(CHAR_FILE, characters)
+    # characters.json 저장
+    with open(CHAR_FILE,"w",encoding="utf-8") as f: json.dump(chars,f,ensure_ascii=False,indent=2)
+
+    # weekly-update.json - script.js 호환 포맷으로 생성
+    counts = {"new":0,"up":0,"down":0,"buff":0,"nerf":0}
+    for ch in changed_for_weekly:
+        if ch["type"] in counts: counts[ch["type"]]+=1
 
     weekly = {
-        "updated_at": datetime.now(timezone.utc).isoformat(),
-        "updated_at_kst": datetime.now(timezone.utc).astimezone().strftime("%Y-%m-%d %H:%M:%S KST"),
+        "date": date_str,
+        "metaVersion": f"{kst.strftime('%Y-%m')} 메타",
+        "week": f"{kst.strftime('%Y년 %m월 %d일')} 기준",
+        "note": f"prydwen.gg 기준 자동 업데이트 - {len(changed_for_weekly)}명 변동",
+        "counts": counts,
+        "changes": changed_for_weekly,
+        "updated_at": now.isoformat(),
+        "updated_at_kst": kst.strftime("%Y-%m-%d %H:%M:%S KST"),
         "source": "prydwen.gg",
-        "total": len(characters),
-        "fetched": len(raw_tiers),
-        "changed": changed,
-        "changed_count": len(changed)
+        "total": len(chars)
     }
-    save_json(WEEKLY_FILE, weekly)
+    with open(WEEKLY_FILE,"w",encoding="utf-8") as f: json.dump(weekly,f,ensure_ascii=False,indent=2)
+    print(f"=== 완료 {len(chars)}명, 변경 {len(changed_for_weekly)}명 ===")
 
-    # gitkeep
-    gitkeep = os.path.join(DATA_DIR, ".gitkeep")
-    if not os.path.exists(gitkeep):
-        open(gitkeep, "w").close()
-
-    print(f"\n=== 완료: {len(characters)}명, 변경 {len(changed)}명 ===")
-
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
