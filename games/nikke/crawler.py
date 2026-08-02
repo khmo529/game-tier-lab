@@ -1,5 +1,4 @@
-
-import json, os, requests
+import json, os, re, requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 
@@ -8,6 +7,8 @@ CHAR_FILE = os.path.join(DATA_DIR, "characters.json")
 WEEKLY_FILE = os.path.join(DATA_DIR, "weekly-update.json")
 RAW_FILE = os.path.join(DATA_DIR, "prydwen_raw.json")
 FALLBACK_FILE = os.path.join(DATA_DIR, "fallback_2026.json")
+
+BASE_IMAGE_URL = "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/"
 
 EN_TO_KO = {
     "Anis: Star": "아니스: 스타",
@@ -25,14 +26,40 @@ EN_TO_KO = {
     "Scarlet: Black Shadow": "스칼렛: 블랙 섀도우",
     "Rapi: Red Hood": "라피: 레드 후드",
     "Crown": "크라운",
+    "Scarlet": "홍련",
 }
 
 TIER_ORDER = {"SSS":0,"SS":1,"S":2,"A":3,"B":4,"C":5,"D":6,"F":7}
 PRYDWEN_MAP = {"SSS":"SSS","SS":"SS","S":"S","A":"A","B":"B","C":"C","D":"C","E":"C","F":"C"}
 
+def to_image_filename(en_name: str) -> str:
+    """
+    영어 이름으로 이미지 경로 자동 생성
+    예: "Scarlet" -> "Scarlet.jpg"
+        "Scarlet: Black Shadow" -> "Scarlet_Black_Shadow.jpg"
+        "Anis: Star" -> "Anis_Star.jpg"
+        "Flora (Treasure)" -> "Flora_Treasure.jpg"
+    """
+    if not en_name:
+        return ""
+    # 1. 양쪽 공백 제거
+    s = en_name.strip()
+    # 2. 괄호 안 내용 유지하되 괄호 기호 제거
+    s = s.replace("(", " ").replace(")", " ")
+    # 3. 콜론, 슬래시 등은 공백으로
+    s = s.replace(":", " ").replace("/", " ").replace("\\", " ")
+    # 4. 특수문자 제거 (알파벳, 숫자, 공백, -, _ 만 남김)
+    s = re.sub(r"[^A-Za-z0-9 _-]", "", s)
+    # 5. 공백을 _ 로 통일, 중복 _ 제거
+    s = "_".join(s.split())
+    s = re.sub(r"_+", "_", s).strip("_")
+    # 6. 빈 문자열이면 fallback
+    if not s:
+        s = "Unknown"
+    return f"{BASE_IMAGE_URL}{s}.jpg"
+
 def load_fallback():
-    # try fallback file in repo, then try local
-    for p in [FALLBACK_FILE, "fallback_2026.json", "/mnt/data/fallback_2026.json"]:
+    for p in [FALLBACK_FILE, "fallback_2026.json", "/mnt/data/fallback_2026.json", "/mnt/data/characters_with_short.json"]:
         if os.path.exists(p):
             try:
                 with open(p,"r",encoding="utf-8") as f:
@@ -81,11 +108,26 @@ def main():
     if not chars:
         fb=load_fallback()
         if fb:
-            print(f"[INFO] fallback {len(fb)} 복구 (2026-07-24 기준)")
+            print(f"[INFO] fallback {len(fb)} 복구")
             chars=fb
         else:
             print("[ERROR] no fallback")
             return
+
+    # 기존 캐릭터들 이미지 경로도 영어 이름 기준으로 재설정
+    for c in chars:
+        en = c.get("en_name") or EN_TO_KO.get(c["name"]) or c["name"]
+        # 영어 이름이 있으면 그걸로, 없으면 한글 이름이라도 변환 시도
+        if "en_name" in c and c["en_name"]:
+            c["image"] = to_image_filename(c["en_name"])
+        elif c["name"] in EN_TO_KO.values():
+            # KO -> EN 역매핑 찾아서 이미지 생성
+            rev = {v:k for k,v in EN_TO_KO.items()}
+            if c["name"] in rev:
+                c["image"] = to_image_filename(rev[c["name"]])
+        # 이미 image가 비어있는 경우도 영어 이름으로 채움
+        if not c.get("image"):
+            c["image"] = to_image_filename(c.get("en_name", c["name"]))
 
     raw=fetch_prydwen()
     if raw:
@@ -115,6 +157,8 @@ def main():
         found=existing_map.get(en_raw.lower())
         if found:
             ot=found.get('tier','B')
+            # 이미지 경로 영어 이름 기준으로 항상 최신화
+            found["image"] = to_image_filename(en_raw)
             if nt!=ot:
                 orank=TIER_ORDER.get(ot,99); nrank=TIER_ORDER.get(nt,99)
                 typ="up" if nrank<orank else "down"
@@ -125,6 +169,8 @@ def main():
                 print(f"[UPDATE] {found['name']} {ot}->{nt}")
         else:
             if len(en_raw)<2 or len(en_raw)>40: continue
+            # 이미지 파일명은 영어 이름 그대로
+            img_path = to_image_filename(en_raw)
             max_id+=1
             ko_name=EN_TO_KO.get(en_raw, en_raw)
             new_c={
@@ -149,14 +195,14 @@ def main():
                 "priority": ["3스킬"],
                 "reroll": nt in ["SSS","SS"],
                 "history": [nt],
-                "image": f"https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/{en_raw}.jpg"
+                "image": img_path
             }
             chars.append(new_c)
             existing_map[en_raw.lower()]=new_c
             existing_map[ko_name.lower()]=new_c
             added.append(new_c['name'])
             changed.append({"id":new_c['id'],"name":ko_name,"type":"new","from":"","to":nt})
-            print(f"[NEW] {ko_name} -> {nt}")
+            print(f"[NEW] {ko_name} ({en_raw}) -> {nt} | {img_path}")
 
     with open(CHAR_FILE,"w",encoding="utf-8") as f: json.dump(chars,f,ensure_ascii=False,indent=2)
 
@@ -178,7 +224,7 @@ def main():
         "total": len(chars)
     }
     with open(WEEKLY_FILE,"w",encoding="utf-8") as f: json.dump(weekly,f,ensure_ascii=False,indent=2)
-    print(f"DONE {len(chars)} chars")
+    print(f"DONE {len(chars)} chars - image path EN based")
 
 if __name__=="__main__":
     main()
