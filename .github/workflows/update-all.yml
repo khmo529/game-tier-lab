@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 코드 가져오기
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 파이썬 설치
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -25,7 +25,7 @@ jobs:
           python games/nikke/crawler.py
 
       - name: 자동 커밋
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "auto: nikke update"
           file_pattern: "games/nikke/data/*"
