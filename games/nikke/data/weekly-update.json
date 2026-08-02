@@ -1,7 +1,16 @@
 {
-  "version": "2026-W31",
-  "updated_at": "2026-08-02 13:50 KST",
-  "headline": "8월 2일 자동 업데이트 성공!",
-  "changes": [],
-  "notice": "game-tier-lab에서 자동 갱신됨"
+  "updated_at": "2026-08-02T08:12:39.298001+00:00",
+  "updated_at_kst": "2026-08-02 08:12:39 KST",
+  "source": "prydwen.gg",
+  "total": 1,
+  "fetched": 216,
+  "changed": [
+    {
+      "name": "스칼렛",
+      "en": "Scarlet: Black Shadow",
+      "from": "S",
+      "to": "SS"
+    }
+  ],
+  "changed_count": 1
 }

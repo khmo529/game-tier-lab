@@ -2,6 +2,11 @@
   {
     "id": "scarlet",
     "name": "스칼렛",
-    "tier": "S"
+    "tier": "SS",
+    "history": [
+      "S",
+      "SS"
+    ],
+    "rating": 5
   }
 ]
