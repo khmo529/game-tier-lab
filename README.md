@@ -1,29 +1,31 @@
-# Game Tier Lab - 니케 티어표 자동화
+# Game Tier Lab - NIKKE Tier Auto Update
 
-> prydwen.gg 기반 니케 티어리스트를 매주 자동으로 크롤링 → GitHub에 커밋 → 워드프레스로 자동 배포
+> prydwen.gg 기반 티어리스트를 매주 자동 크롤링 → GitHub 커밋 → 워드프레스 자동 배포
 
-## 🚀 동작 흐름
-[prydwen.gg] --(크롤링)--> [crawler.py] --(병합)--> characters.json -> GitHub Auto Commit -> SFTP 워드프레스
+## Overview
+- 매주 월요일 00:00 UTC 자동 실행 (cron)
+- 수동 실행: GitHub Actions > Run workflow
+- prydwen.gg 티어 변동 시 history 자동 누적
 
-- 매주 월요일 00:00 KST 자동 실행
-- 수동 실행: Actions > Run workflow
-
-## 📁 폴더 구조
+## Folder Structure
 game-tier-lab/
-├── games/nikke/crawler.py
-├── games/nikke/data/characters.json
-├── games/nikke/data/weekly-update.json
-├── games/nikke/data/prydwen_raw.json
+├── games/nikke/
+│   ├── crawler.py
+│   └── data/
+│       ├── characters.json
+│       ├── weekly-update.json
+│       └── prydwen_raw.json
 └── .github/workflows/update.yml
 
-## 🔧 crawler.py 로직
-1. prydwen.gg /nikke/tier-list 에서 __NEXT_DATA__ 파싱
-2. 영문명 -> 한글명 매핑 (Crown -> 크라운)
-3. characters.json 병합 (tier, rating, history만 업데이트)
-4. history 최대 8개 유지
+## How Crawler Works
+1. Fetch https://www.prydwen.gg/nikke/tier-list
+2. Parse __NEXT_DATA__ JSON (Next.js)
+3. Map EN name to KO name via table
+4. Merge into characters.json (only tier/rating/history)
+5. Generate weekly-update.json changelog
 
-## 🤖 GitHub Actions 최종본
-name: 전체 티어표 자동 업데이트
+## GitHub Actions Workflow
+name: Update Tier
 on:
   workflow_dispatch:
   schedule:
@@ -31,7 +33,7 @@ on:
 permissions:
   contents: write
 jobs:
-  update-nikke:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -40,34 +42,35 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: 니케 크롤러 실행
+      - name: Run crawler
         run: |
           pip install requests beautifulsoup4 lxml
           python games/nikke/crawler.py
-          ls -lh games/nikke/data/
-      - name: 자동 커밋
+      - name: Auto commit
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "auto: nikke update from prydwen"
+          commit_message: "auto: tier update"
           file_pattern: "games/nikke/data/*"
-      - name: 워드프레스 배포
+      - name: Deploy via SFTP
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.FTP_SERVER }}
-          username: nopickle
+          username: ${{ secrets.FTP_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
           source: "games/nikke/data/*"
-          target: "/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/"
+          target: ${{ secrets.DEPLOY_PATH }}
           strip_components: 3
           overwrite: true
 
-## Secrets
-- FTP_SERVER: Vultr IP
-- SSH_KEY: private key
+### Required Secrets
+- FTP_SERVER
+- FTP_USERNAME
+- SSH_KEY
+- DEPLOY_PATH
 
-## 트러블슈팅
-- characters.json 삭제시 자동 복구됨
-- ssh unable to authenticate -> 키 인증만 가능 (CloudPanel)
-- fetch first 에러 -> fetch-depth: 0
-- 날짜 안바뀜 -> strip_components 3 확인, data/data 폴더 삭제
+## Troubleshooting
+- Deleted characters.json not restored -> new crawler auto-restores
+- ssh unable to authenticate -> use key auth
+- fetch first error -> fetch-depth: 0
+- Date not updated -> strip_components 3 확인
