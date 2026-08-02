@@ -37,5 +37,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           port: 22
           local_path: './games/nikke/data/*'
-          remote_path: '/home/cloudpanel/htdocs/도메인.com/wp-content/themes/generatepress_child/nikke-tier/data/'
+          remote_path: '/home/cloudpanel/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/'
           sftp_only: true
