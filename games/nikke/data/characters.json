@@ -1,12 +1,173 @@
 [
   {
-    "id": "scarlet",
+    "id": 1,
+    "name": "도로시",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "필그림",
+    "element": "풍압",
+    "weapon": "AR",
+    "burst": "2",
+    "position": "서포터",
+    "rating": 3,
+    "history": [
+      "SSS",
+      "SSS",
+      "SSS",
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Dorothy.jpg",
+    "pros": [
+      "쿨감 최상"
+    ],
+    "cons": [
+      "몸약"
+    ],
+    "overload": [
+      "탄약",
+      "명중"
+    ],
+    "cube": "바스티온",
+    "team": [
+      "크라운/도로시/모더니아"
+    ],
+    "priority": [
+      "버스트>스킬1>스킬2"
+    ],
+    "reroll": true,
+    "scores": {
+      "story": 10,
+      "boss": 10,
+      "pvp": 8,
+      "raid": 10,
+      "union": 9
+    }
+  },
+  {
+    "id": 2,
+    "name": "크라운",
+    "tier": "SSS",
+    "rarity": "SSR",
+    "company": "필그림",
+    "element": "철갑",
+    "weapon": "AR",
+    "burst": "2",
+    "position": "서포터",
+    "rating": 5,
+    "history": [
+      "SSS",
+      "SSS",
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Crown.jpg",
+    "pros": [
+      "무적기"
+    ],
+    "cons": [
+      "쿨타임"
+    ],
+    "overload": [
+      "방어"
+    ],
+    "cube": "바스티온",
+    "team": [
+      "크라운/도로시/홍련"
+    ],
+    "priority": [
+      "버스트>스킬2"
+    ],
+    "reroll": true,
+    "scores": {
+      "story": 10,
+      "boss": 10,
+      "pvp": 9,
+      "raid": 10,
+      "union": 10
+    }
+  },
+  {
+    "id": 3,
+    "name": "홍련",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "필그림",
+    "element": "풍압",
+    "weapon": "AR",
+    "burst": "3",
+    "position": "공격",
+    "rating": 3,
+    "history": [
+      "SSS",
+      "SSS",
+      "SSS",
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Scarlet.jpg",
+    "pros": [
+      "광역딜 최강"
+    ],
+    "cons": [
+      "생존기 없음"
+    ],
+    "overload": [
+      "공격",
+      "치명타"
+    ],
+    "cube": "윙맨",
+    "team": [
+      "리터/크라운/홍련"
+    ],
+    "priority": [
+      "스킬2>버스트"
+    ],
+    "reroll": true,
+    "scores": {
+      "story": 10,
+      "boss": 9,
+      "pvp": 7,
+      "raid": 10,
+      "union": 10
+    }
+  },
+  {
+    "id": 12,
     "name": "스칼렛",
     "tier": "SS",
+    "rarity": "SSR",
+    "company": "필그림",
+    "element": "풍압",
+    "weapon": "AR",
+    "burst": "3",
+    "position": "공격",
+    "rating": 5,
     "history": [
       "S",
       "SS"
     ],
-    "rating": 5
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Scarlet_Black_Shadow.jpg",
+    "pros": [
+      "강력"
+    ],
+    "cons": [
+      "조건부"
+    ],
+    "overload": [
+      "공격"
+    ],
+    "cube": "윙맨",
+    "team": [
+      "리터/크라운/스칼렛"
+    ],
+    "priority": [
+      "스킬2>버스트"
+    ],
+    "reroll": true,
+    "scores": {
+      "story": 9,
+      "boss": 9,
+      "pvp": 8,
+      "raid": 9,
+      "union": 9
+    }
   }
 ]

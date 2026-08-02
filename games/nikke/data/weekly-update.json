@@ -1,9 +1,33 @@
 {
-  "updated_at": "2026-08-02T08:18:00.931750+00:00",
-  "updated_at_kst": "2026-08-02 08:18:00 KST",
+  "date": "2026-08-02",
+  "metaVersion": "2026-08 메타",
+  "week": "2026년 08월 02일 기준",
+  "note": "prydwen.gg 기준 자동 업데이트 - 2명 변동",
+  "counts": {
+    "new": 0,
+    "up": 0,
+    "down": 2,
+    "buff": 0,
+    "nerf": 0
+  },
+  "changes": [
+    {
+      "id": 1,
+      "name": "도로시",
+      "type": "down",
+      "from": "SSS",
+      "to": "C"
+    },
+    {
+      "id": 3,
+      "name": "홍련",
+      "type": "down",
+      "from": "SSS",
+      "to": "A"
+    }
+  ],
+  "updated_at": "2026-08-02T08:25:36.878612+00:00",
+  "updated_at_kst": "2026-08-02 08:25:36 KST",
   "source": "prydwen.gg",
-  "total": 1,
-  "fetched": 216,
-  "changed": [],
-  "changed_count": 0
+  "total": 4
 }
