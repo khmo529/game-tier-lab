@@ -36,5 +36,5 @@ jobs:
           port: 22
           source: "games/nikke/data/*"
           target: "/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/"
-          strip_components: 2
+          strip_components: 3
           overwrite: true
