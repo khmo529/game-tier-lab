@@ -5,13 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  update:
+  update-nikke:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        game: [nikke] # 일단 니케만!
-
     steps:
       - name: 코드 가져오기
         uses: actions/checkout@v4
@@ -23,16 +18,12 @@ jobs:
 
       - name: 니케 크롤러 실행
         run: |
-          if [! -f "games/${{ matrix.game }}/crawler.py" ]; then
-            echo "크롤러 파일 없음 - 스킵"
-            exit 0
-          fi
           pip install requests
-          python games/${{ matrix.game }}/crawler.py
+          python games/nikke/crawler.py
 
       - name: 변경사항 커밋
         run: |
           git config --global user.name 'tier-bot'
           git config --global user.email 'bot@factory.com'
-          git add games/
+          git add games/nikke/data/
           git diff --quiet && git diff --staged --quiet || (git commit -m "auto: nikke update" && git push)
