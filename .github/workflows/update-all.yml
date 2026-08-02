@@ -19,23 +19,24 @@ jobs:
         run: |
           pip install requests
           python games/nikke/crawler.py
+          echo "--- 생성된 파일 확인 ---"
+          ls -R games/nikke/data/
+
       - name: 자동 커밋
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "auto: nikke update"
           file_pattern: "games/nikke/data/*"
 
-      - name: 비밀키 체크
-        run: |
-          if [ -z "${{ secrets.FTP_SERVER }}" ]; then echo "❌ FTP_SERVER 비어있음"; exit 1; else echo "✅ FTP_SERVER 있음"; fi
-
       - name: 워드프레스로 SFTP 배포
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: appleboy/scp-action@v0.1.7
         with:
+          host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server: ${{ secrets.FTP_SERVER }}
           port: 22
-          local_path: './games/nikke/data/*'
-          remote_path: '/home/cloudpanel/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/'
-          sftp_only: true
+          source: "games/nikke/data/*"
+          target: "/home/cloudpanel/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/"
+          strip_components: 2
+          overwrite: true
+          rm: false
