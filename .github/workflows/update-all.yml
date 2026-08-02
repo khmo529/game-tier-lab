@@ -25,14 +25,17 @@ jobs:
           commit_message: "auto: nikke update"
           file_pattern: "games/nikke/data/*"
 
+      - name: 비밀키 체크
+        run: |
+          if [ -z "${{ secrets.FTP_SERVER }}" ]; then echo "❌ FTP_SERVER 비어있음"; exit 1; else echo "✅ FTP_SERVER 있음"; fi
+
       - name: 워드프레스로 SFTP 배포
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp
+          server: ${{ secrets.FTP_SERVER }}
           port: 22
-          local-dir: ./games/nikke/data/
-          server-dir: /home/cloudpanel/htdocs/nopickle.com/wp-content/themes/generatepress_child/nikke-tier/data/
-          # ↑↑↑ 여기 경로만 너꺼로 바꿔!
+          local_path: './games/nikke/data/*'
+          remote_path: '/home/cloudpanel/htdocs/도메인.com/wp-content/themes/generatepress_child/nikke-tier/data/'
+          sftp_only: true
