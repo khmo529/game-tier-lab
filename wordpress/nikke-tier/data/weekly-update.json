@@ -1,0 +1,15 @@
+{
+  "week": "2026년 7월 4주차",
+  "date": "2026-07-26",
+  "metaVersion": "v3.14",
+  "note": "최신 메타 기준. 유니온레이드 신규 보스 반영.",
+  "counts": { "new": 2, "up": 5, "down": 3, "buff": 4, "nerf": 2 },
+  "changes": [
+    { "id": 12, "name": "홍련",     "type": "up",   "from": "SS",  "to": "SSS" },
+    { "id": 7,  "name": "레드후드", "type": "up",   "from": "S",   "to": "SS" },
+    { "id": 15, "name": "도로시",   "type": "down", "from": "SSS", "to": "SS" },
+    { "id": 3,  "name": "모더니아", "type": "down", "from": "SS",  "to": "S" },
+    { "id": 20, "name": "시로코",   "type": "new",  "from": "-",   "to": "SS" },
+    { "id": 21, "name": "라피 RH",  "type": "new",  "from": "-",   "to": "S" }
+  ]
+}
