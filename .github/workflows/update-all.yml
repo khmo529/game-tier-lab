@@ -1,16 +1,16 @@
 name: 전체 티어표 자동 업데이트
-
 on:
   schedule:
-    - cron: '0 0 * * 1' # 매주 월요일 오전 9시(KST)
-  workflow_dispatch: # 수동 실행 버튼 (게임 선택 가능)
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
 
 jobs:
   update:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false # <- 이게 핵심! 하나 실패해도 나머지는 계속 실행
       matrix:
-        game: [nikke, hsr, wuwa, brownduet2] # 여기에 게임 추가하면 자동 확장
+        game: [nikke] # <- 일단 니케 1개만! 성공하면 뒤에 3개 추가하자
 
     steps:
       - name: 코드 가져오기
@@ -18,25 +18,21 @@ jobs:
 
       - name: 파이썬 설치
         uses: actions/setup-python@v4
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
 
-      - name: ${{ matrix.game }} 업데이트 실행
+      - name: ${{ matrix.game }} 크롤러 실행
         run: |
-          pip install requests beautifulsoup4
+          if [! -f "games/${{ matrix.game }}/crawler.py" ]; then
+            echo "크롤러 파일 없음 - 스킵"
+            exit 0
+          fi
+          pip install requests
           python games/${{ matrix.game }}/crawler.py
 
       - name: 변경사항 커밋
         run: |
           git config --global user.name 'tier-bot'
           git config --global user.email 'bot@factory.com'
-          git add games/${{ matrix.game }}/data/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: ${{ matrix.game }} 업데이트" && git push)
-
-      - name: 워드프레스로 배포 (${{ matrix.game }})
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./wordpress/${{ matrix.game }}-tier/
-          server-dir: /wp-content/themes/generatepress_child/${{ matrix.game }}-tier/
+          git add games/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: ${{ matrix.game }} update" && git push)
