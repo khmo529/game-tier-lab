@@ -8,9 +8,9 @@ jobs:
   update:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false # <- 이게 핵심! 하나 실패해도 나머지는 계속 실행
+      fail-fast: false
       matrix:
-        game: [nikke] # <- 일단 니케 1개만! 성공하면 뒤에 3개 추가하자
+        game: [nikke] # 일단 니케만!
 
     steps:
       - name: 코드 가져오기
@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: ${{ matrix.game }} 크롤러 실행
+      - name: 니케 크롤러 실행
         run: |
           if [! -f "games/${{ matrix.game }}/crawler.py" ]; then
             echo "크롤러 파일 없음 - 스킵"
@@ -35,4 +35,4 @@ jobs:
           git config --global user.name 'tier-bot'
           git config --global user.email 'bot@factory.com'
           git add games/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: ${{ matrix.game }} update" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "auto: nikke update" && git push)
