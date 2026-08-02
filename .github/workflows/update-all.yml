@@ -19,13 +19,13 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 니케 크롤러 실행 (prydwen.gg 연동)
+      - name: 니케 크롤러 실행 (prydwen 연동)
         run: |
           pip install requests beautifulsoup4 lxml
           python games/nikke/crawler.py
-          echo "--- 생성된 파일 확인 ---"
+          echo "=== 로컬 파일 ==="
           ls -lh games/nikke/data/
-          cat games/nikke/data/weekly-update.json
+          cat games/nikke/data/characters.json | head -20
 
       - name: 자동 커밋
         uses: stefanzweifel/git-auto-commit-action@v6
@@ -33,7 +33,20 @@ jobs:
           commit_message: "auto: nikke update from prydwen"
           file_pattern: "games/nikke/data/*"
 
-      - name: 워드프레스로 SFTP 배포
+      - name: 배포 전 원격 폴더 확인
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          username: nopickle
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            echo "--- dash 폴더 ---"
+            ls -lh /home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/data/ || echo "dash 폴더 없음"
+            echo "--- underscore 폴더 ---"
+            ls -lh /home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/ || echo "underscore 폴더 없음"
+
+      - name: 워드프레스로 SFTP 배포 (dash - 실제 사용중)
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.FTP_SERVER }}
@@ -41,6 +54,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           source: "games/nikke/data/*"
-          target: "/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/"
+          target: "/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/data/"
           strip_components: 3
           overwrite: true
