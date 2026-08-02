@@ -11,21 +11,28 @@ jobs:
   update-nikke:
     runs-on: ubuntu-latest
     steps:
-      - name: 코드 가져오기
-        uses: actions/checkout@v5
-
-      - name: 파이썬 설치
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: 니케 크롤러 실행
         run: |
           pip install requests
           python games/nikke/crawler.py
-
       - name: 자동 커밋
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: "auto: nikke update"
           file_pattern: "games/nikke/data/*"
+
+      - name: 워드프레스로 SFTP 배포
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: sftp
+          port: 22
+          local-dir: ./games/nikke/data/
+          server-dir: /home/cloudpanel/htdocs/nopickle.com/wp-content/themes/generatepress_child/nikke-tier/data/
+          # ↑↑↑ 여기 경로만 너꺼로 바꿔!
