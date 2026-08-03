@@ -1,0 +1,36 @@
+name: BD2 Tier Auto
+on:
+  schedule: [{cron: '0 0 * * 1'}]
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install requests
+      - run: python scripts/tier_updater.py
+      - id: diff
+        run: git diff --quiet browndust2-tier/data/ || echo "changed=true" >> $GITHUB_OUTPUT
+      - if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "bd2-bot"
+          git config user.email "bot@bd2"
+          git add browndust2-tier/data/*.json
+          git commit -m "auto: bd2 $(date +%Y-%m-%d) [skip ci]"
+          git push
+      - if: steps.diff.outputs.changed == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir:./browndust2-tier/
+          server-dir: /wp-content/themes/generatepress_child/browndust2-tier/
+      - if: steps.diff.outputs.changed == 'true'
+        run: |
+          curl -X POST ${{ secrets.WP_WEBHOOK_URL }} \
+            -H "X-BD2-SECRET: ${{ secrets.BD2_WEBHOOK_SECRET }}" \
+            -d '{}'
