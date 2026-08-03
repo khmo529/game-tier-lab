@@ -1,17 +1,18 @@
-name: BD2 Tier Auto
+name: BD2 티어표 자동 업데이트
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * 1'
-  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  update:
+  update-bd2:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -19,56 +20,48 @@ jobs:
         with:
           python-version: '3.11'
 
-      - run: pip install requests beautifulsoup4
-
-      - name: Run updater
-        env:
-          GITHUB_RUN_ID: ${{ github.run_id }}
-          GITHUB_SHA: ${{ github.sha }}
+      - name: BD2 업데이터 실행
         run: |
+          pip install requests beautifulsoup4 lxml
           python games/browndust2/tier_updater.py
+          echo "=== 로컬 파일 ==="
           ls -lh games/browndust2/data/
+          cat games/browndust2/data/weekly-update.json | head -20
 
-      - name: Sync data to deploy folder
-        run: |
-          mkdir -p games/browndust2/browndust2-tier/data
-          cp -v games/browndust2/data/*.json games/browndust2/browndust2-tier/data/
+      - name: 자동 커밋
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "auto: bd2 update"
+          file_pattern: "games/browndust2/data/*"
 
-      - name: Check diff
-        id: diff
-        run: |
-          if git status --porcelain | grep -E "characters\.json|weekly-update\.json" > /dev/null; then
-            echo "changed=true" >> $GITHUB_OUTPUT
-          else
-            echo "changed=false" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Commit & Push
-        if: steps.diff.outputs.changed == 'true'
-        run: |
-          git config user.name "bd2-bot"
-          git config user.email "bot@browndust2.tier"
-          git add games/browndust2/data/*.json games/browndust2/browndust2-tier/data/*.json
-          git commit -m "auto: bd2 $(date +%Y-%m-%d) [skip ci]"
-          git push
-
-      # 여기부터가 핵심 - 키교환 SFTP 배포
-      - name: Deploy via SFTP with key
-        if: steps.diff.outputs.changed == 'true'
-        uses: appleboy/scp-action@master
+      - name: 배포 전 원격 폴더 확인
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
+          username: nopickle
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: "games/browndust2/browndust2-tier/*"
-          target: "/wp-content/themes/generatepress_child/browndust2-tier/"
-          strip_components: 2
+          script: |
+            echo "--- bd2 dash 폴더 ---"
+            ls -lh /home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/data/ || echo "dash 폴더 없음"
+            echo "--- bd2 underscore 폴더 ---"
+            ls -lh /home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/browndust2-tier/data/ || echo "underscore 폴더 없음"
+
+      - name: 워드프레스로 SFTP 배포 (bd2 data)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          username: nopickle
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          source: "games/browndust2/data/*"
+          target: "/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/data/"
+          strip_components: 3
           overwrite: true
 
-      - name: Purge cache via webhook
-        if: steps.diff.outputs.changed == 'true'
+      - name: 캐시 퍼지
+        if: success()
         run: |
           curl -X POST "${{ secrets.WP_WEBHOOK_URL }}" \
             -H "X-BD2-SECRET: ${{ secrets.BD2_WEBHOOK_SECRET }}" \
-            -d "{\"run_id\":\"${{ github.run_id }}\"}"
+            -d "{\"run_id\":\"${{ github.run_id }}\"}" || echo "webhook skip"
