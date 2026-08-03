@@ -1,18 +1,21 @@
-name: BD2 티어표 자동 업데이트
+name: Tier Update (Weekly) - GitHub Only Source
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 1'
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
 
-permissions:
-  contents: write
+concurrency:
+  group: tier-update
+  cancel-in-progress: false
 
 jobs:
-  update-bd2:
+  update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -20,48 +23,49 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: BD2 업데이터 실행
+      - name: Install deps
+        run: pip install requests beautifulsoup4 lxml
+
+      - name: Run BD2 updater (fix images + grades)
+        working-directory: games/browndust2
         run: |
-          pip install requests beautifulsoup4 lxml
-          python games/browndust2/tier_updater.py
-          echo "=== 로컬 파일 ==="
-          ls -lh games/browndust2/data/
-          cat games/browndust2/data/weekly-update.json | head -20
+          python tier_updater.py
+          ls -lh assets/images/ | wc -l
+          echo "justia count:"
+          grep -c "justia.png" data/characters.json || true
 
-      - name: 자동 커밋
-        uses: stefanzweifel/git-auto-commit-action@v6
-        with:
-          commit_message: "auto: bd2 update"
-          file_pattern: "games/browndust2/data/*"
+      - name: Run NIKKE updater
+        working-directory: games/nikke
+        run: python tier_updater.py
 
-      - name: 배포 전 원격 폴더 확인
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: nopickle
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          script: |
-            echo "--- bd2 dash 폴더 ---"
-            ls -lh /home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/data/ || echo "dash 폴더 없음"
-            echo "--- bd2 underscore 폴더 ---"
-            ls -lh /home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/browndust2-tier/data/ || echo "underscore 폴더 없음"
-
-      - name: 워드프레스로 SFTP 배포 (bd2 data)
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: nopickle
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          source: "games/browndust2/data/*"
-          target: "/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/data/"
-          strip_components: 3
-          overwrite: true
-
-      - name: 캐시 퍼지
-        if: success()
+      - name: Sync to WP theme (delete trash)
         run: |
-          curl -X POST "${{ secrets.WP_WEBHOOK_URL }}" \
-            -H "X-BD2-SECRET: ${{ secrets.BD2_WEBHOOK_SECRET }}" \
-            -d "{\"run_id\":\"${{ github.run_id }}\"}" || echo "webhook skip"
+          echo "Cleaning trash files..."
+          rm -f games/browndust2/assets/images/17682*.png
+          rm -f wp-content/themes/generatepress-child/browndust2-tier/assets/images/17682*.png
+          rm -f games/browndust2/assets/images/123*.png
+          
+          mkdir -p wp-content/themes/generatepress-child/browndust2-tier/data
+          mkdir -p wp-content/themes/generatepress-child/nikke-tier/data
+          mkdir -p wp-content/themes/generatepress-child/browndust2-tier/assets/images
+
+          cp games/browndust2/data/*.json wp-content/themes/generatepress-child/browndust2-tier/data/
+          cp games/nikke/data/*.json wp-content/themes/generatepress-child/nikke-tier/data/
+          cp games/browndust2/assets/images/* wp-content/themes/generatepress-child/browndust2-tier/assets/images/ 2>/dev/null || true
+
+          echo "After sync:"
+          ls wp-content/themes/generatepress-child/browndust2-tier/assets/images/ | wc -l
+          grep -c "justia.png" wp-content/themes/generatepress-child/browndust2-tier/data/characters.json || true
+
+      - name: Commit & Push
+        run: |
+          git config user.name "tier-bot"
+          git config user.email "bot@nopickle.co.kr"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "fix: auto restore images + sync to wp (justia fix)"
+          git pull --rebase origin main
+          git push origin main
