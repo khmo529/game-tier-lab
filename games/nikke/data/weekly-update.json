@@ -1,110 +1,1517 @@
 {
-  "date": "2026-08-02",
+  "date": "2026-08-03",
   "metaVersion": "2026-08 메타",
-  "week": "2026년 08월 02일 기준",
-  "note": "prydwen.gg 기준 자동 업데이트 - 13명 변동",
+  "week": "2026년 08월 03일 기준",
+  "note": "prydwen.gg Story 티어 기준 - 214명 변동 (214명 신규)",
   "counts": {
-    "new": 0,
+    "new": 214,
     "up": 0,
-    "down": 13,
+    "down": 0,
     "buff": 0,
     "nerf": 0
   },
   "changes": [
     {
-      "id": 12,
+      "id": 25,
+      "name": "아니스: 스타",
+      "type": "new",
+      "from": "",
+      "to": "SSS"
+    },
+    {
+      "id": 26,
+      "name": "크라운",
+      "type": "new",
+      "from": "",
+      "to": "SSS"
+    },
+    {
+      "id": 27,
+      "name": "플로라(트레저)",
+      "type": "new",
+      "from": "",
+      "to": "SSS"
+    },
+    {
+      "id": 28,
+      "name": "에이다 웡",
+      "type": "new",
+      "from": "",
+      "to": "SSS"
+    },
+    {
+      "id": 29,
+      "name": "라피: 레드 후드",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 30,
+      "name": "베스티: 택티컬 업그레이드",
+      "type": "new",
+      "from": "",
+      "to": "SSS"
+    },
+    {
+      "id": 31,
+      "name": "모란(트레저)",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 32,
+      "name": "세이렌",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 33,
+      "name": "마스트: 로맨틱 메이드",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 34,
+      "name": "나유타",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 35,
+      "name": "타키나 이노우에",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 36,
+      "name": "신데렐라: 크리스탈 웨이브",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 37,
+      "name": "라플라스: 얼티밋 히어로",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 38,
+      "name": "프리바티(트레저)",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 39,
+      "name": "스칼렛: 블랙 섀도우",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 40,
+      "name": "Snow White: Heavy Arms",
+      "type": "new",
+      "from": "",
+      "to": "SS"
+    },
+    {
+      "id": 41,
+      "name": "Red Hood B1",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 42,
+      "name": "Anchor: Innocent Maid",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 43,
+      "name": "Mint",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 44,
+      "name": "Prika",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 45,
+      "name": "Alice",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 46,
+      "name": "Ein",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 47,
+      "name": "Helm (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 48,
+      "name": "Liberalio",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 49,
+      "name": "Milk: Blooming Bunny",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 50,
+      "name": "Neon: Vision Eye",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 51,
+      "name": "Red Hood B3",
+      "type": "new",
+      "from": "",
+      "to": "S"
+    },
+    {
+      "id": 52,
+      "name": "D: Killer Wife",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 53,
+      "name": "Emma: Tactical Upgrade",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 54,
+      "name": "Liter",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 55,
+      "name": "Miranda (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 56,
+      "name": "Rouge",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 57,
+      "name": "Soline: Frost Ticket",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 58,
+      "name": "Tia",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 59,
+      "name": "Ade: Agent Bunny",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 60,
+      "name": "Blanc",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 61,
+      "name": "Brid: Silent Track",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 62,
+      "name": "Eunhwa: Tactical Upgrade",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 63,
+      "name": "Grave",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 64,
+      "name": "Mari Makinami Illustrious",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 65,
+      "name": "Naga",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 66,
+      "name": "Velvet",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 67,
+      "name": "Ark Ranger Black",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 68,
+      "name": "Asuka Shikinami Langley",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 69,
+      "name": "Asuka Shikinami Langley: Wille",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 70,
+      "name": "Cinderella",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 71,
+      "name": "Dorothy: Serendipity",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 72,
+      "name": "Maxwell",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 73,
+      "name": "Modernia",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 74,
+      "name": "Rei Ayanami",
+      "type": "new",
+      "from": "",
+      "to": "A"
+    },
+    {
+      "id": 75,
       "name": "홍련",
-      "type": "down",
-      "from": "SSS",
+      "type": "new",
+      "from": "",
       "to": "A"
     },
     {
-      "id": 15,
-      "name": "도로시",
-      "type": "down",
-      "from": "SS",
-      "to": "C"
-    },
-    {
-      "id": 2,
-      "name": "리터",
-      "type": "down",
-      "from": "SSS",
+      "id": 76,
+      "name": "Anis: Sparkling Summer",
+      "type": "new",
+      "from": "",
       "to": "A"
     },
     {
-      "id": 4,
-      "name": "모더니아",
-      "type": "down",
-      "from": "S",
-      "to": "A"
-    },
-    {
-      "id": 6,
-      "name": "블랑",
-      "type": "down",
-      "from": "SSS",
-      "to": "A"
-    },
-    {
-      "id": 8,
-      "name": "누아르",
-      "type": "down",
-      "from": "SS",
+      "id": 77,
+      "name": "Exia (Treasure)",
+      "type": "new",
+      "from": "",
       "to": "B"
     },
     {
-      "id": 9,
-      "name": "노아",
-      "type": "down",
-      "from": "S",
-      "to": "C"
-    },
-    {
-      "id": 14,
-      "name": "볼륨",
-      "type": "down",
-      "from": "A",
+      "id": 78,
+      "name": "Label",
+      "type": "new",
+      "from": "",
       "to": "B"
     },
     {
-      "id": 16,
-      "name": "센티",
-      "type": "down",
-      "from": "B",
-      "to": "C"
-    },
-    {
-      "id": 18,
-      "name": "아니스",
-      "type": "down",
-      "from": "B",
-      "to": "C"
-    },
-    {
-      "id": 22,
-      "name": "루드밀라",
-      "type": "down",
-      "from": "S",
-      "to": "C"
-    },
-    {
-      "id": 23,
-      "name": "프리바티",
-      "type": "down",
-      "from": "SS",
+      "id": 79,
+      "name": "Volume",
+      "type": "new",
+      "from": "",
       "to": "B"
     },
     {
-      "id": 24,
-      "name": "라플라스",
-      "type": "down",
-      "from": "A",
+      "id": 80,
+      "name": "Zwei (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 81,
+      "name": "Helm: Aquamarine",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 82,
+      "name": "Crust",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 83,
+      "name": "Delta: Ninja Thief",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 84,
+      "name": "Dolla",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 85,
+      "name": "Rosanna: Chic Ocean",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 86,
+      "name": "Trina",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 87,
+      "name": "Bready",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 88,
+      "name": "Chisato Nishikigi",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 89,
+      "name": "Diesel: Winter Sweets",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 90,
+      "name": "E.H.",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 91,
+      "name": "Helm",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 92,
+      "name": "Jill Valentine",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 93,
+      "name": "Laplace (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 94,
+      "name": "Ludmilla: Winter Owner",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 95,
+      "name": "Maiden: Ice Rose",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 96,
+      "name": "Noir",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 97,
+      "name": "Phantom",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 98,
+      "name": "Privaty",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 99,
+      "name": "Quency: Escape Queen",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 100,
+      "name": "Rei Ayanami (Tentative Name)",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 101,
+      "name": "Snow White",
+      "type": "new",
+      "from": "",
+      "to": "B"
+    },
+    {
+      "id": 102,
+      "name": "Alice: Wonderland Bunny",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 103,
+      "name": "Mary: Bay Goddess",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 104,
+      "name": "Dorothy",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 105,
+      "name": "Frima (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 106,
+      "name": "Mica: Snow Buddy",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 107,
+      "name": "Milk (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 108,
+      "name": "Miranda",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 109,
+      "name": "N102",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 110,
+      "name": "Rapunzel",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 111,
+      "name": "Sakura",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 112,
+      "name": "Tove (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 113,
+      "name": "Zwei",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 114,
+      "name": "Admi",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 115,
+      "name": "Anis",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 116,
+      "name": "Arcana: Fortune Mate",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 117,
+      "name": "Centi",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 118,
+      "name": "Centi (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 119,
+      "name": "Diesel (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 120,
+      "name": "Poli",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 121,
+      "name": "Poli (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 122,
+      "name": "Rem",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 123,
+      "name": "A2",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 124,
+      "name": "Drake (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 125,
+      "name": "Emilia",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 126,
+      "name": "Eve",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 127,
+      "name": "Guillotine",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 128,
+      "name": "Guillotine: Winter Slayer",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 129,
+      "name": "Harran",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 130,
+      "name": "Snow White: Innocent Days",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 131,
+      "name": "Mana",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 132,
+      "name": "Marciana: Marine Study",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 133,
+      "name": "Privaty: Unkind Maid",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 134,
+      "name": "Soda: Twinkling Bunny",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 135,
+      "name": "Avistar",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 136,
+      "name": "Exia",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 137,
+      "name": "Jackal",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 138,
+      "name": "Kurumi",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 139,
+      "name": "Ludmilla",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 140,
+      "name": "Moran",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 141,
+      "name": "Noise",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 142,
+      "name": "Pepper",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 143,
+      "name": "Rapunzel: Pure Grace",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 144,
+      "name": "Rumani",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 145,
+      "name": "Sakura Suzuhara",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 146,
+      "name": "Soda",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 147,
+      "name": "Tove",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 148,
+      "name": "Rupee: Winter Shopper",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 149,
+      "name": "Yan",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 150,
+      "name": "Ade",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 151,
+      "name": "Arcana",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 152,
+      "name": "Bay",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 153,
+      "name": "Bay (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 154,
+      "name": "Biscuit",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 155,
+      "name": "Chime",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 156,
+      "name": "Clay",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 157,
+      "name": "Elegg",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 158,
+      "name": "Flora",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 159,
+      "name": "Makima",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 160,
+      "name": "Marciana",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 161,
+      "name": "Mast",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 162,
+      "name": "Anne: Miracle Fairy",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 163,
+      "name": "Noah",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 164,
+      "name": "Quency",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 165,
+      "name": "Rupee",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 166,
+      "name": "Snow Crane",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 167,
+      "name": "Viper (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 168,
+      "name": "2B",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 169,
+      "name": "Drake",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 170,
+      "name": "Elegg: Boom and Shock",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 171,
+      "name": "Epinel",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 172,
+      "name": "Julia (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 173,
+      "name": "Kilo",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 174,
+      "name": "Laplace",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 175,
+      "name": "Raven",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 176,
+      "name": "Sakura: Bloom in Summer",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 177,
+      "name": "Vesti",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 178,
+      "name": "Anchor",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 179,
+      "name": "Claire Redfield",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 180,
+      "name": "Cocoa",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 181,
+      "name": "Emma",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 182,
+      "name": "Ether",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 183,
+      "name": "frima",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 184,
+      "name": "Mary",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 185,
+      "name": "Mica",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 186,
+      "name": "Milk",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 187,
+      "name": "Misato Katsuragi",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 188,
+      "name": "Neon",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 189,
+      "name": "Pascal",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 190,
+      "name": "Ram",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 191,
+      "name": "Rei",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 192,
+      "name": "Rosanna",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 193,
+      "name": "Rosanna (Treasure)",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 194,
+      "name": "Sora",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 195,
+      "name": "Aria",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 196,
+      "name": "Belorta",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 197,
+      "name": "Delta",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 198,
+      "name": "Diesel",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 199,
+      "name": "Eunhwa",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 200,
+      "name": "Folkwang",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 201,
+      "name": "Guilty",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 202,
+      "name": "Himeno",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 203,
+      "name": "Leona",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 204,
+      "name": "Lily",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 205,
+      "name": "Mori",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 206,
+      "name": "Nero",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 207,
+      "name": "Nihilister",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 208,
+      "name": "Novel",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 209,
+      "name": "Red Hood B2",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 210,
+      "name": "Signal",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 211,
+      "name": "Sin",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 212,
+      "name": "Viper",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 213,
+      "name": "Yuni",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 214,
+      "name": "Neon: Blue Ocean",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 215,
+      "name": "Brid",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 216,
+      "name": "Crow",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 217,
+      "name": "Isabel",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 218,
+      "name": "Julia",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 219,
+      "name": "Maiden",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 220,
+      "name": "Mihara",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 221,
+      "name": "Mihara: Bonding Chain",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 222,
+      "name": "Neve",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 223,
+      "name": "Power",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 224,
+      "name": "Quiry",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 225,
+      "name": "Rapi",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 226,
+      "name": "Soline",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 227,
+      "name": "Sugar",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 228,
+      "name": "Trony",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 229,
+      "name": "Yulha",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 230,
+      "name": "iDoll Flower",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 231,
+      "name": "iDoll Ocean",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 232,
+      "name": "Product-08",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 233,
+      "name": "Soldier OW",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 234,
+      "name": "Product-23",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 235,
+      "name": "Soldier FA",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 236,
+      "name": "iDoll Sun",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 237,
+      "name": "Product-12",
+      "type": "new",
+      "from": "",
+      "to": "C"
+    },
+    {
+      "id": 238,
+      "name": "Soldier EG",
+      "type": "new",
+      "from": "",
       "to": "C"
     }
   ],
-  "updated_at": "2026-08-02T08:36:01.624038+00:00",
-  "updated_at_kst": "2026-08-02 08:36:01 KST",
+  "updated_at": "2026-08-03T03:43:21.420714+00:00",
+  "updated_at_kst": "2026-08-03 03:43:21 KST",
   "source": "prydwen.gg",
-  "total": 21
+  "total": 235
 }

@@ -1122,5 +1122,9421 @@
       "C"
     ],
     "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Laplace.jpg"
+  },
+  {
+    "id": 25,
+    "name": "아니스: 스타",
+    "en_name": "Anis: Star",
+    "tier": "SSS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SSS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "아니스: 스타"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SSS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Anis_Star.jpg"
+  },
+  {
+    "id": 26,
+    "name": "크라운",
+    "en_name": "Crown",
+    "tier": "SSS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SSS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "크라운"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SSS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Crown.jpg"
+  },
+  {
+    "id": 27,
+    "name": "플로라(트레저)",
+    "en_name": "Flora (Treasure)",
+    "tier": "SSS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SSS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "플로라(트레저)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SSS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Flora_Treasure.jpg"
+  },
+  {
+    "id": 28,
+    "name": "에이다 웡",
+    "en_name": "Ada Wong",
+    "tier": "SSS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SSS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "에이다 웡"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SSS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ada_Wong.jpg"
+  },
+  {
+    "id": 29,
+    "name": "라피: 레드 후드",
+    "en_name": "Rapi: Red Hood",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "라피: 레드 후드"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rapi_Red_Hood.jpg"
+  },
+  {
+    "id": 30,
+    "name": "베스티: 택티컬 업그레이드",
+    "en_name": "Vesti: Tactical Upgrade",
+    "tier": "SSS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SSS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "베스티: 택티컬 업그레이드"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SSS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Vesti_Tactical_Upgrade.jpg"
+  },
+  {
+    "id": 31,
+    "name": "모란(트레저)",
+    "en_name": "Moran (Treasure)",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "모란(트레저)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Moran_Treasure.jpg"
+  },
+  {
+    "id": 32,
+    "name": "세이렌",
+    "en_name": "Siren",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "세이렌"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Siren.jpg"
+  },
+  {
+    "id": 33,
+    "name": "마스트: 로맨틱 메이드",
+    "en_name": "Mast: Romantic Maid",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "마스트: 로맨틱 메이드"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mast_Romantic_Maid.jpg"
+  },
+  {
+    "id": 34,
+    "name": "나유타",
+    "en_name": "Nayuta",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "나유타"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Nayuta.jpg"
+  },
+  {
+    "id": 35,
+    "name": "타키나 이노우에",
+    "en_name": "Takina Inoue",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "타키나 이노우에"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Takina_Inoue.jpg"
+  },
+  {
+    "id": 36,
+    "name": "신데렐라: 크리스탈 웨이브",
+    "en_name": "Cinderella: Crystal Wave",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "신데렐라: 크리스탈 웨이브"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Cinderella_Crystal_Wave.jpg"
+  },
+  {
+    "id": 37,
+    "name": "라플라스: 얼티밋 히어로",
+    "en_name": "Laplace: Ultimate Hero",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "라플라스: 얼티밋 히어로"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Laplace_Ultimate_Hero.jpg"
+  },
+  {
+    "id": 38,
+    "name": "프리바티(트레저)",
+    "en_name": "Privaty (Treasure)",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "프리바티(트레저)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Privaty_Treasure.jpg"
+  },
+  {
+    "id": 39,
+    "name": "스칼렛: 블랙 섀도우",
+    "en_name": "Scarlet: Black Shadow",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "스칼렛: 블랙 섀도우"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Scarlet_Black_Shadow.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Snow White: Heavy Arms",
+    "en_name": "Snow White: Heavy Arms",
+    "tier": "SS",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 5,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "SS 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Snow White: Heavy Arms"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": true,
+    "history": [
+      "SS"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Snow_White_Heavy_Arms.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Red Hood B1",
+    "en_name": "Red Hood B1",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Red Hood B1"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Red_Hood_B1.jpg"
+  },
+  {
+    "id": 42,
+    "name": "Anchor: Innocent Maid",
+    "en_name": "Anchor: Innocent Maid",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Anchor: Innocent Maid"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Anchor_Innocent_Maid.jpg"
+  },
+  {
+    "id": 43,
+    "name": "Mint",
+    "en_name": "Mint",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mint"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mint.jpg"
+  },
+  {
+    "id": 44,
+    "name": "Prika",
+    "en_name": "Prika",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Prika"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Prika.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Alice",
+    "en_name": "Alice",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Alice"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Alice.jpg"
+  },
+  {
+    "id": 46,
+    "name": "Ein",
+    "en_name": "Ein",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Ein"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ein.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Helm (Treasure)",
+    "en_name": "Helm (Treasure)",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Helm (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Helm_Treasure.jpg"
+  },
+  {
+    "id": 48,
+    "name": "Liberalio",
+    "en_name": "Liberalio",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Liberalio"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Liberalio.jpg"
+  },
+  {
+    "id": 49,
+    "name": "Milk: Blooming Bunny",
+    "en_name": "Milk: Blooming Bunny",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Milk: Blooming Bunny"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Milk_Blooming_Bunny.jpg"
+  },
+  {
+    "id": 50,
+    "name": "Neon: Vision Eye",
+    "en_name": "Neon: Vision Eye",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Neon: Vision Eye"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Neon_Vision_Eye.jpg"
+  },
+  {
+    "id": 51,
+    "name": "Red Hood B3",
+    "en_name": "Red Hood B3",
+    "tier": "S",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "S 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Red Hood B3"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "S"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Red_Hood_B3.jpg"
+  },
+  {
+    "id": 52,
+    "name": "D: Killer Wife",
+    "en_name": "D: Killer Wife",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "D: Killer Wife"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/D_Killer_Wife.jpg"
+  },
+  {
+    "id": 53,
+    "name": "Emma: Tactical Upgrade",
+    "en_name": "Emma: Tactical Upgrade",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Emma: Tactical Upgrade"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Emma_Tactical_Upgrade.jpg"
+  },
+  {
+    "id": 54,
+    "name": "Liter",
+    "en_name": "Liter",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Liter"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Liter.jpg"
+  },
+  {
+    "id": 55,
+    "name": "Miranda (Treasure)",
+    "en_name": "Miranda (Treasure)",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Miranda (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Miranda_Treasure.jpg"
+  },
+  {
+    "id": 56,
+    "name": "Rouge",
+    "en_name": "Rouge",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rouge"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rouge.jpg"
+  },
+  {
+    "id": 57,
+    "name": "Soline: Frost Ticket",
+    "en_name": "Soline: Frost Ticket",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Soline: Frost Ticket"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Soline_Frost_Ticket.jpg"
+  },
+  {
+    "id": 58,
+    "name": "Tia",
+    "en_name": "Tia",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Tia"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Tia.jpg"
+  },
+  {
+    "id": 59,
+    "name": "Ade: Agent Bunny",
+    "en_name": "Ade: Agent Bunny",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Ade: Agent Bunny"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ade_Agent_Bunny.jpg"
+  },
+  {
+    "id": 60,
+    "name": "Blanc",
+    "en_name": "Blanc",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Blanc"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Blanc.jpg"
+  },
+  {
+    "id": 61,
+    "name": "Brid: Silent Track",
+    "en_name": "Brid: Silent Track",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Brid: Silent Track"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Brid_Silent_Track.jpg"
+  },
+  {
+    "id": 62,
+    "name": "Eunhwa: Tactical Upgrade",
+    "en_name": "Eunhwa: Tactical Upgrade",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Eunhwa: Tactical Upgrade"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Eunhwa_Tactical_Upgrade.jpg"
+  },
+  {
+    "id": 63,
+    "name": "Grave",
+    "en_name": "Grave",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Grave"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Grave.jpg"
+  },
+  {
+    "id": 64,
+    "name": "Mari Makinami Illustrious",
+    "en_name": "Mari Makinami Illustrious",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mari Makinami Illustrious"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mari_Makinami_Illustrious.jpg"
+  },
+  {
+    "id": 65,
+    "name": "Naga",
+    "en_name": "Naga",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Naga"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Naga.jpg"
+  },
+  {
+    "id": 66,
+    "name": "Velvet",
+    "en_name": "Velvet",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Velvet"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Velvet.jpg"
+  },
+  {
+    "id": 67,
+    "name": "Ark Ranger Black",
+    "en_name": "Ark Ranger Black",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Ark Ranger Black"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ark_Ranger_Black.jpg"
+  },
+  {
+    "id": 68,
+    "name": "Asuka Shikinami Langley",
+    "en_name": "Asuka Shikinami Langley",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Asuka Shikinami Langley"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Asuka_Shikinami_Langley.jpg"
+  },
+  {
+    "id": 69,
+    "name": "Asuka Shikinami Langley: Wille",
+    "en_name": "Asuka Shikinami Langley: Wille",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Asuka Shikinami Langley: Wille"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Asuka_Shikinami_Langley_Wille.jpg"
+  },
+  {
+    "id": 70,
+    "name": "Cinderella",
+    "en_name": "Cinderella",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Cinderella"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Cinderella.jpg"
+  },
+  {
+    "id": 71,
+    "name": "Dorothy: Serendipity",
+    "en_name": "Dorothy: Serendipity",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Dorothy: Serendipity"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Dorothy_Serendipity.jpg"
+  },
+  {
+    "id": 72,
+    "name": "Maxwell",
+    "en_name": "Maxwell",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Maxwell"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Maxwell.jpg"
+  },
+  {
+    "id": 73,
+    "name": "Modernia",
+    "en_name": "Modernia",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Modernia"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Modernia.jpg"
+  },
+  {
+    "id": 74,
+    "name": "Rei Ayanami",
+    "en_name": "Rei Ayanami",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rei Ayanami"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rei_Ayanami.jpg"
+  },
+  {
+    "id": 75,
+    "name": "홍련",
+    "en_name": "Scarlet",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "홍련"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Scarlet.jpg"
+  },
+  {
+    "id": 76,
+    "name": "Anis: Sparkling Summer",
+    "en_name": "Anis: Sparkling Summer",
+    "tier": "A",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "A 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Anis: Sparkling Summer"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "A"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Anis_Sparkling_Summer.jpg"
+  },
+  {
+    "id": 77,
+    "name": "Exia (Treasure)",
+    "en_name": "Exia (Treasure)",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Exia (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Exia_Treasure.jpg"
+  },
+  {
+    "id": 78,
+    "name": "Label",
+    "en_name": "Label",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Label"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Label.jpg"
+  },
+  {
+    "id": 79,
+    "name": "Volume",
+    "en_name": "Volume",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Volume"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Volume.jpg"
+  },
+  {
+    "id": 80,
+    "name": "Zwei (Treasure)",
+    "en_name": "Zwei (Treasure)",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Zwei (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Zwei_Treasure.jpg"
+  },
+  {
+    "id": 81,
+    "name": "Helm: Aquamarine",
+    "en_name": "Helm: Aquamarine",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Helm: Aquamarine"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Helm_Aquamarine.jpg"
+  },
+  {
+    "id": 82,
+    "name": "Crust",
+    "en_name": "Crust",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Crust"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Crust.jpg"
+  },
+  {
+    "id": 83,
+    "name": "Delta: Ninja Thief",
+    "en_name": "Delta: Ninja Thief",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Delta: Ninja Thief"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Delta_Ninja_Thief.jpg"
+  },
+  {
+    "id": 84,
+    "name": "Dolla",
+    "en_name": "Dolla",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Dolla"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Dolla.jpg"
+  },
+  {
+    "id": 85,
+    "name": "Rosanna: Chic Ocean",
+    "en_name": "Rosanna: Chic Ocean",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rosanna: Chic Ocean"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rosanna_Chic_Ocean.jpg"
+  },
+  {
+    "id": 86,
+    "name": "Trina",
+    "en_name": "Trina",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Trina"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Trina.jpg"
+  },
+  {
+    "id": 87,
+    "name": "Bready",
+    "en_name": "Bready",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Bready"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Bready.jpg"
+  },
+  {
+    "id": 88,
+    "name": "Chisato Nishikigi",
+    "en_name": "Chisato Nishikigi",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Chisato Nishikigi"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Chisato_Nishikigi.jpg"
+  },
+  {
+    "id": 89,
+    "name": "Diesel: Winter Sweets",
+    "en_name": "Diesel: Winter Sweets",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Diesel: Winter Sweets"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Diesel_Winter_Sweets.jpg"
+  },
+  {
+    "id": 90,
+    "name": "E.H.",
+    "en_name": "E.H.",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "E.H."
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/EH.jpg"
+  },
+  {
+    "id": 91,
+    "name": "Helm",
+    "en_name": "Helm",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Helm"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Helm.jpg"
+  },
+  {
+    "id": 92,
+    "name": "Jill Valentine",
+    "en_name": "Jill Valentine",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Jill Valentine"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Jill_Valentine.jpg"
+  },
+  {
+    "id": 93,
+    "name": "Laplace (Treasure)",
+    "en_name": "Laplace (Treasure)",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Laplace (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Laplace_Treasure.jpg"
+  },
+  {
+    "id": 94,
+    "name": "Ludmilla: Winter Owner",
+    "en_name": "Ludmilla: Winter Owner",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Ludmilla: Winter Owner"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ludmilla_Winter_Owner.jpg"
+  },
+  {
+    "id": 95,
+    "name": "Maiden: Ice Rose",
+    "en_name": "Maiden: Ice Rose",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Maiden: Ice Rose"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Maiden_Ice_Rose.jpg"
+  },
+  {
+    "id": 96,
+    "name": "Noir",
+    "en_name": "Noir",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Noir"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Noir.jpg"
+  },
+  {
+    "id": 97,
+    "name": "Phantom",
+    "en_name": "Phantom",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Phantom"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Phantom.jpg"
+  },
+  {
+    "id": 98,
+    "name": "Privaty",
+    "en_name": "Privaty",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Privaty"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Privaty.jpg"
+  },
+  {
+    "id": 99,
+    "name": "Quency: Escape Queen",
+    "en_name": "Quency: Escape Queen",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Quency: Escape Queen"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Quency_Escape_Queen.jpg"
+  },
+  {
+    "id": 100,
+    "name": "Rei Ayanami (Tentative Name)",
+    "en_name": "Rei Ayanami (Tentative Name)",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rei Ayanami (Tentative Name)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rei_Ayanami_Tentative_Name.jpg"
+  },
+  {
+    "id": 101,
+    "name": "Snow White",
+    "en_name": "Snow White",
+    "tier": "B",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "B 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Snow White"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "B"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Snow_White.jpg"
+  },
+  {
+    "id": 102,
+    "name": "Alice: Wonderland Bunny",
+    "en_name": "Alice: Wonderland Bunny",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Alice: Wonderland Bunny"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Alice_Wonderland_Bunny.jpg"
+  },
+  {
+    "id": 103,
+    "name": "Mary: Bay Goddess",
+    "en_name": "Mary: Bay Goddess",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mary: Bay Goddess"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mary_Bay_Goddess.jpg"
+  },
+  {
+    "id": 104,
+    "name": "Dorothy",
+    "en_name": "Dorothy",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Dorothy"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Dorothy.jpg"
+  },
+  {
+    "id": 105,
+    "name": "Frima (Treasure)",
+    "en_name": "Frima (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Frima (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Frima_Treasure.jpg"
+  },
+  {
+    "id": 106,
+    "name": "Mica: Snow Buddy",
+    "en_name": "Mica: Snow Buddy",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mica: Snow Buddy"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mica_Snow_Buddy.jpg"
+  },
+  {
+    "id": 107,
+    "name": "Milk (Treasure)",
+    "en_name": "Milk (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Milk (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Milk_Treasure.jpg"
+  },
+  {
+    "id": 108,
+    "name": "Miranda",
+    "en_name": "Miranda",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Miranda"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Miranda.jpg"
+  },
+  {
+    "id": 109,
+    "name": "N102",
+    "en_name": "N102",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "N102"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/N102.jpg"
+  },
+  {
+    "id": 110,
+    "name": "Rapunzel",
+    "en_name": "Rapunzel",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rapunzel"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rapunzel.jpg"
+  },
+  {
+    "id": 111,
+    "name": "Sakura",
+    "en_name": "Sakura",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Sakura"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Sakura.jpg"
+  },
+  {
+    "id": 112,
+    "name": "Tove (Treasure)",
+    "en_name": "Tove (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Tove (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Tove_Treasure.jpg"
+  },
+  {
+    "id": 113,
+    "name": "Zwei",
+    "en_name": "Zwei",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Zwei"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Zwei.jpg"
+  },
+  {
+    "id": 114,
+    "name": "Admi",
+    "en_name": "Admi",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Admi"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Admi.jpg"
+  },
+  {
+    "id": 115,
+    "name": "Anis",
+    "en_name": "Anis",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Anis"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Anis.jpg"
+  },
+  {
+    "id": 116,
+    "name": "Arcana: Fortune Mate",
+    "en_name": "Arcana: Fortune Mate",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Arcana: Fortune Mate"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Arcana_Fortune_Mate.jpg"
+  },
+  {
+    "id": 117,
+    "name": "Centi",
+    "en_name": "Centi",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Centi"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Centi.jpg"
+  },
+  {
+    "id": 118,
+    "name": "Centi (Treasure)",
+    "en_name": "Centi (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Centi (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Centi_Treasure.jpg"
+  },
+  {
+    "id": 119,
+    "name": "Diesel (Treasure)",
+    "en_name": "Diesel (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Diesel (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Diesel_Treasure.jpg"
+  },
+  {
+    "id": 120,
+    "name": "Poli",
+    "en_name": "Poli",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Poli"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Poli.jpg"
+  },
+  {
+    "id": 121,
+    "name": "Poli (Treasure)",
+    "en_name": "Poli (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Poli (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Poli_Treasure.jpg"
+  },
+  {
+    "id": 122,
+    "name": "Rem",
+    "en_name": "Rem",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rem"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rem.jpg"
+  },
+  {
+    "id": 123,
+    "name": "A2",
+    "en_name": "A2",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "A2"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/A2.jpg"
+  },
+  {
+    "id": 124,
+    "name": "Drake (Treasure)",
+    "en_name": "Drake (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Drake (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Drake_Treasure.jpg"
+  },
+  {
+    "id": 125,
+    "name": "Emilia",
+    "en_name": "Emilia",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Emilia"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Emilia.jpg"
+  },
+  {
+    "id": 126,
+    "name": "Eve",
+    "en_name": "Eve",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Eve"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Eve.jpg"
+  },
+  {
+    "id": 127,
+    "name": "Guillotine",
+    "en_name": "Guillotine",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Guillotine"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Guillotine.jpg"
+  },
+  {
+    "id": 128,
+    "name": "Guillotine: Winter Slayer",
+    "en_name": "Guillotine: Winter Slayer",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Guillotine: Winter Slayer"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Guillotine_Winter_Slayer.jpg"
+  },
+  {
+    "id": 129,
+    "name": "Harran",
+    "en_name": "Harran",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Harran"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Harran.jpg"
+  },
+  {
+    "id": 130,
+    "name": "Snow White: Innocent Days",
+    "en_name": "Snow White: Innocent Days",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Snow White: Innocent Days"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Snow_White_Innocent_Days.jpg"
+  },
+  {
+    "id": 131,
+    "name": "Mana",
+    "en_name": "Mana",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mana"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mana.jpg"
+  },
+  {
+    "id": 132,
+    "name": "Marciana: Marine Study",
+    "en_name": "Marciana: Marine Study",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Marciana: Marine Study"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Marciana_Marine_Study.jpg"
+  },
+  {
+    "id": 133,
+    "name": "Privaty: Unkind Maid",
+    "en_name": "Privaty: Unkind Maid",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Privaty: Unkind Maid"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Privaty_Unkind_Maid.jpg"
+  },
+  {
+    "id": 134,
+    "name": "Soda: Twinkling Bunny",
+    "en_name": "Soda: Twinkling Bunny",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Soda: Twinkling Bunny"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Soda_Twinkling_Bunny.jpg"
+  },
+  {
+    "id": 135,
+    "name": "Avistar",
+    "en_name": "Avistar",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Avistar"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Avistar.jpg"
+  },
+  {
+    "id": 136,
+    "name": "Exia",
+    "en_name": "Exia",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Exia"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Exia.jpg"
+  },
+  {
+    "id": 137,
+    "name": "Jackal",
+    "en_name": "Jackal",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Jackal"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Jackal.jpg"
+  },
+  {
+    "id": 138,
+    "name": "Kurumi",
+    "en_name": "Kurumi",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Kurumi"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Kurumi.jpg"
+  },
+  {
+    "id": 139,
+    "name": "Ludmilla",
+    "en_name": "Ludmilla",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Ludmilla"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ludmilla.jpg"
+  },
+  {
+    "id": 140,
+    "name": "Moran",
+    "en_name": "Moran",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Moran"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Moran.jpg"
+  },
+  {
+    "id": 141,
+    "name": "Noise",
+    "en_name": "Noise",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Noise"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Noise.jpg"
+  },
+  {
+    "id": 142,
+    "name": "Pepper",
+    "en_name": "Pepper",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Pepper"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Pepper.jpg"
+  },
+  {
+    "id": 143,
+    "name": "Rapunzel: Pure Grace",
+    "en_name": "Rapunzel: Pure Grace",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rapunzel: Pure Grace"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rapunzel_Pure_Grace.jpg"
+  },
+  {
+    "id": 144,
+    "name": "Rumani",
+    "en_name": "Rumani",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rumani"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rumani.jpg"
+  },
+  {
+    "id": 145,
+    "name": "Sakura Suzuhara",
+    "en_name": "Sakura Suzuhara",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Sakura Suzuhara"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Sakura_Suzuhara.jpg"
+  },
+  {
+    "id": 146,
+    "name": "Soda",
+    "en_name": "Soda",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Soda"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Soda.jpg"
+  },
+  {
+    "id": 147,
+    "name": "Tove",
+    "en_name": "Tove",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Tove"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Tove.jpg"
+  },
+  {
+    "id": 148,
+    "name": "Rupee: Winter Shopper",
+    "en_name": "Rupee: Winter Shopper",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rupee: Winter Shopper"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rupee_Winter_Shopper.jpg"
+  },
+  {
+    "id": 149,
+    "name": "Yan",
+    "en_name": "Yan",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Yan"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Yan.jpg"
+  },
+  {
+    "id": 150,
+    "name": "Ade",
+    "en_name": "Ade",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Ade"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ade.jpg"
+  },
+  {
+    "id": 151,
+    "name": "Arcana",
+    "en_name": "Arcana",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Arcana"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Arcana.jpg"
+  },
+  {
+    "id": 152,
+    "name": "Bay",
+    "en_name": "Bay",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Bay"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Bay.jpg"
+  },
+  {
+    "id": 153,
+    "name": "Bay (Treasure)",
+    "en_name": "Bay (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Bay (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Bay_Treasure.jpg"
+  },
+  {
+    "id": 154,
+    "name": "Biscuit",
+    "en_name": "Biscuit",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Biscuit"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Biscuit.jpg"
+  },
+  {
+    "id": 155,
+    "name": "Chime",
+    "en_name": "Chime",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Chime"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Chime.jpg"
+  },
+  {
+    "id": 156,
+    "name": "Clay",
+    "en_name": "Clay",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Clay"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Clay.jpg"
+  },
+  {
+    "id": 157,
+    "name": "Elegg",
+    "en_name": "Elegg",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Elegg"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Elegg.jpg"
+  },
+  {
+    "id": 158,
+    "name": "Flora",
+    "en_name": "Flora",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Flora"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Flora.jpg"
+  },
+  {
+    "id": 159,
+    "name": "Makima",
+    "en_name": "Makima",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Makima"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Makima.jpg"
+  },
+  {
+    "id": 160,
+    "name": "Marciana",
+    "en_name": "Marciana",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Marciana"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Marciana.jpg"
+  },
+  {
+    "id": 161,
+    "name": "Mast",
+    "en_name": "Mast",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mast"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mast.jpg"
+  },
+  {
+    "id": 162,
+    "name": "Anne: Miracle Fairy",
+    "en_name": "Anne: Miracle Fairy",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Anne: Miracle Fairy"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Anne_Miracle_Fairy.jpg"
+  },
+  {
+    "id": 163,
+    "name": "Noah",
+    "en_name": "Noah",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Noah"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Noah.jpg"
+  },
+  {
+    "id": 164,
+    "name": "Quency",
+    "en_name": "Quency",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Quency"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Quency.jpg"
+  },
+  {
+    "id": 165,
+    "name": "Rupee",
+    "en_name": "Rupee",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rupee"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rupee.jpg"
+  },
+  {
+    "id": 166,
+    "name": "Snow Crane",
+    "en_name": "Snow Crane",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Snow Crane"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Snow_Crane.jpg"
+  },
+  {
+    "id": 167,
+    "name": "Viper (Treasure)",
+    "en_name": "Viper (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Viper (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Viper_Treasure.jpg"
+  },
+  {
+    "id": 168,
+    "name": "2B",
+    "en_name": "2B",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "2B"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/2B.jpg"
+  },
+  {
+    "id": 169,
+    "name": "Drake",
+    "en_name": "Drake",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Drake"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Drake.jpg"
+  },
+  {
+    "id": 170,
+    "name": "Elegg: Boom and Shock",
+    "en_name": "Elegg: Boom and Shock",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Elegg: Boom and Shock"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Elegg_Boom_and_Shock.jpg"
+  },
+  {
+    "id": 171,
+    "name": "Epinel",
+    "en_name": "Epinel",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Epinel"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Epinel.jpg"
+  },
+  {
+    "id": 172,
+    "name": "Julia (Treasure)",
+    "en_name": "Julia (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Julia (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Julia_Treasure.jpg"
+  },
+  {
+    "id": 173,
+    "name": "Kilo",
+    "en_name": "Kilo",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Kilo"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Kilo.jpg"
+  },
+  {
+    "id": 174,
+    "name": "Laplace",
+    "en_name": "Laplace",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Laplace"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Laplace.jpg"
+  },
+  {
+    "id": 175,
+    "name": "Raven",
+    "en_name": "Raven",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Raven"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Raven.jpg"
+  },
+  {
+    "id": 176,
+    "name": "Sakura: Bloom in Summer",
+    "en_name": "Sakura: Bloom in Summer",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Sakura: Bloom in Summer"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Sakura_Bloom_in_Summer.jpg"
+  },
+  {
+    "id": 177,
+    "name": "Vesti",
+    "en_name": "Vesti",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "D 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Vesti"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Vesti.jpg"
+  },
+  {
+    "id": 178,
+    "name": "Anchor",
+    "en_name": "Anchor",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Anchor"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Anchor.jpg"
+  },
+  {
+    "id": 179,
+    "name": "Claire Redfield",
+    "en_name": "Claire Redfield",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Claire Redfield"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Claire_Redfield.jpg"
+  },
+  {
+    "id": 180,
+    "name": "Cocoa",
+    "en_name": "Cocoa",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Cocoa"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Cocoa.jpg"
+  },
+  {
+    "id": 181,
+    "name": "Emma",
+    "en_name": "Emma",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Emma"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Emma.jpg"
+  },
+  {
+    "id": 182,
+    "name": "Ether",
+    "en_name": "Ether",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Ether"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ether.jpg"
+  },
+  {
+    "id": 183,
+    "name": "frima",
+    "en_name": "frima",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "frima"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/frima.jpg"
+  },
+  {
+    "id": 184,
+    "name": "Mary",
+    "en_name": "Mary",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mary"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mary.jpg"
+  },
+  {
+    "id": 185,
+    "name": "Mica",
+    "en_name": "Mica",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mica"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mica.jpg"
+  },
+  {
+    "id": 186,
+    "name": "Milk",
+    "en_name": "Milk",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Milk"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Milk.jpg"
+  },
+  {
+    "id": 187,
+    "name": "Misato Katsuragi",
+    "en_name": "Misato Katsuragi",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Misato Katsuragi"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Misato_Katsuragi.jpg"
+  },
+  {
+    "id": 188,
+    "name": "Neon",
+    "en_name": "Neon",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Neon"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Neon.jpg"
+  },
+  {
+    "id": 189,
+    "name": "Pascal",
+    "en_name": "Pascal",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Pascal"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Pascal.jpg"
+  },
+  {
+    "id": 190,
+    "name": "Ram",
+    "en_name": "Ram",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Ram"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ram.jpg"
+  },
+  {
+    "id": 191,
+    "name": "Rei",
+    "en_name": "Rei",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rei"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rei.jpg"
+  },
+  {
+    "id": 192,
+    "name": "Rosanna",
+    "en_name": "Rosanna",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rosanna"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rosanna.jpg"
+  },
+  {
+    "id": 193,
+    "name": "Rosanna (Treasure)",
+    "en_name": "Rosanna (Treasure)",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rosanna (Treasure)"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rosanna_Treasure.jpg"
+  },
+  {
+    "id": 194,
+    "name": "Sora",
+    "en_name": "Sora",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Sora"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Sora.jpg"
+  },
+  {
+    "id": 195,
+    "name": "Aria",
+    "en_name": "Aria",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Aria"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Aria.jpg"
+  },
+  {
+    "id": 196,
+    "name": "Belorta",
+    "en_name": "Belorta",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Belorta"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Belorta.jpg"
+  },
+  {
+    "id": 197,
+    "name": "Delta",
+    "en_name": "Delta",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Delta"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Delta.jpg"
+  },
+  {
+    "id": 198,
+    "name": "Diesel",
+    "en_name": "Diesel",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Diesel"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Diesel.jpg"
+  },
+  {
+    "id": 199,
+    "name": "Eunhwa",
+    "en_name": "Eunhwa",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Eunhwa"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Eunhwa.jpg"
+  },
+  {
+    "id": 200,
+    "name": "Folkwang",
+    "en_name": "Folkwang",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Folkwang"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Folkwang.jpg"
+  },
+  {
+    "id": 201,
+    "name": "Guilty",
+    "en_name": "Guilty",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Guilty"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Guilty.jpg"
+  },
+  {
+    "id": 202,
+    "name": "Himeno",
+    "en_name": "Himeno",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Himeno"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Himeno.jpg"
+  },
+  {
+    "id": 203,
+    "name": "Leona",
+    "en_name": "Leona",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Leona"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Leona.jpg"
+  },
+  {
+    "id": 204,
+    "name": "Lily",
+    "en_name": "Lily",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Lily"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Lily.jpg"
+  },
+  {
+    "id": 205,
+    "name": "Mori",
+    "en_name": "Mori",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mori"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mori.jpg"
+  },
+  {
+    "id": 206,
+    "name": "Nero",
+    "en_name": "Nero",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Nero"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Nero.jpg"
+  },
+  {
+    "id": 207,
+    "name": "Nihilister",
+    "en_name": "Nihilister",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Nihilister"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Nihilister.jpg"
+  },
+  {
+    "id": 208,
+    "name": "Novel",
+    "en_name": "Novel",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Novel"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Novel.jpg"
+  },
+  {
+    "id": 209,
+    "name": "Red Hood B2",
+    "en_name": "Red Hood B2",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Red Hood B2"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Red_Hood_B2.jpg"
+  },
+  {
+    "id": 210,
+    "name": "Signal",
+    "en_name": "Signal",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Signal"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Signal.jpg"
+  },
+  {
+    "id": 211,
+    "name": "Sin",
+    "en_name": "Sin",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Sin"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Sin.jpg"
+  },
+  {
+    "id": 212,
+    "name": "Viper",
+    "en_name": "Viper",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Viper"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Viper.jpg"
+  },
+  {
+    "id": 213,
+    "name": "Yuni",
+    "en_name": "Yuni",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Yuni"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Yuni.jpg"
+  },
+  {
+    "id": 214,
+    "name": "Neon: Blue Ocean",
+    "en_name": "Neon: Blue Ocean",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Neon: Blue Ocean"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Neon_Blue_Ocean.jpg"
+  },
+  {
+    "id": 215,
+    "name": "Brid",
+    "en_name": "Brid",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Brid"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Brid.jpg"
+  },
+  {
+    "id": 216,
+    "name": "Crow",
+    "en_name": "Crow",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Crow"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Crow.jpg"
+  },
+  {
+    "id": 217,
+    "name": "Isabel",
+    "en_name": "Isabel",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Isabel"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Isabel.jpg"
+  },
+  {
+    "id": 218,
+    "name": "Julia",
+    "en_name": "Julia",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Julia"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Julia.jpg"
+  },
+  {
+    "id": 219,
+    "name": "Maiden",
+    "en_name": "Maiden",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Maiden"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Maiden.jpg"
+  },
+  {
+    "id": 220,
+    "name": "Mihara",
+    "en_name": "Mihara",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mihara"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mihara.jpg"
+  },
+  {
+    "id": 221,
+    "name": "Mihara: Bonding Chain",
+    "en_name": "Mihara: Bonding Chain",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Mihara: Bonding Chain"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mihara_Bonding_Chain.jpg"
+  },
+  {
+    "id": 222,
+    "name": "Neve",
+    "en_name": "Neve",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Neve"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Neve.jpg"
+  },
+  {
+    "id": 223,
+    "name": "Power",
+    "en_name": "Power",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Power"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Power.jpg"
+  },
+  {
+    "id": 224,
+    "name": "Quiry",
+    "en_name": "Quiry",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Quiry"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Quiry.jpg"
+  },
+  {
+    "id": 225,
+    "name": "Rapi",
+    "en_name": "Rapi",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Rapi"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rapi.jpg"
+  },
+  {
+    "id": 226,
+    "name": "Soline",
+    "en_name": "Soline",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Soline"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Soline.jpg"
+  },
+  {
+    "id": 227,
+    "name": "Sugar",
+    "en_name": "Sugar",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Sugar"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Sugar.jpg"
+  },
+  {
+    "id": 228,
+    "name": "Trony",
+    "en_name": "Trony",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Trony"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Trony.jpg"
+  },
+  {
+    "id": 229,
+    "name": "Yulha",
+    "en_name": "Yulha",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "E 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Yulha"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Yulha.jpg"
+  },
+  {
+    "id": 230,
+    "name": "iDoll Flower",
+    "en_name": "iDoll Flower",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "iDoll Flower"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/iDoll_Flower.jpg"
+  },
+  {
+    "id": 231,
+    "name": "iDoll Ocean",
+    "en_name": "iDoll Ocean",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "iDoll Ocean"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/iDoll_Ocean.jpg"
+  },
+  {
+    "id": 232,
+    "name": "Product-08",
+    "en_name": "Product-08",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Product-08"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Product-08.jpg"
+  },
+  {
+    "id": 233,
+    "name": "Soldier OW",
+    "en_name": "Soldier OW",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Soldier OW"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Soldier_OW.jpg"
+  },
+  {
+    "id": 234,
+    "name": "Product-23",
+    "en_name": "Product-23",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Product-23"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Product-23.jpg"
+  },
+  {
+    "id": 235,
+    "name": "Soldier FA",
+    "en_name": "Soldier FA",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Soldier FA"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Soldier_FA.jpg"
+  },
+  {
+    "id": 236,
+    "name": "iDoll Sun",
+    "en_name": "iDoll Sun",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "iDoll Sun"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/iDoll_Sun.jpg"
+  },
+  {
+    "id": 237,
+    "name": "Product-12",
+    "en_name": "Product-12",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Product-12"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Product-12.jpg"
+  },
+  {
+    "id": 238,
+    "name": "Soldier EG",
+    "en_name": "Soldier EG",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "F 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Soldier EG"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Soldier_EG.jpg"
   }
 ]
