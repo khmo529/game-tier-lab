@@ -1,6 +1,5 @@
 import json, os, re, requests
 from pathlib import Path
-from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
@@ -10,7 +9,6 @@ WEEKLY_FILE = DATA_DIR / "weekly-update.json"
 RAW_FILE = DATA_DIR / "prydwen_raw.json"
 BASE_IMAGE_URL = "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/"
 
-# 전체 한글 매핑 216개 (수동 정리본 기준)
 FULL_KO_MAP = {
     "Ada Wong":"에이다 웡","Anis: Star":"아니스: 스타","Crown":"크라운","Flora (Treasure)":"플로라(애장품)",
     "Vesti: Tactical Upgrade":"베스티: 택티컬 업그레이드","Moran (Treasure)":"모란(애장품)","Siren":"세이렌",
@@ -32,7 +30,7 @@ FULL_KO_MAP = {
     "Chisato Nishikigi":"치사토 니시키기","Diesel: Winter Sweets":"디젤: 윈터 스위츠","E.H.":"E.H.","Helm":"헬름",
     "Jill Valentine":"질 발렌타인","Laplace (Treasure)":"라플라스(애장품)","Ludmilla: Winter Owner":"루드밀라: 윈터 오너",
     "Maiden: Ice Rose":"메이든: 아이스 로즈","Noir":"누아르","Phantom":"팬텀","Privaty":"프라이버시",
-    "Quency: Escape Queen":"퀀시: 이스케이프 퀸","Rei Ayanami (Tentative Name)":"레이 아야나미(가칭)","Snow White":"스노우화이트",
+    "Quency: Escape Queen":"퀀시: 이스케이프 퀸","Rei Ayanami (Tentative Name)":"레이 Ayanami(가칭)","Snow White":"스노우화이트",
     "Alice: Wonderland Bunny":"앨리스: 원더랜드 버니","Mary: Bay Goddess":"메리: 베이 갓데스","Dorothy":"도로시",
     "Frima (Treasure)":"프리마(애장품)","Mica: Snow Buddy":"미카: 스노우 버디","Milk (Treasure)":"밀크(애장품)","Miranda":"미란다",
     "N102":"N102","Rapunzel":"라푼젤","Sakura":"사쿠라","Tove (Treasure)":"토브(애장품)","Zwei":"츠바이","Admi":"애드미","Anis":"아니스",
@@ -58,30 +56,41 @@ FULL_KO_MAP = {
     "Rapi RH":"라피 RH","Tabitha":"태버사","Red Hood":"레드후드","frima":"프리마"
 }
 
-TIER_ORDER = {"SSS":0,"SS":1,"S":2,"A":3,"B":4,"C":5}
-PRYDWEN_MAP = {"SSS":"SSS","SS":"SS","S":"S","A":"A","B":"B","C":"C","D":"C","E":"C","F":"C"}
+# 역방향 매핑 (한글 -> 영문) 추가
+KO_TO_EN_MAP = {v: k for k, v in FULL_KO_MAP.items()}
+EN_TO_KO_MAP = {k.lower(): v for k, v in FULL_KO_MAP.items()}
+
+TIER_ORDER = {"SSS": 0, "SS": 1, "S": 2, "A": 3, "B": 4, "C": 5}
+PRYDWEN_MAP = {"SSS": "SSS", "SS": "SS", "S": "S", "A": "A", "B": "B", "C": "C", "D": "C", "E": "C", "F": "C"}
 
 def to_image_filename(en_name: str) -> str:
-    s = re.sub(r'[^A-Za-z0-9 ]',' ',en_name).strip()
+    if not en_name:
+        return ""
+    s = re.sub(r'[^A-Za-z0-9 ]', ' ', en_name).strip()
     s = "_".join(s.split())
-    return f"{BASE_IMAGE_URL}{s}.jpg"
+    return f"{BASE_IMAGE_URL}{s}.jpg" if s else ""
 
 def fetch_prydwen():
-    headers={"User-Agent":"Mozilla/5.0"}
+    headers = {"User-Agent": "Mozilla/5.0"}
     try:
-        r=requests.get("https://www.prydwen.gg/page-data/nikke/tier-list/page-data.json", headers=headers, timeout=20)
-        if r.status_code==200:
-            tiers={}
+        r = requests.get("https://www.prydwen.gg/page-data/nikke/tier-list/page-data.json", headers=headers, timeout=20)
+        if r.status_code == 200:
+            tiers = {}
             def rec(o):
-                if isinstance(o,dict):
+                if isinstance(o, dict):
                     if "name" in o and ("tier" in o or "rating" in o):
-                        n=o.get("name"); t=o.get("tier") or o.get("rating")
-                        if n and t and len(n)<50: tiers[n]=str(t).upper()
-                    for v in o.values(): rec(v)
-                elif isinstance(o,list):
-                    for x in o: rec(x)
+                        n = o.get("name")
+                        t = o.get("tier") or o.get("rating")
+                        if n and t and len(n) < 50:
+                            tiers[n] = str(t).upper()
+                    for v in o.values():
+                        rec(v)
+                elif isinstance(o, list):
+                    for x in o:
+                        rec(x)
             rec(r.json())
-            if tiers: return tiers
+            if tiers:
+                return tiers
     except Exception as e:
         print(f"[WARN] page-data 실패 {e}")
     return {}
@@ -93,70 +102,74 @@ def main():
     now_utc = datetime.now(timezone.utc)
 
     chars = json.load(open(CHAR_FILE, encoding="utf-8")) if CHAR_FILE.exists() else []
-    trans_lower = {k.lower(): v for k,v in FULL_KO_MAP.items()}
 
-    # 1. dedup 딕셔너리 생성 및 1차 중복 제거 (정상 소속 우선)
-    dedup = {}
-    for c in sorted(chars, key=lambda x: (0 if x.get("company")!="미확인" else 1)):
-        key = (c.get("en_name") or c.get("name") or "").lower()
-        if not key: 
+    processed = []
+    for c in chars:
+        # 1. 특수 케이스 및 이름 보정
+        if c.get("name") == "태버사" or (c.get("en_name") or "").lower() == "tabitha":
             continue
-        if key not in dedup:
-            dedup[key] = c
-        elif dedup[key].get("company") == "미확인" and c.get("company") != "미확인":
-            dedup[key] = c
 
-    # 2. 이름 최종 정리 및 특수 케이스 처리
-    for key, c in list(dedup.items()):
-        # 백설 -> 스노우화이트
         if "백설" in c.get("name", ""):
             c["name"] = c["name"].replace("백설", "스노우화이트")
-        # 스칼렛 -> 홍련
         if c.get("name", "").startswith("스칼렛"):
             c["name"] = c["name"].replace("스칼렛", "홍련")
-        # 태버사 제거
-        if c.get("name") == "태버사" or key == "tabitha":
-            del dedup[key]
-            continue
-        # 레드후드 B1/B2/B3 통일
+
         if c.get("en_name") in ["Red Hood B1", "Red Hood B2", "Red Hood B3"]:
             c["name"] = "레드후드"
-            c["image"] = f"{BASE_IMAGE_URL}Red_Hood.jpg"
+            c["en_name"] = "Red Hood"
 
-    # 3. 레드후드 등 한글 이름 기준 2차 중복 재제거
-    dedup2 = {}
-    for c in dedup.values():
+        # 2. 누락된 en_name 역추적 복구 (한글 이름 기반)
+        if not c.get("en_name") and c.get("name") in KO_TO_EN_MAP:
+            c["en_name"] = KO_TO_EN_MAP[c["name"]]
+
+        # 3. 한글 이름 동기화
+        if c.get("en_name") and c["en_name"].lower() in EN_TO_KO_MAP:
+            c["name"] = EN_TO_KO_MAP[c["en_name"].lower()]
+
+        # 4. 이미지 URL 자동 세팅 (en_name 사용)
+        if c.get("en_name"):
+            c["image"] = to_image_filename(c["en_name"])
+
+        processed.append(c)
+
+    # 5. 중복 제거 (영문 이름 기준 1차 제거)
+    dedup_by_en = {}
+    for c in sorted(processed, key=lambda x: (0 if x.get("company") != "미확인" else 1)):
+        key = (c.get("en_name") or c.get("name") or "").lower()
+        if not key:
+            continue
+        if key not in dedup_by_en:
+            dedup_by_en[key] = c
+
+    # 6. 한글 이름 기준 2차 중복 제거 (티어 높은 순)
+    dedup_by_ko = {}
+    for c in dedup_by_en.values():
         k = c["name"].lower()
-        if k not in dedup2 or TIER_ORDER.get(c.get("tier","C"),99) < TIER_ORDER.get(dedup2[k].get("tier","C"),99):
-            dedup2[k] = c
-    dedup = dedup2
+        if k not in dedup_by_ko or TIER_ORDER.get(c.get("tier", "C"), 99) < TIER_ORDER.get(dedup_by_ko[k].get("tier", "C"), 99):
+            dedup_by_ko[k] = c
 
-    # 4. 한글 매핑 및 이미지 URL 정리
-    cleaned = []
-    for c in dedup.values():
-        en = c.get("en_name", "")
-        if en.lower() in trans_lower:
-            c["name"] = trans_lower[en.lower()]
-        c["image"] = to_image_filename(en or c["name"])
-        cleaned.append(c)
-
-    # 5. Prydwen 크롤링 데이터 매핑 및 티어 업데이트
+    # 7. Prydwen 티어 매핑 (영문 키 조회를 위한 딕셔너리 구성)
     raw = fetch_prydwen()
     changed = []
+    
+    # 영문 소문자 -> 캐릭터 객체 매핑 테이블 생성
+    en_lookup = {c["en_name"].lower(): c for c in dedup_by_ko.values() if c.get("en_name")}
+
     for en_raw, tier_raw in raw.items():
         nt = PRYDWEN_MAP.get(tier_raw.upper())
-        if not nt: 
+        if not nt:
             continue
-        key = en_raw.lower()
-        if key in dedup:
-            if dedup[key].get("tier") != nt:
-                changed.append({"name": dedup[key]["name"], "from": dedup[key].get("tier", "C"), "to": nt})
-                dedup[key]["tier"] = nt
+        
+        target_char = en_lookup.get(en_raw.lower())
+        if target_char:
+            if target_char.get("tier") != nt:
+                changed.append({"name": target_char["name"], "from": target_char.get("tier", "C"), "to": nt})
+                target_char["tier"] = nt
 
-    # 6. 최종 파일 저장
-    final = list(dedup.values())
+    # 8. 최종 결과 정렬 및 저장
+    final = list(dedup_by_ko.values())
     final.sort(key=lambda x: (TIER_ORDER.get(x.get("tier", "C"), 99), x.get("name", "")))
-    
+
     with open(CHAR_FILE, "w", encoding="utf-8") as f:
         json.dump(final, f, ensure_ascii=False, indent=2)
 
