@@ -1,17 +1,7 @@
 {
-  "version": "2026년 08월 1주차 (W32)",
+  "version": "2026년 08월 03주차 (W32)",
   "updated": "2026-08-03",
-  "updated_at": "2026-08-03T21:49:45.470688+09:00",
   "meta": "전체 167개 / SS+:3 SS:3 S:7 A:8 B:146",
-  "buff": [],
-  "nerf": [],
-  "deployed_at": "2026-08-03T21:25:02.775840+09:00",
-  "new": [],
-  "note": "08/03 크롤링 - 신캐 0명 추가",
-  "banner": "",
-  "headline": "",
-  "github_run_id": "30806451540",
-  "github_sha": "a17a430ed3f5f7fe8dec53d300abc24209031f8d",
   "total": 167,
   "grades": {
     "SS+": 3,
@@ -19,5 +9,8 @@
     "S": 7,
     "A": 8,
     "B": 146
-  }
+  },
+  "buff": [],
+  "nerf": [],
+  "note": "자동 집계 - Counter(c['grade']) 기준"
 }
