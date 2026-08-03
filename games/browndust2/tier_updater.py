@@ -1,145 +1,85 @@
 #!/usr/bin/env python3
-# fix_remaining_39.py - 남은 39개 이미지 Fandom에서 다운로드 + 오타 매칭
-import json, re, os, requests, difflib
+# tier_updater v15.2 - GitHub Action + Vultr 둘 다 되는 경로 고정 버전
+import json, re
 from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from collections import Counter
 
-BASE_DIR = Path("/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier")
-DATA_DIR = BASE_DIR / "data" if (BASE_DIR / "data").exists() else BASE_DIR / "../data"
-CHAR_PATH = BASE_DIR / "data/characters.json" if (BASE_DIR / "data/characters.json").exists() else Path("data/characters.json")
-ASSET_DIR = BASE_DIR / "assets/images"
+# === 경로 고정: 이 파일 위치 기준으로 절대경로 사용 ===
+SCRIPT_DIR = Path(__file__).resolve().parent
+DATA_DIR = SCRIPT_DIR / "data"
+CHAR_PATH = DATA_DIR / "characters.json"
+WEEKLY_PATH = DATA_DIR / "weekly-update.json"
 
-BASE_URL = "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/"
-FANDOM_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; NoPickleBot/2.0)"}
+# Vultr(CloudPanel)에서도 돌아가게 대체 경로 탐색
+if not CHAR_PATH.exists():
+    alt_paths = [
+        Path("/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/data/characters.json"),
+        Path.cwd() / "games/browndust2/data/characters.json",
+        Path.cwd() / "data/characters.json",
+    ]
+    for p in alt_paths:
+        if p.exists():
+            CHAR_PATH = p
+            DATA_DIR = p.parent
+            WEEKLY_PATH = DATA_DIR / "weekly-update.json"
+            break
 
-def normalize(s): return re.sub(r'[^a-z0-9]', '', s.lower())
+KST = ZoneInfo("Asia/Seoul")
 
-def load_json(p):
-    return json.loads(Path(p).read_text(encoding='utf-8'))
+def load_json(path, default):
+    if not path.exists():
+        print(f"[WARN] {path} 없음, 기본값 사용")
+        return default
+    try:
+        return json.loads(path.read_text(encoding='utf-8'))
+    except Exception as e:
+        print(f"[WARN] {path} 로드 실패: {e}")
+        return default
 
-# Fandom에서 이미지 다운로드 시도
-def try_fandom_download(char_id, base_en, costume):
-    candidates = []
-    if base_en and costume:
-        candidates += [
-            f"{base_en} {costume}",
-            f"{costume} {base_en}",
-            f"{base_en} {costume}".replace('-',' '),
-            f"{base_en}_{costume}",
-            f"{base_en}({costume})",
-        ]
-    if base_en:
-        candidates.append(base_en)
-    candidates.append(char_id.replace('-',' '))
-    candidates.append(char_id)
+def slugify(s):
+    s=s.lower()
+    s=re.sub(r'[^a-z0-9]+','-',s)
+    return re.sub(r'^-+|-+$','',s)
 
-    for name in candidates:
-        for ext in ['png','webp','jpg']:
-            # Special:FilePath는 대소문자 구분 덜 함
-            url = f"https://browndust2.fandom.com/wiki/Special:FilePath/{name}.{ext}"
-            try:
-                r = requests.get(url, headers=FANDOM_HEADERS, timeout=10, stream=True, allow_redirects=True)
-                if r.status_code == 200 and 'image' in r.headers.get('Content-Type',''):
-                    # 너무 작은 파일(404 html)은 제외
-                    if len(r.content) < 5000:
-                        continue
-                    out_path = ASSET_DIR / f"{char_id}.png"
-                    with open(out_path, 'wb') as f:
-                        for chunk in r.iter_content(8192):
-                            f.write(chunk)
-                    print(f"  [DOWNLOAD OK] {char_id}.png <- {name}.{ext} ({len(r.content)} bytes)")
-                    return out_path.name
-            except Exception as e:
-                continue
-    return None
+def normalize_name(s):
+    return re.sub(r'[^a-z0-9]','',s.lower()) if s else ""
 
-# 메인
-chars = load_json(CHAR_PATH)
-files = [f.name for f in ASSET_DIR.iterdir() if f.suffix.lower() in ['.png','.webp','.jpg']]
-files_stem = [f.lower() for f in files]
-norm_map = {normalize(Path(f).stem): f for f in files}
+def main():
+    print(f"[PATH] SCRIPT_DIR={SCRIPT_DIR}")
+    print(f"[PATH] DATA_DIR={DATA_DIR}")
+    print(f"[PATH] CHAR_PATH={CHAR_PATH}")
+    print(f"[PATH] exists={CHAR_PATH.exists()}")
 
-print(f"[INFO] 현재 이미지 {len(files)}개, 캐릭터 {len(chars)}개")
+    chars = load_json(CHAR_PATH, [])
+    if not chars:
+        print(f"[ERROR] {CHAR_PATH} 비어있음 - 복구 필요")
+        # 빈 파일이면 생성하지 말고 종료
+        return
 
-missing = []
-for c in chars:
-    img = c.get('image','')
-    # justia로 떨어지거나 파일이 실제로 없는 경우
-    if 'justia.png' in img.lower():
-        missing.append(c)
-    else:
-        # URL에서 파일명 추출해서 실제로 존재하는지 체크
-        m = re.search(r'/([^/]+\.(png|webp|jpg))', img, re.I)
-        if m:
-            fname = m.group(1)
-            if fname.lower() not in files_stem and normalize(Path(fname).stem) not in norm_map:
-                missing.append(c)
+    print(f"[BD2 v15.2] 캐릭터 {len(chars)}개 로드")
 
-print(f"[MISSING] {len(missing)}개 남음")
-for c in missing[:15]:
-    print(f" - {c['id']} | base={c.get('base_en')} costume={c.get('costume')} | current={c.get('image').split('/')[-1]}")
+    # 외부 크롤링은 일단 스킵 (Pocket Tactics 파싱 불안정) - 등급은 기존 유지
+    # 필요하면 나중에 fetch 로직 추가
 
-# 1단계: 오타/유사 매칭으로 기존 파일 재활용
-fixed = 0
-for c in missing[:]:
-    cid = c['id']
-    # difflib로 가장 가까운 파일 찾기
-    close = difflib.get_close_matches(cid, [f.lower().replace('.png','') for f in files], n=1, cutoff=0.7)
-    if not close:
-        # 정규화 버전으로도 시도
-        norm_cid = normalize(cid)
-        close_norm = difflib.get_close_matches(norm_cid, list(norm_map.keys()), n=1, cutoff=0.7)
-        if close_norm:
-            matched_file = norm_map[close_norm[0]]
-            # 복사해서 정확한 id로 만들기
-            src = ASSET_DIR / matched_file
-            dst = ASSET_DIR / f"{cid}.png"
-            if not dst.exists():
-                import shutil
-                shutil.copy(src, dst)
-                print(f"  [COPY] {matched_file} -> {cid}.png (유사도 {close_norm[0]})")
-                c['image'] = BASE_URL + f"{cid}.png"
-                fixed += 1
-                missing.remove(c)
-            continue
-    else:
-        # 찾았으면 복사
-        matched_stem = close[0]
-        # 실제 파일명 찾기
-        actual = next((f for f in files if f.lower().startswith(matched_stem) or matched_stem in f.lower()), None)
-        if actual:
-            import shutil
-            src = ASSET_DIR / actual
-            dst = ASSET_DIR / f"{cid}.png"
-            if not dst.exists():
-                shutil.copy(src, dst)
-                print(f"  [COPY] {actual} -> {cid}.png")
-                c['image'] = BASE_URL + f"{cid}.png"
-                fixed += 1
-                if c in missing:
-                    missing.remove(c)
+    # weekly 집계
+    counter = Counter(c.get('grade') or 'C' for c in chars)
+    now = datetime.now(KST)
+    meta = "전체 %d개 / " % len(chars) + " ".join(f"{t}:{counter[t]}" for t in ['SS+','SS','S','A','B','C'] if t in counter)
+    weekly = load_json(WEEKLY_PATH, {})
+    weekly.update({
+        "version": f"{now.year}년 {now.month:02d}월 {(now.day-1)//7+1}주차 (W{now.isocalendar()[1]})",
+        "updated": now.strftime("%Y-%m-%d"),
+        "updated_at": now.isoformat(),
+        "deployed_at": now.isoformat(),
+        "meta": meta,
+        "total": len(chars),
+        "grades": dict(counter),
+    })
+    WEEKLY_PATH.write_text(json.dumps(weekly, ensure_ascii=False, indent=2), encoding='utf-8')
+    CHAR_PATH.write_text(json.dumps(chars, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(f"[BD2] 저장 완료: {len(chars)}개, {meta}")
 
-print(f"\n[COPY FIX] {fixed}개 해결, 남은 {len(missing)}개는 Fandom 다운로드 시도")
-
-# 2단계: Fandom 다운로드
-dl_ok = 0
-for c in missing[:]:
-    cid = c['id']
-    base_en = c.get('base_en','')
-    costume = c.get('costume','')
-    print(f"[TRY DOWNLOAD] {cid} ({base_en} / {costume})")
-    result = try_fandom_download(cid, base_en, costume)
-    if result:
-        c['image'] = BASE_URL + result
-        dl_ok += 1
-        missing.remove(c)
-
-print(f"\n[DOWNLOAD] {dl_ok}개 다운로드 성공")
-print(f"[REMAIN] {len(missing)}개 여전히 없음:")
-for c in missing:
-    print(f" - {c['id']}")
-
-# 저장
-CHAR_PATH.write_text(json.dumps(chars, ensure_ascii=False, indent=2), encoding='utf-8')
-print(f"\n[DONE] {CHAR_PATH} 저장 완료")
-print(f"그대로 두면 v2.0.7 PHP가 알아서 base 이미지로 보여주니까 사이트는 정상 작동함")
-print(f"남은 {len(missing)}개는 수동으로 Fandom에서 받아서 {ASSET_DIR}/ 에 넣으면 끝")
+if __name__ == "__main__":
+    main()
