@@ -1,39 +1,27 @@
 #!/usr/bin/env python3
-# game/browndust2/tier_updater.py - 경로 고정 버전
+# game/browndust2/tier_updater.py - 생성 경로: game/browndust2/data 고정
 import json
 import os
+import shutil
 from pathlib import Path
 from datetime import datetime
 
-# 스크립트 위치 기준 절대경로로 고정 (cwd가 어디든 동작)
 SCRIPT_DIR = Path(__file__).resolve().parent
-REPO_ROOT = SCRIPT_DIR.parents[1] if (SCRIPT_DIR / "..").exists() else Path.cwd()
-
-# 데이터 폴더 후보 (네 구조 대응)
-CANDIDATES = [
+DATA_DIR = SCRIPT_DIR / "data"  # 요청한 경로: game/browndust2/data
+DEPLOY_CANDIDATES = [
     SCRIPT_DIR / "browndust2-tier" / "data",
-    SCRIPT_DIR / "data",
-    REPO_ROOT / "browndust2-tier" / "data",
-    REPO_ROOT / "game" / "browndust2" / "browndust2-tier" / "data",
+    SCRIPT_DIR.parent / "wordpress" / "browndust2-tier" / "data",
+    Path.cwd() / "wordpress" / "browndust2-tier" / "data",
     Path.cwd() / "browndust2-tier" / "data",
-    Path.cwd() / "game" / "browndust2" / "browndust2-tier" / "data",
 ]
 
-def find_data_dir():
-    for p in CANDIDATES:
-        if p.exists():
-            return p
-    # 없으면 첫번째 후보에 생성
-    first = CANDIDATES[0]
-    first.mkdir(parents=True, exist_ok=True)
-    return first
+DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-DATA_DIR = find_data_dir()
 CHAR_PATH = DATA_DIR / "characters.json"
 WEEKLY_PATH = DATA_DIR / "weekly-update.json"
 
 print(f"[BD2] SCRIPT_DIR={SCRIPT_DIR}")
-print(f"[BD2] DATA_DIR={DATA_DIR}")
+print(f"[BD2] DATA_DIR={DATA_DIR} (생성 위치)")
 print(f"[BD2] CHAR_PATH={CHAR_PATH}")
 
 def load_json(path, default):
@@ -44,22 +32,15 @@ def load_json(path, default):
         return json.load(f)
 
 def main():
-    # 기존 데이터 로드
     characters = load_json(CHAR_PATH, [])
     weekly = load_json(WEEKLY_PATH, {})
 
-    print(f"[BD2] Loaded {len(characters)} characters")
+    print(f"[BD2] Loaded {len(characters)} characters from {CHAR_PATH}")
 
-    # 여기서 실제 크롤링 로직이 들어가야 함 (Prydwen 등)
-    # 지금은 기존 데이터 유지 + weekly 메타만 갱신
-    # 예: characters.sort(key=...) 등 처리 가능
-
-    # weekly 갱신
     now = datetime.now()
     github_run_id = os.environ.get("GITHUB_RUN_ID", "")
     github_sha = os.environ.get("GITHUB_SHA", "")
 
-    # 기존 weekly 유지하면서 일부 필드만 갱신
     new_weekly = {
         "version": weekly.get("version") or now.strftime("%Y년 %m월 %W주차"),
         "updated": now.strftime("%Y-%m-%d"),
@@ -75,7 +56,6 @@ def main():
         "github_sha": github_sha,
     }
 
-    # 저장
     with open(CHAR_PATH, "w", encoding="utf-8") as f:
         json.dump(characters, f, ensure_ascii=False, indent=2)
     print(f"[BD2] Saved {CHAR_PATH}")
@@ -83,6 +63,17 @@ def main():
     with open(WEEKLY_PATH, "w", encoding="utf-8") as f:
         json.dump(new_weekly, f, ensure_ascii=False, indent=2)
     print(f"[BD2] Saved {WEEKLY_PATH}")
+
+    # 배포용 폴더에도 자동 복사 (있으면)
+    for deploy_data_dir in DEPLOY_CANDIDATES:
+        if deploy_data_dir.parent.exists():
+            deploy_data_dir.mkdir(parents=True, exist_ok=True)
+            try:
+                shutil.copy2(CHAR_PATH, deploy_data_dir / "characters.json")
+                shutil.copy2(WEEKLY_PATH, deploy_data_dir / "weekly-update.json")
+                print(f"[BD2] Copied to deploy dir: {deploy_data_dir}")
+            except Exception as e:
+                print(f"[BD2] Copy failed to {deploy_data_dir}: {e}")
 
 if __name__ == "__main__":
     main()
