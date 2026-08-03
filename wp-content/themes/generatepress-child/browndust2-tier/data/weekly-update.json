@@ -12,5 +12,5 @@
   },
   "buff": [],
   "nerf": [],
-  "note": "자동 집계 - Counter(c['grade']) 기준"
+  "note": "Counter(c['grade']) 기준"
 }
