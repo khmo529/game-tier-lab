@@ -186,7 +186,8 @@
       "SSS",
       "SSS"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Crown.jpg",
+    "en_name": "Crown"
   },
   {
     "id": 27,
@@ -374,7 +375,8 @@
       "S",
       "SS"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Red_Hood.jpg",
+    "en_name": "Red Hood"
   },
   {
     "id": 33,
@@ -736,7 +738,8 @@
       "SS",
       "SS"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Scarlet.jpg",
+    "en_name": "Scarlet"
   },
   {
     "id": 39,
@@ -877,7 +880,8 @@
       "-",
       "S"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/RH.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rapi_RH.jpg",
+    "en_name": "Rapi RH"
   },
   {
     "id": 29,
@@ -1500,7 +1504,8 @@
       "A",
       "A"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Rapi.jpg",
+    "en_name": "Rapi"
   },
   {
     "id": 74,
@@ -1645,7 +1650,8 @@
       "SSS",
       "A"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Liter.jpg",
+    "en_name": "Liter"
   },
   {
     "id": 64,
@@ -1783,7 +1789,8 @@
       "A",
       "A"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Mary.jpg",
+    "en_name": "Mary"
   },
   {
     "id": 4,
@@ -1837,7 +1844,8 @@
       "S",
       "A"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Modernia.jpg",
+    "en_name": "Modernia"
   },
   {
     "id": 55,
@@ -2026,7 +2034,8 @@
       "SSS",
       "A"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Blanc.jpg",
+    "en_name": "Blanc"
   },
   {
     "id": 57,
@@ -2564,7 +2573,8 @@
       "SS",
       "B"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Noir.jpg",
+    "en_name": "Noir"
   },
   {
     "id": 84,
@@ -2788,7 +2798,7 @@
   },
   {
     "id": 100,
-    "name": "레이 아야나미(가칭)",
+    "name": "레이 Ayanami(가칭)",
     "en_name": "Rei Ayanami (Tentative Name)",
     "tier": "B",
     "rarity": "SSR",
@@ -3012,7 +3022,8 @@
       "A",
       "B"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Volume.jpg",
+    "en_name": "Volume"
   },
   {
     "id": 87,
@@ -4039,7 +4050,8 @@
       "C",
       "C"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Neon.jpg",
+    "en_name": "Neon"
   },
   {
     "id": 214,
@@ -4180,7 +4192,8 @@
       "S",
       "C"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Noah.jpg",
+    "en_name": "Noah"
   },
   {
     "id": 141,
@@ -4369,7 +4382,8 @@
       "SS",
       "C"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Dorothy.jpg",
+    "en_name": "Dorothy"
   },
   {
     "id": 169,
@@ -4685,7 +4699,8 @@
       "A",
       "C"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Laplace.jpg",
+    "en_name": "Laplace"
   },
   {
     "id": 190,
@@ -5046,7 +5061,8 @@
       "S",
       "C"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Ludmilla.jpg",
+    "en_name": "Ludmilla"
   },
   {
     "id": 144,
@@ -6460,7 +6476,8 @@
       "B",
       "C"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Centi.jpg",
+    "en_name": "Centi"
   },
   {
     "id": 118,
@@ -7082,7 +7099,8 @@
       "B",
       "C"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Anis.jpg",
+    "en_name": "Anis"
   },
   {
     "id": 150,
