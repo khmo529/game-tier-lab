@@ -95,26 +95,35 @@ def main():
     chars = json.load(open(CHAR_FILE, encoding="utf-8")) if CHAR_FILE.exists() else []
     trans_lower = {k.lower(): v for k,v in FULL_KO_MAP.items()}
 
-    # 중복 제거 + 한글 강제
+    # 1. dedup 딕셔너리 생성 및 1차 중복 제거 (정상 소속 우선)
+    dedup = {}
+    for c in sorted(chars, key=lambda x: (0 if x.get("company")!="미확인" else 1)):
+        key = (c.get("en_name") or c.get("name") or "").lower()
+        if not key: 
+            continue
+        if key not in dedup:
+            dedup[key] = c
+        elif dedup[key].get("company") == "미확인" and c.get("company") != "미확인":
+            dedup[key] = c
 
-    # [FINAL FIX v2] 이름 최종 정리
-    for c in list(dedup.values()):
-        # 백설 -> 스노우화이트 (이미 위에서 치환됐지만 방어)
-        if "백설" in c.get("name",""):
+    # 2. 이름 최종 정리 및 특수 케이스 처리
+    for key, c in list(dedup.items()):
+        # 백설 -> 스노우화이트
+        if "백설" in c.get("name", ""):
             c["name"] = c["name"].replace("백설", "스노우화이트")
         # 스칼렛 -> 홍련
-        if c.get("name","").startswith("스칼렛"):
+        if c.get("name", "").startswith("스칼렛"):
             c["name"] = c["name"].replace("스칼렛", "홍련")
         # 태버사 제거
-        if c.get("name") == "태버사" or c.get("en_name","").lower() == "tabitha":
-            del dedup[(c.get("en_name") or c.get("name") or "").lower()]
+        if c.get("name") == "태버사" or key == "tabitha":
+            del dedup[key]
             continue
         # 레드후드 B1/B2/B3 통일
-        if c.get("en_name") in ["Red Hood B1","Red Hood B2","Red Hood B3"]:
+        if c.get("en_name") in ["Red Hood B1", "Red Hood B2", "Red Hood B3"]:
             c["name"] = "레드후드"
             c["image"] = f"{BASE_IMAGE_URL}Red_Hood.jpg"
 
-    # 레드후드 중복 재제거
+    # 3. 레드후드 등 한글 이름 기준 2차 중복 재제거
     dedup2 = {}
     for c in dedup.values():
         k = c["name"].lower()
@@ -122,42 +131,36 @@ def main():
             dedup2[k] = c
     dedup = dedup2
 
-    dedup={}
-    for c in sorted(chars, key=lambda x: (0 if x.get("company")!="미확인" else 1)):
-        key=(c.get("en_name") or c.get("name") or "").lower()
-        if not key: continue
-        if key not in dedup:
-            dedup[key]=c
-        elif dedup[key].get("company")=="미확인" and c.get("company")!="미확인":
-            dedup[key]=c
-
-    cleaned=[]
+    # 4. 한글 매핑 및 이미지 URL 정리
+    cleaned = []
     for c in dedup.values():
-        en=c.get("en_name","")
+        en = c.get("en_name", "")
         if en.lower() in trans_lower:
-            c["name"]=trans_lower[en.lower()]
-        c["image"]=to_image_filename(en or c["name"])
+            c["name"] = trans_lower[en.lower()]
+        c["image"] = to_image_filename(en or c["name"])
         cleaned.append(c)
 
-    # prydwen 업데이트
-    raw=fetch_prydwen()
-    changed=[]
+    # 5. Prydwen 크롤링 데이터 매핑 및 티어 업데이트
+    raw = fetch_prydwen()
+    changed = []
     for en_raw, tier_raw in raw.items():
-        nt=PRYDWEN_MAP.get(tier_raw.upper())
-        if not nt: continue
-        key=en_raw.lower()
+        nt = PRYDWEN_MAP.get(tier_raw.upper())
+        if not nt: 
+            continue
+        key = en_raw.lower()
         if key in dedup:
-            if dedup[key]["tier"]!=nt:
-                changed.append({"name":dedup[key]["name"],"from":dedup[key]["tier"],"to":nt})
-                dedup[key]["tier"]=nt
+            if dedup[key].get("tier") != nt:
+                changed.append({"name": dedup[key]["name"], "from": dedup[key].get("tier", "C"), "to": nt})
+                dedup[key]["tier"] = nt
 
-    # 저장
-    final=list(dedup.values())
-    final.sort(key=lambda x:(TIER_ORDER.get(x.get("tier","C"),99), x.get("name","")))
-    with open(CHAR_FILE,"w",encoding="utf-8") as f:
+    # 6. 최종 파일 저장
+    final = list(dedup.values())
+    final.sort(key=lambda x: (TIER_ORDER.get(x.get("tier", "C"), 99), x.get("name", "")))
+    
+    with open(CHAR_FILE, "w", encoding="utf-8") as f:
         json.dump(final, f, ensure_ascii=False, indent=2)
 
-    weekly={
+    weekly = {
         "date": now_kst.strftime("%Y-%m-%d"),
         "week": f"{now_kst.strftime('%Y년 %m월 %d일')} 기준",
         "note": f"prydwen.gg Story 티어 기준 - {len(changed)}명 변동",
@@ -166,10 +169,10 @@ def main():
         "updated_at": now_utc.isoformat(),
         "updated_at_kst": now_kst.strftime("%Y-%m-%d %H:%M:%S KST")
     }
-    with open(DATA_DIR / "weekly-update.json","w",encoding="utf-8") as f:
+    with open(WEEKLY_FILE, "w", encoding="utf-8") as f:
         json.dump(weekly, f, ensure_ascii=False, indent=2)
 
     print(f"DONE {len(final)}명 - {len(changed)}명 변동")
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
