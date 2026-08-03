@@ -1,85 +1,192 @@
-#!/usr/bin/env python3
-# tier_updater v15.2 - GitHub Action + Vultr 둘 다 되는 경로 고정 버전
-import json, re
-from pathlib import Path
-from datetime import datetime
-from zoneinfo import ZoneInfo
-from collections import Counter
+from dataclasses import dataclass, field
+from typing import List, Optional, Dict, Any
+import json
 
-# === 경로 고정: 이 파일 위치 기준으로 절대경로 사용 ===
-SCRIPT_DIR = Path(__file__).resolve().parent
-DATA_DIR = SCRIPT_DIR / "data"
-CHAR_PATH = DATA_DIR / "characters.json"
-WEEKLY_PATH = DATA_DIR / "weekly-update.json"
+@dataclass
+class CharacterTierItem:
+    """캐릭터/코스튬 티어 정보를 담는 데이터 모델"""
+    id: str
+    name: str
+    grade: str
+    tier: str
+    element: str
+    attribute: str
+    role: str
+    type: str
+    costume: str
+    pve: float
+    pvp: float
+    guild: float
+    boss: float
+    image: str
+    summary: str
+    detail: str
+    gear: List[str] = field(default_factory=list)
+    team: List[str] = field(default_factory=list)
+    pros: List[str] = field(default_factory=list)
+    cons: List[str] = field(default_factory=list)
+    invest: int = 0
+    beginner: bool = False
+    updated_at: str = ""
+    
+    # 선택적 확장 필드 (일부 코스튬 항목 전용)
+    name_en: Optional[str] = None
+    base_en: Optional[str] = None
+    base_ko: Optional[str] = None
+    costume_ko: Optional[str] = None
 
-# Vultr(CloudPanel)에서도 돌아가게 대체 경로 탐색
-if not CHAR_PATH.exists():
-    alt_paths = [
-        Path("/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/data/characters.json"),
-        Path.cwd() / "games/browndust2/data/characters.json",
-        Path.cwd() / "data/characters.json",
-    ]
-    for p in alt_paths:
-        if p.exists():
-            CHAR_PATH = p
-            DATA_DIR = p.parent
-            WEEKLY_PATH = DATA_DIR / "weekly-update.json"
-            break
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "CharacterTierItem":
+        """Dictionary 데이터로부터 객체를 안전하게 생성"""
+        return cls(
+            id=data.get("id", ""),
+            name=data.get("name", ""),
+            grade=data.get("grade", ""),
+            tier=data.get("tier", ""),
+            element=data.get("element", "Unknown"),
+            attribute=data.get("attribute", "Unknown"),
+            role=data.get("role", "Unknown"),
+            type=data.get("type", ""),
+            costume=data.get("costume", ""),
+            pve=float(data.get("pve", 0.0)),
+            pvp=float(data.get("pvp", 0.0)),
+            guild=float(data.get("guild", 0.0)),
+            boss=float(data.get("boss", 0.0)),
+            image=data.get("image", ""),
+            summary=data.get("summary", ""),
+            detail=data.get("detail", ""),
+            gear=data.get("gear", []),
+            team=data.get("team", []),
+            pros=data.get("pros", []),
+            cons=data.get("cons", []),
+            invest=int(data.get("invest", 0)),
+            beginner=bool(data.get("beginner", False)),
+            updated_at=data.get("updatedAt", ""),
+            name_en=data.get("name_en"),
+            base_en=data.get("base_en"),
+            base_ko=data.get("base_ko"),
+            costume_ko=data.get("costume_ko")
+        )
 
-KST = ZoneInfo("Asia/Seoul")
+    def to_dict(self) -> Dict[str, Any]:
+        """객체를 Dictionary 형태로 변환 (JSON 저장 시 활용)"""
+        result = {
+            "id": self.id,
+            "name": self.name,
+            "grade": self.grade,
+            "tier": self.tier,
+            "element": self.element,
+            "attribute": self.attribute,
+            "role": self.role,
+            "type": self.type,
+            "costume": self.costume,
+            "pve": self.pve,
+            "pvp": self.pvp,
+            "guild": self.guild,
+            "boss": self.boss,
+            "image": self.image,
+            "summary": self.summary,
+            "detail": self.detail,
+            "gear": self.gear,
+            "team": self.team,
+            "pros": self.pros,
+            "cons": self.cons,
+            "invest": self.invest,
+            "beginner": self.beginner,
+            "updatedAt": self.updated_at
+        }
+        # 선택적 필드가 존재하는 경우에만 포함
+        if self.name_en: result["name_en"] = self.name_en
+        if self.base_en: result["base_en"] = self.base_en
+        if self.base_ko: result["base_ko"] = self.base_ko
+        if self.costume_ko: result["costume_ko"] = self.costume_ko
+        
+        return result
 
-def load_json(path, default):
-    if not path.exists():
-        print(f"[WARN] {path} 없음, 기본값 사용")
-        return default
-    try:
-        return json.loads(path.read_text(encoding='utf-8'))
-    except Exception as e:
-        print(f"[WARN] {path} 로드 실패: {e}")
-        return default
 
-def slugify(s):
-    s=s.lower()
-    s=re.sub(r'[^a-z0-9]+','-',s)
-    return re.sub(r'^-+|-+$','',s)
+class TierListManager:
+    """티어 리스트 데이터를 관리하고 조회하는 클래스"""
+    def __init__(self, raw_data: List[Dict[str, Any]] = None):
+        self.items: List[CharacterTierItem] = []
+        if raw_data:
+            self.load_data(raw_data)
 
-def normalize_name(s):
-    return re.sub(r'[^a-z0-9]','',s.lower()) if s else ""
+    def load_data(self, raw_data: List[Dict[str, Any]]):
+        """raw JSON/Dict 데이터 파싱하여 내부 리스트 구축"""
+        self.items = [CharacterTierItem.from_dict(item) for item in raw_data]
 
-def main():
-    print(f"[PATH] SCRIPT_DIR={SCRIPT_DIR}")
-    print(f"[PATH] DATA_DIR={DATA_DIR}")
-    print(f"[PATH] CHAR_PATH={CHAR_PATH}")
-    print(f"[PATH] exists={CHAR_PATH.exists()}")
+    def load_json_file(self, filepath: str):
+        """JSON 파일로부터 데이터를 불러옴"""
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            self.load_data(data)
 
-    chars = load_json(CHAR_PATH, [])
-    if not chars:
-        print(f"[ERROR] {CHAR_PATH} 비어있음 - 복구 필요")
-        # 빈 파일이면 생성하지 말고 종료
-        return
+    def filter_by_grade(self, grade: str) -> List[CharacterTierItem]:
+        """등급(SS+, SS, S, A 등)으로 필터링"""
+        return [item for item in self.items if item.grade.upper() == grade.upper()]
 
-    print(f"[BD2 v15.2] 캐릭터 {len(chars)}개 로드")
+    def filter_by_element(self, element: str) -> List[CharacterTierItem]:
+        """속성(Wind, Dark, Light, Fire, Water 등)으로 필터링"""
+        return [item for item in self.items if item.element.lower() == element.lower()]
 
-    # 외부 크롤링은 일단 스킵 (Pocket Tactics 파싱 불안정) - 등급은 기존 유지
-    # 필요하면 나중에 fetch 로직 추가
+    def get_beginner_recommended(self) -> List[CharacterTierItem]:
+        """초보자 추천 캐릭터 목록 추출"""
+        return [item for item in self.items if item.beginner]
 
-    # weekly 집계
-    counter = Counter(c.get('grade') or 'C' for c in chars)
-    now = datetime.now(KST)
-    meta = "전체 %d개 / " % len(chars) + " ".join(f"{t}:{counter[t]}" for t in ['SS+','SS','S','A','B','C'] if t in counter)
-    weekly = load_json(WEEKLY_PATH, {})
-    weekly.update({
-        "version": f"{now.year}년 {now.month:02d}월 {(now.day-1)//7+1}주차 (W{now.isocalendar()[1]})",
-        "updated": now.strftime("%Y-%m-%d"),
-        "updated_at": now.isoformat(),
-        "deployed_at": now.isoformat(),
-        "meta": meta,
-        "total": len(chars),
-        "grades": dict(counter),
-    })
-    WEEKLY_PATH.write_text(json.dumps(weekly, ensure_ascii=False, indent=2), encoding='utf-8')
-    CHAR_PATH.write_text(json.dumps(chars, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(f"[BD2] 저장 완료: {len(chars)}개, {meta}")
+    def get_top_pve(self, limit: int = 5) -> List[CharacterTierItem]:
+        """PVE 상위 캐릭터 목록 추출"""
+        return sorted(self.items, key=lambda x: x.pve, reverse=True)[:limit]
 
+    def search_by_name(self, keyword: str) -> List[CharacterTierItem]:
+        """이름 키워드 검색 (한국어 및 영어 대응)"""
+        keyword_lower = keyword.lower()
+        results = []
+        for item in self.items:
+            if keyword_lower in item.name.lower():
+                results.append(item)
+            elif item.name_en and keyword_lower in item.name_en.lower():
+                results.append(item)
+            elif item.base_ko and keyword_lower in item.base_ko.lower():
+                results.append(item)
+        return results
+
+
+# --- 간단 사용 예시 ---
 if __name__ == "__main__":
-    main()
+    # 제공받은 JSON 데이터 예시 입력
+    sample_json = [
+        {
+            "id": "diana",
+            "name": "디아나",
+            "grade": "SS+",
+            "tier": "SS+",
+            "element": "Wind",
+            "role": "Support",
+            "pve": 10.0,
+            "pvp": 8.5,
+            "beginner": True
+        },
+        {
+            "id": "morpeah-apostle",
+            "name": "모르페아 (사도)",
+            "name_en": "Morpeah: Apostle",
+            "base_ko": "모르페아",
+            "grade": "S",
+            "tier": "S",
+            "element": "Unknown",
+            "pve": 8.0,
+            "pvp": 8.0,
+            "beginner": False
+        }
+    ]
+
+    # 매니저 클래스 생성 및 데이터 로드
+    manager = TierListManager(sample_json)
+
+    # 1. PVE 상위 캐릭터 조회
+    top_pve = manager.get_top_pve(1)
+    print(f"Top PVE 캐릭터: {top_pve[0].name} (점수: {top_pve[0].pve})")
+
+    # 2. 이름 검색 테스트
+    search_result = manager.search_by_name("모르페아")
+    print(f"검색 결과: {[item.name for item in search_result]}")
