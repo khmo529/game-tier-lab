@@ -1,4 +1,4 @@
-name: Tier Update (Weekly) - GitHub Only Source
+name: BD2 Tier Update (Weekly) - GitHub Only Source
 
 on:
   schedule:
@@ -34,9 +34,14 @@ jobs:
           echo "justia count:"
           grep -c "justia.png" data/characters.json || true
 
-      - name: Run NIKKE updater
-        working-directory: games/nikke
-        run: python tier_updater.py
+      - name: Run NIKKE updater (if exists)
+        run: |
+          if [ -f "games/nikke/tier_updater.py" ]; then
+            cd games/nikke
+            python tier_updater.py
+          else
+            echo "nikke updater not found, skip"
+          fi
 
       - name: Sync to WP theme (delete trash)
         run: |
@@ -49,8 +54,10 @@ jobs:
           mkdir -p wp-content/themes/generatepress-child/nikke-tier/data
           mkdir -p wp-content/themes/generatepress-child/browndust2-tier/assets/images
 
-          cp games/browndust2/data/*.json wp-content/themes/generatepress-child/browndust2-tier/data/
-          cp games/nikke/data/*.json wp-content/themes/generatepress-child/nikke-tier/data/
+          cp games/browndust2/data/*.json wp-content/themes/generatepress-child/browndust2-tier/data/ || true
+          if [ -d "games/nikke/data" ]; then
+            cp games/nikke/data/*.json wp-content/themes/generatepress-child/nikke-tier/data/ || true
+          fi
           cp games/browndust2/assets/images/* wp-content/themes/generatepress-child/browndust2-tier/assets/images/ 2>/dev/null || true
 
           echo "After sync:"
