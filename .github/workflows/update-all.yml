@@ -1,4 +1,4 @@
-name: 전체 티어표 자동 업데이트
+name: 니케 티어표 자동 업데이트
 on:
   workflow_dispatch:
   schedule:
