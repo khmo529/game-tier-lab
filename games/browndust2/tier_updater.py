@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# games/browndust2/tier_updater.py - v8: 전체 130개 하드코딩 + 크롤링 병합 + 한글 강제
+# games/browndust2/tier_updater.py - v9: 167개 유지 + 실제 217개 이미지 파일 매칭 + 한글 강제
 import json, re, os, requests
 from pathlib import Path
 from datetime import datetime
@@ -16,6 +16,77 @@ KST = ZoneInfo("Asia/Seoul")
 now_kst = datetime.now(KST)
 
 TIER_ORDER = {"SS+": 6, "SS": 5, "S": 4, "A": 3, "B": 2, "C": 1, "D": 0}
+
+# ===== 실제 서버에 존재하는 217개 파일 리스트 (list_all_images.php 결과) =====
+KNOWN_IMAGES = [
+    "17682970-1760522855.png","acolyte-elpis.png","actingarchbishopmichaela.png","admiralsylvia.png",
+    "adventureroftheunknowndiana.png","aliceglacia.png","alignment-icon.png","androidqueenlecliss.png",
+    "angelica.png","angelofdestructionteresse.png","anonymoussagenartas.png","antidystopiadiana.png",
+    "anvilofcreationlayla.png","apostleblade.png","apostlekalienolivier.png","apostlemorpeah.png",
+    "apprenticespearmanlydia.png","archmage-olstein.png","archmagemaria.png","beachangelteresse.png",
+    "beachsidejusticemichaela.png","beachvacatinmorpeah.png","beachvacationeclipse.png",
+    "bikiniagentsylvia.png","blade-dancer-justia.png","bloodgluttonjustia.png","bombfanaticwiggle.png",
+    "bombinthehoodiewiggle.png","brankidoleleaneer.png","brankidolhelena.png","brankidolseir.png",
+    "brankmanagergray.png","brightmoondalvi.png","celebritybunnyloen.png","code-name-s-scheherazade.png",
+    "codenamearafina.png","codenameoelise.png","codenamesscheherazade.png","combatdoctorremnunt.png",
+    "comebackidolgranhildr.png","comebackidolventana.png","comebackidolyuri.png","darkknightlathel.png",
+    "darksaintessliberta.png","daydreambunnymorpeah.png","dealsnatcherluvencia.png","demonsdaughterseir.png",
+    "descendantofthegreatwitchcelia.png","desert-sword-sylvia.png","desertflowersylvia.png",
+    "dimensionalwitcheclipse.png","disciniplinarycommitteeglacia.png","djvenaka.png","dreambrideeclipse.png",
+    "eclipse.png","empressoftheoceanrubia.png","executioner-alec.png","fallen-angel-angelica.png",
+    "fallenwingsolivier.png","fiendscholarolstein.png","firegraffitianastasia.png","gameclubrafina.png",
+    "gentlemaidanastasia.png","handofsalvationelpis.png","healerjulie.png","herbtrackerlathel.png",
+    "holy-order-celia.png","homunculus-lathel.png","homunculuslathel.png","ironbloodmonarchwilhelmina.png",
+    "justia.png","kendoclubjustia.png","killerdolllecliss.png","kindliberatorsamay.png","kindstudentsamay.png",
+    "knightofbloodjustia.png","labyrinthgatekeepernebris.png","laidbacklifeguardnebris.png",
+    "lapiswitchscheherazade.png","lasthopeloen.png","liberatedmarauderkry.png","littlehunterriginette.png",
+    "lonesurvivorlathel.png","lovelyladyelise.png","loyalbutlerandrew.png","lugodefenseforcefred.png",
+    "lugohuntergynt.png","magicschoolprofessorscheherazade.png","maidbikinirubia.png","maidnamecrubia.png",
+    "maidnamerliatris.png","mangaresearchclubjayden.png","masqueradebunnycelia.png",
+    "medical-staff-terisse.png","medicalclubteresse.png","mercenaryknightcarlson.png",
+    "midsummerdreamppjustia.png","naturesclawrou.png","neonsaviorangelica.png","neonstalkerliatris.png",
+    "newhirenebris.png","newhireseir.png","night-veil-seir.png","nightmarebunnyeclipse.png",
+    "onsenmanagerliberta.png","onsenpractitionerventana.png","overheatlevia.png","poolpartyangelica.png",
+    "poolpartygray.png","poolpartyjustia.png","poolpartylathel.png","poolpartyscheherazade.png",
+    "poolsidefairyrefithea.png","poolsideguardianzenith.png","priestofvitalityarines.png",
+    "promiseofvengeancelathel.png","propheticdreamdarian.png","purewhitebriderefithea.png",
+    "queenofsignaturesmichaela.png","reclaimeddestinysacredjustia.png","red-hood-rou.png",
+    "redridinghoodrou.png","rodevstarliatris.png","sageofbluecloudolstein.png","schoolqueenemma.png",
+    "seductive-nun-lucrezia.png","seductivewingslucrezia.png","shadoweddreamsonya.png",
+    "sharpshooterofthemistgray.png","starlightguardiantyr.png","steelenginerafina.png","straycatrou.png",
+    "summer-eclipse-eclipse.png","summervacationdalvi.png","swordbreakeralec.png","swordqueensylvia.png",
+    "tbdbaseolivier.png","thecursedcelia.png","thedestructionalec.png","thefallenangelica.png",
+    "tide-prayer-rafine.png","topidolhelena.png","trackandfieldteamcaptainlevia.png",
+    "trackandfieldteamloen.png","unknown-pink-diana.png","vanguardgray.png","violentstudentkry.png",
+    "wanderingpriestlisianne.png","waterparkqueenwilhelmina.png","whiteboltyuri.png","whitecatrou.png",
+    "whitereaperjustia.png","wilddogluvencia.png","winddancervenaka.png","youngladyblade.png",
+    "zzzzz-1762163612booghostgranhildr.png","zzzzz-1762163612pumpkingirlsonya.png",
+]
+
+# 오타/축약 수동 매핑 (서버에 실제로 존재하는 파일명과 다른 경우)
+MANUAL_IMAGE_MAP = {
+    "olivier-apostle-kelian": "apostlekalienolivier.png",
+    "gray-the-sharpshooter-of-the-mist": "sharpshooterofthemistgray.png",
+    "glacia-disciplinary-committee": "disciniplinarycommitteeglacia.png",
+    "lathel-lonely-survivor": "lonesurvivorlathel.png",
+    "lathel-medicinal-herb-tracker": "herbtrackerlathel.png",
+    "levia-track-and-field-captain": "trackandfieldteamcaptainlevia.png",
+    "refithea-pure-white-blessing": "purewhitebriderefithea.png",
+    "rou-red-hat": "redridinghoodrou.png",
+    "rubia-the-empress-of-the-ocean": "empressoftheoceanrubia.png",
+    "liatris-rodev-s-star": "rodevstarliatris.png",
+    "rigenette-little-hunter": "littlehunterriginette.png",
+    "morpeah-beach-vacation": "beachvacatinmorpeah.png",
+    "wilhelmina-iron-monarch": "ironbloodmonarchwilhelmina.png",
+    "sonya-little-pumpkin-girl": "zzzzz-1762163612pumpkingirlsonya.png",
+    "sylvia-the-sword-queen": "swordqueensylvia.png",
+    "anatasia-fire-graffiti": "firegraffitianastasia.png",
+    "anatasia-gentle-maid": "gentlemaidanastasia.png",
+    "olstein-the-fiend-scholar": "fiendscholarolstein.png",
+    "olstein-sage-of-blue-clouds": "sageofbluecloudolstein.png",
+    "carlson-the-mercenary-knight": "mercenaryknightcarlson.png",
+    "teresse-beachside-angel": "beachangelteresse.png",
+}
 
 BASE_KO = {
     "alec": "알렉", "anatasia": "아나타샤", "andrew": "앤드류", "arines": "아리네스",
@@ -38,7 +109,8 @@ BASE_KO = {
     "venaka": "베나카", "ventana": "벤타나", "wilhelmina": "빌헬미나", "wiggle": "위글",
     "yomi": "요미", "yozakura": "요자쿠라", "yumi": "유미", "yuri": "유리",
     "zenith": "제니스", "scheherazade": "셰헤라자드", "schera": "셰헤라자드",
-    "angelica": "안젤리카", "queen of signatures": "서명의 여왕", "samay": "사메이",
+    "angelica": "안젤리카", "queen of signatures": "서명의 여왕", "diana": "다이아나",
+    "rafine": "라피네",
 }
 
 COSTUME_KO = {
@@ -93,16 +165,55 @@ COSTUME_KO = {
     "bomb in the hoodie": "후드 속 폭탄", "gentle destroyer": "온화한 파괴자",
     "fist of conviction": "신념의 주먹", "dancing snowflake": "춤추는 눈송이",
     "whitebolt": "화이트볼트", "robin hood": "로빈 후드", "poolside guardian": "풀사이드 가디언",
+    "summer eclipse": "서머 이클립스", "unknown pink": "언노운 핑크", "holy order": "홀리 오더",
+    "tide prayer": "타이드 프레어",
 }
 
 def ko_base(b): return BASE_KO.get(b.lower().strip(), b.title())
 def ko_costume(c): return COSTUME_KO.get(c.lower().strip(), c.title())
 def slugify(s):
-    import re
     s = s.lower()
     s = re.sub(r'[^a-z0-9]+', '-', s)
     s = re.sub(r'^-+|-+$', '', s)
     return s or "unknown"
+
+def normalize(s):
+    return re.sub(r'[^a-z0-9]', '', s.lower()) if s else ""
+
+def find_image_file(slug, base_en, costume_en):
+    # 1. 수동 매핑 우선
+    if slug in MANUAL_IMAGE_MAP:
+        fname = MANUAL_IMAGE_MAP[slug]
+        if fname.lower() in [f.lower() for f in KNOWN_IMAGES]:
+            return fname
+    
+    # 2. 정확한 slug.png
+    candidates = [
+        f"{slug}.png",
+        f"{normalize(costume_en)}{normalize(base_en)}.png",
+        f"{normalize(costume_en)}{normalize(slug)}.png",
+        f"{normalize(base_en)}.png",
+        f"{normalize(costume_en)}-{normalize(base_en)}.png",
+    ]
+    
+    lower_images = {f.lower(): f for f in KNOWN_IMAGES}
+    for cand in candidates:
+        if cand.lower() in lower_images:
+            return lower_images[cand.lower()]
+    
+    # 3. 부분 일치
+    search = normalize(base_en)
+    for f in KNOWN_IMAGES:
+        if search and search in normalize(f):
+            # costume도 포함되면 더 좋음
+            if normalize(costume_en) and normalize(costume_en) in normalize(f):
+                return f
+    for f in KNOWN_IMAGES:
+        if search and search in normalize(f):
+            return f
+            
+    # 4. fallback
+    return f"{slug}.png"
 
 def load_json(path, default):
     if not path.exists(): return default
@@ -112,7 +223,6 @@ def load_json(path, default):
     except: return default
 
 def get_hardcoded_full_list():
-    # Fandom에서 긁어온 전체 리스트 (130개)
     raw = [
         ("Alec","The Destruction"), ("Alec","Sword Breaker"),
         ("Anatasia","Gentle Maid"), ("Anatasia","Fire Graffiti"),
@@ -163,6 +273,8 @@ def get_hardcoded_full_list():
         ("Wiggle","Bomb Fanatic"), ("Wiggle","Bomb in the Hoodie"),
         ("Yomi","Gentle Destroyer"), ("Yozakura","Fist of Conviction"), ("Yumi","Dancing Snowflake"),
         ("Yuri","Whitebolt"), ("Yuri","Comeback Idol"), ("Zenith","Robin Hood"), ("Zenith","Poolside Guardian"),
+        # 추가: 기존 167개 유지용
+        ("Diana","Unknown Pink"), ("Eclipse","Summer Eclipse"), ("Celia","Holy Order"), ("Rafine","Tide Prayer"),
     ]
     return raw
 
@@ -212,12 +324,20 @@ def main():
         tier_letter = find_tier(base_en, costume_en)
         our_tier = tier_map.get(tier_letter, "A" if "B-Rank" in costume_en or "B Rank" in costume_en else "S" if "Apostle" in costume_en else "B")
 
+        image_file = find_image_file(slug, base_en, costume_en)
+        image_url = f"https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/{image_file}"
+
         if slug in existing_by_id:
             c = existing_by_id[slug]
             c["name"] = name_ko
             c["tier"] = our_tier
             c["grade"] = our_tier
             c["updatedAt"] = now_kst.strftime("%Y-%m-%d")
+            # 이미지는 기존 것 유지하되, 실제 파일이 존재하지 않으면 새 것으로 교체
+            existing_img = c.get("image","")
+            existing_base = existing_img.split("/")[-1].lower() if existing_img else ""
+            if existing_base not in [f.lower() for f in KNOWN_IMAGES]:
+                c["image"] = image_url
             all_chars.append(c)
         else:
             char = {
@@ -238,7 +358,7 @@ def main():
                 "pvp": 9.5 if our_tier=="SS+" else 8.8 if our_tier=="SS" else 8.0,
                 "guild": 8.5,
                 "boss": 8.5,
-                "image": f"https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/{slug}.png",
+                "image": image_url,
                 "summary": f"{name_ko} - {our_tier}티어",
                 "detail": f"{base_en}의 {costume_en} 코스튬. {name_ko}",
                 "gear": [], "team": [], "pros": [], "cons": [], "invest": 3, "beginner": False,
@@ -246,16 +366,8 @@ def main():
             }
             all_chars.append(char)
 
-    # 기존 18개 중 빠진 애들도 유지 (id가 다른 경우)
     for c in existing:
         if c["id"] not in [x["id"] for x in all_chars]:
-            # 한글 강제
-            if "name" in c:
-                # 영문 이름이면 한글로 교체
-                for eng, ko in BASE_KO.items():
-                    if eng in c["id"]:
-                        if c["name"].lower() != ko.lower():
-                            c["name"] = f"{ko} ({c.get('costume','')})" if c.get('costume') else ko
             all_chars.append(c)
 
     def sort_key(c):
@@ -264,7 +376,7 @@ def main():
 
     with open(CHAR_PATH, "w", encoding="utf-8") as f:
         json.dump(all_sorted, f, ensure_ascii=False, indent=2)
-    print(f"[BD2] 저장 완료: {len(all_sorted)}개 (하드코딩 {len(full_list)} + 기존)")
+    print(f"[BD2] 저장 완료: {len(all_sorted)}개")
 
     weekly = load_json(WEEKLY_PATH, {})
     iso_week = now_kst.isocalendar()[1]
