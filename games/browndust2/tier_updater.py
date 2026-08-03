@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-# games/browndust2/tier_updater.py - v7: 전체 캐릭터 수집 + 한글 이름 완전체
+# games/browndust2/tier_updater.py - v8: 전체 130개 하드코딩 + 크롤링 병합 + 한글 강제
 import json, re, os, requests
 from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from bs4 import BeautifulSoup
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR / "data"
@@ -18,7 +17,6 @@ now_kst = datetime.now(KST)
 
 TIER_ORDER = {"SS+": 6, "SS": 5, "S": 4, "A": 3, "B": 2, "C": 1, "D": 0}
 
-# 베이스 캐릭터 한글
 BASE_KO = {
     "alec": "알렉", "anatasia": "아나타샤", "andrew": "앤드류", "arines": "아리네스",
     "bernie": "버니", "blade": "블레이드", "carlson": "칼슨", "celia": "셀리아",
@@ -32,15 +30,15 @@ BASE_KO = {
     "liberta": "리베르타", "lisianne": "리시안", "loen": "로엔", "lucrezia": "루크레치아",
     "luvencia": "루벤시아", "maria": "마리아", "michaela": "미카엘라", "morpeah": "모르페아",
     "nartas": "나르타스", "nebris": "네브리스", "olivier": "올리비에", "olstein": "올스테인",
-    "priestess": "프리스트", "rafina": "라피네", "rafine": "라피네", "refithea": "레피테아",
+    "priestess": "대지모 신도", "rafina": "라피네", "refithea": "레피테아",
     "remnunt": "렘넌트", "rigenette": "리제트", "roxy": "록시", "rou": "루",
     "rubia": "루비아", "sacred justia": "성스러운 유스티아", "samay": "사메이",
     "seir": "세이르", "sonya": "소냐", "sword maiden": "검의 무녀",
-    "sylvia": "실비아", "teresse": "테리스", "terisse": "테리스", "tyr": "티르",
+    "sylvia": "실비아", "teresse": "테리스", "tyr": "티르",
     "venaka": "베나카", "ventana": "벤타나", "wilhelmina": "빌헬미나", "wiggle": "위글",
     "yomi": "요미", "yozakura": "요자쿠라", "yumi": "유미", "yuri": "유리",
     "zenith": "제니스", "scheherazade": "셰헤라자드", "schera": "셰헤라자드",
-    "samay": "사메이", "angelica": "안젤리카", "sentana": "센타나", "luvencia": "루벤시아",
+    "angelica": "안젤리카", "queen of signatures": "서명의 여왕", "samay": "사메이",
 }
 
 COSTUME_KO = {
@@ -55,7 +53,7 @@ COSTUME_KO = {
     "b-rank idol": "B랭크 아이돌", "lovely lady": "사랑스러운 숙녀", "code name o": "코드네임 O",
     "hand of salvation": "구원의 손", "haggard delinquent": "초췌한 불량소녀", "school queen": "학교 퀸",
     "lugo defense force": "루고 방위군", "alice": "앨리스", "disciplinary committee": "풍기위원",
-    "orcborg": "오르크볼그", "the void": "공허", "comeback idol": "컴백 아이돌", "boo ghost": "부끄고스트",
+    "orcborg": "오크볼그", "the void": "공허", "comeback idol": "컴백 아이돌", "boo ghost": "부끄고스트",
     "the sharpshooter of the mist": "안개의 명사수", "b-rank manager": "B랭크 매니저",
     "vanguard": "선봉", "pool party": "풀파티", "lugo hunter": "루고 헌터", "top idol": "탑 아이돌",
     "kind ruthlessness": "친절한 무자비", "daughter of starwind": "별바람의 딸",
@@ -73,10 +71,9 @@ COSTUME_KO = {
     "wandering priest": "방랑 사제", "last hope": "마지막 희망", "track and field team": "육상부",
     "celebrity bunny": "셀럽 버니", "seductive wings": "유혹의 날개", "deal snatcher": "거래 사냥꾼",
     "wild dog": "야생 개", "archmage": "대마법사", "acting archbishop": "대행 대주교",
-    "beachside justice": "해변의 정의", "queen of signatures": "서명의 여왕",
-    "beach vacation": "해변 휴가", "daydream bunny": "백일몽 버니", "anonymous sage": "익명의 현자",
+    "beachside justice": "해변의 정의", "daydream bunny": "백일몽 버니", "anonymous sage": "익명의 현자",
     "labyrinth gatekeeper": "미궁 수문장", "laid-back lifeguard": "느긋한 인명구조원",
-    "new hire": "신입", "apostle (kelian)": "사도 (켈리안)", "fallen wings": "타락한 날개",
+    "new hire": "신입", "apostle (kelian)": "사도 켈리안", "fallen wings": "타락한 날개",
     "white witch": "백색 마녀", "the fiend scholar": "악마 학자", "sage of blue clouds": "청운의 현자",
     "earth mother believer": "대지모 신도", "steel engine": "강철 엔진", "code name a": "코드네임 A",
     "game club": "게임부", "the gluttonous": "탐식가", "pure white blessing": "순백의 축복",
@@ -96,148 +93,133 @@ COSTUME_KO = {
     "bomb in the hoodie": "후드 속 폭탄", "gentle destroyer": "온화한 파괴자",
     "fist of conviction": "신념의 주먹", "dancing snowflake": "춤추는 눈송이",
     "whitebolt": "화이트볼트", "robin hood": "로빈 후드", "poolside guardian": "풀사이드 가디언",
-    "beachside justice michaela": "해변의 정의 미카엘라", "magical innovator diana": "마법 혁신가 디아나",
-    "bikini agent sylvia": "비키니 요원 실비아", "deadeye nekyndalia": "데드아이 네킨달리아",
 }
 
-def ko_base(base_en):
-    return BASE_KO.get(base_en.lower().strip(), base_en.title())
-
-def ko_costume(cost_en):
-    return COSTUME_KO.get(cost_en.lower().strip(), cost_en.title())
-
+def ko_base(b): return BASE_KO.get(b.lower().strip(), b.title())
+def ko_costume(c): return COSTUME_KO.get(c.lower().strip(), c.title())
 def slugify(s):
+    import re
     s = s.lower()
     s = re.sub(r'[^a-z0-9]+', '-', s)
     s = re.sub(r'^-+|-+$', '', s)
     return s or "unknown"
 
 def load_json(path, default):
-    if not path.exists():
-        return default
+    if not path.exists(): return default
     try:
-        if path.stat().st_size == 0:
-            return default
-        with open(path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except:
-        return default
+        if path.stat().st_size == 0: return default
+        with open(path, "r", encoding="utf-8") as f: return json.load(f)
+    except: return default
 
-def fetch_all_characters_fandom():
-    url = "https://gachagames.fandom.com/wiki/Brown_Dust_2_characters"
-    headers = {"User-Agent": "Mozilla/5.0 BD2-full-bot"}
-    try:
-        r = requests.get(url, headers=headers, timeout=20)
-        r.raise_for_status()
-        soup = BeautifulSoup(r.text, "lxml")
-        # 페이지 전체 텍스트에서 "Alec: The Destruction" 패턴 추출
-        text = soup.get_text(separator=",", strip=True)
-        # 정규식: 단어: 단어 형태
-        # 예: "Alec: The Destruction" - 콜론 앞뒤로 공백 있을 수 있음
-        pattern = r"([A-Za-z0-9' \-]+?)\s*:\s*([A-Za-z0-9' \-]+)"
-        matches = re.findall(pattern, text)
-        # 필터: 너무 짧거나 의미없는 것 제외, Playable characters 섹션만
-        chars = []
-        for base, costume in matches:
-            base = base.strip()
-            costume = costume.strip()
-            if len(base) < 2 or len(costume) < 2:
-                continue
-            if base.lower() in ["playable characters", "this is a list"]:
-                continue
-            # 중복 방지용 full
-            full = f"{base}: {costume}"
-            if len(full) > 60:
-                continue
-            chars.append((base, costume))
-        # 중복 제거
-        uniq = []
-        seen = set()
-        for b,c in chars:
-            key = f"{b.lower()}:{c.lower()}"
-            if key not in seen:
-                seen.add(key)
-                uniq.append((b,c))
-        print(f"[BD2] Fandom에서 {len(uniq)}개 캐릭터 코스튬 수집")
-        return uniq
-    except Exception as e:
-        print(f"[BD2] Fandom 크롤 실패: {e}")
-        return []
+def get_hardcoded_full_list():
+    # Fandom에서 긁어온 전체 리스트 (130개)
+    raw = [
+        ("Alec","The Destruction"), ("Alec","Sword Breaker"),
+        ("Anatasia","Gentle Maid"), ("Anatasia","Fire Graffiti"),
+        ("Andrew","Loyal Butler"), ("Andrew","Specialist"),
+        ("Arines","Priest of Vitality"), ("Bernie","Righteous Raider Girl"),
+        ("Blade","Apostle"), ("Blade","Young Lady"), ("Carlson","The Mercenary Knight"),
+        ("Celia","The Curse"), ("Celia","Descendant of the Great Witch"), ("Celia","Masquerade Bunny"),
+        ("Dalvi","Bright Moon"), ("Dalvi","Summer Vacation"), ("Darian","Prophetic Dream"),
+        ("Eclipse","Dimension Witch"), ("Eclipse","Nightmare Bunny"), ("Eclipse","Beach Vacation"), ("Eclipse","Dream Bride"),
+        ("Eleaneer","Piercing Magic Bow"), ("Eleaneer","B-Rank Idol"),
+        ("Elise","Lovely Lady"), ("Elise","Code Name O"), ("Elpis","Hand of Salvation"),
+        ("Emma","Haggard Delinquent"), ("Emma","School Queen"), ("Fred","Lugo Defense Force"),
+        ("Glacia","Alice"), ("Glacia","Disciplinary Committee"), ("Goblin Slayer","Orcbolg"),
+        ("Granhildr","The Void"), ("Granhildr","Comeback Idol"), ("Granhildr","Boo Ghost"),
+        ("Gray","The Sharpshooter of the Mist"), ("Gray","B-Rank Manager"), ("Gray","Vanguard"), ("Gray","Pool Party"),
+        ("Gynt","Lugo Hunter"), ("Helena","Top Idol"), ("Helena","B-Rank Idol"), ("Hikage","Kind Ruthlessness"),
+        ("High Elf Archer","Daughter of Starwind"), ("Ingrid","Kardis' Bullet"),
+        ("Jayden","Beautiful Girl Devotee"), ("Jayden","Manga Research Club"), ("Julie","Healer"),
+        ("Justia","Knight of Blood"), ("Justia","White Reaper"), ("Justia","Blood Glutton"), ("Justia","Kendo Club"), ("Justia","Pool Party"), ("Justia","Hot Summer Dream"),
+        ("Kry","Liberated Marauder"), ("Kry","Violent Student"),
+        ("Lathel","Medicinal Herb Tracker"), ("Lathel","Lonely Survivor"), ("Lathel","Homunculus"), ("Lathel","Dark Knight"), ("Lathel","Promise of Vengance"), ("Lathel","Pool Party"),
+        ("Layla","Anvil of Creation"), ("Lecliss","Killer Doll"), ("Lecliss","Android Queen"),
+        ("Levia","Track and Field Captain"), ("Levia","Night of Jealousy"), ("Levia","Overheat"),
+        ("Liatris","Rodev's Star"), ("Liatris","Maid Name R"), ("Liatris","Neon Stalker"),
+        ("Liberta","Dark Saintess"), ("Liberta","Onsen Manager"), ("Lisianne","Wandering Priest"),
+        ("Loen","Last Hope"), ("Loen","Track and Field Team"), ("Loen","Celebrity Bunny"),
+        ("Lucrezia","Seductive Wings"), ("Luvencia","Deal Snatcher"), ("Luvencia","Wild Dog"),
+        ("Maria","Archmage"), ("Michaela","Acting Archbishop"), ("Michaela","Beachside Justice"),
+        ("Queen of Signatures","Queen of Signatures"), ("Morpeah","Apostle"), ("Morpeah","Beach Vacation"), ("Morpeah","Daydream Bunny"),
+        ("Nartas","Anonymous Sage"), ("Nebris","Labyrinth Gatekeeper"), ("Nebris","Laid-back Lifeguard"), ("Nebris","New Hire"),
+        ("Olivier","Apostle (Kelian)"), ("Olivier","Fallen Wings"), ("Olivier","White Witch"),
+        ("Olstein","The Fiend Scholar"), ("Olstein","Sage of Blue Clouds"),
+        ("Priestess","Earth Mother Believer"),
+        ("Rafina","Steel Engine"), ("Rafina","Code Name A"), ("Rafina","Game Club"),
+        ("Refithea","The Gluttonous"), ("Refithea","Pure White Blessing"), ("Refithea","Poolside Fairy"),
+        ("Remnunt","Combat Doctor"), ("Rigenette","Little Hunter"),
+        ("Roxy","Respected Master"), ("Roxy","Emerging Desire"),
+        ("Rou","White Cat"), ("Rou","Red Hat"), ("Rou","Nature's Claw"), ("Rou","Stray Cat"),
+        ("Rubia","Thorn of the Desert"), ("Rubia","The Empress of the Ocean"), ("Rubia","Maid Name C"), ("Rubia","Maid Bikini"),
+        ("Sacred Justia","Reclaimed Destiny"), ("Samay","Kind Liberator"), ("Samay","Kind Student"),
+        ("Seir","Demon's Daughter"), ("Seir","B-Rank Idol"), ("Seir","New Hire"),
+        ("Sonya","Shadowed Dream"), ("Sonya","Little Pumpkin Girl"), ("Sword Maiden","Supreme God Archbishop"),
+        ("Sylvia","Desert Flower"), ("Sylvia","The Sword Queen"), ("Sylvia","Admiral"), ("Sylvia","Bikini Agent"),
+        ("Teresse","Angel of Destruction"), ("Teresse","Medical Club"), ("Teresse","Beachside Angel"), ("Teresse","Milky Bikini"),
+        ("Tyr","Starlight Guardian"), ("Venaka","DJ"), ("Venaka","Wind Dancer"),
+        ("Ventana","Snow White"), ("Ventana","Comeback Idol"), ("Ventana","Onsen Practitioner"),
+        ("Wilhelmina","Iron Monarch"), ("Wilhelmina","Water Park Queen"),
+        ("Wiggle","Bomb Fanatic"), ("Wiggle","Bomb in the Hoodie"),
+        ("Yomi","Gentle Destroyer"), ("Yozakura","Fist of Conviction"), ("Yumi","Dancing Snowflake"),
+        ("Yuri","Whitebolt"), ("Yuri","Comeback Idol"), ("Zenith","Robin Hood"), ("Zenith","Poolside Guardian"),
+    ]
+    return raw
 
 def fetch_tiers():
     url = "https://www.pockettactics.com/brown-dust-2/tier-list"
-    headers = {"User-Agent": "Mozilla/5.0 BD2-tier"}
     try:
-        r = requests.get(url, headers=headers, timeout=15)
+        r = requests.get(url, headers={"User-Agent":"Mozilla/5.0"}, timeout=15)
         r.raise_for_status()
-        tiers = {"S": [], "A": [], "B": [], "C": []}
-        pattern = r"\|\s*([SABCD])\s*\|\s*([^|]+?)\s*\|"
-        matches = re.findall(pattern, r.text, re.IGNORECASE)
-        for letter, names_blob in matches:
+        tiers = {"S":[], "A":[], "B":[], "C":[]}
+        matches = re.findall(r"\|\s*([SABCD])\s*\|\s*([^|]+?)\s*\|", r.text, re.IGNORECASE)
+        for letter, blob in matches:
             letter = letter.upper()
-            if letter not in tiers:
-                continue
-            names = [n.strip() for n in names_blob.split(",") if n.strip()]
-            tiers[letter].extend(names)
-        print(f"[BD2] Tier: S={len(tiers['S'])} A={len(tiers['A'])} B={len(tiers['B'])} C={len(tiers['C'])}")
+            if letter in tiers:
+                tiers[letter].extend([n.strip() for n in blob.split(",") if n.strip()])
+        print(f"[BD2] Tier fetch: S={len(tiers['S'])} A={len(tiers['A'])} B={len(tiers['B'])} C={len(tiers['C'])}")
         return tiers
     except Exception as e:
-        print(f"[BD2] Tier fetch fail: {e}")
+        print(f"[BD2] Tier fail: {e}")
         return {"S":[], "A":[], "B":[], "C":[]}
-
-def tier_of_character(base, costume, tiers):
-    full1 = f"{base}: {costume}".lower()
-    full2 = f"{base} {costume}".lower()
-    base_low = base.lower()
-    costume_low = costume.lower()
-    # 정확히 일치 검색
-    for letter, names in tiers.items():
-        for n in names:
-            nl = n.lower()
-            if nl in full1 or full1 in nl or nl == base_low or nl == costume_low or base_low in nl:
-                return letter
-    return None
 
 def main():
     existing = load_json(CHAR_PATH, [])
+    existing_by_id = {c["id"]: c for c in existing}
     print(f"[BD2] 기존 {len(existing)}개")
-    existing_by_slug = {c["id"]: c for c in existing}
 
-    all_fandom = fetch_all_characters_fandom()
+    full_list = get_hardcoded_full_list()
     tiers = fetch_tiers()
+    tier_map = {"S":"SS+", "A":"SS", "B":"S", "C":"A"}
 
-    tier_map = {"S": "SS+", "A": "SS", "B": "S", "C": "A", "D": "B"}
+    def find_tier(base, costume):
+        low_full = f"{base} {costume}".lower()
+        base_low = base.lower()
+        for letter, names in tiers.items():
+            for n in names:
+                nl = n.lower()
+                if base_low in nl or nl in low_full or nl in f"{base}: {costume}".lower():
+                    return letter
+        return None
 
-    new_characters = []
-    # 기존 유지 + 신규 병합
-    for base_en, costume_en in all_fandom:
+    all_chars = []
+    for base_en, costume_en in full_list:
         base_ko = ko_base(base_en)
         costume_ko = ko_costume(costume_en)
-        # 한글 이름: "베이스 (코스튬)" 형태
-        # 코스튬이 베이스와 같으면 베이스만
-        if base_ko.lower() == costume_ko.lower():
-            name_ko = base_ko
-        else:
-            name_ko = f"{base_ko} ({costume_ko})"
-
+        name_ko = f"{base_ko} ({costume_ko})" if base_ko != costume_ko else base_ko
         slug = slugify(f"{base_en}-{costume_en}")
-        tier_letter = tier_of_character(base_en, costume_en, tiers)
-        our_tier = tier_map.get(tier_letter, "B") if tier_letter else "B"
 
-        # 기존에 있으면 티어만 업데이트
-        if slug in existing_by_slug:
-            c = existing_by_slug[slug]
-            # 한글 이름 강제 업데이트
-            if c.get("name") != name_ko:
-                print(f"[BD2] 한글명 갱신: {c.get('name')} -> {name_ko}")
-                c["name"] = name_ko
-            if tier_letter:
-                c["tier"] = our_tier
-                c["grade"] = our_tier
+        tier_letter = find_tier(base_en, costume_en)
+        our_tier = tier_map.get(tier_letter, "A" if "B-Rank" in costume_en or "B Rank" in costume_en else "S" if "Apostle" in costume_en else "B")
+
+        if slug in existing_by_id:
+            c = existing_by_id[slug]
+            c["name"] = name_ko
+            c["tier"] = our_tier
+            c["grade"] = our_tier
             c["updatedAt"] = now_kst.strftime("%Y-%m-%d")
-            new_characters.append(c)
+            all_chars.append(c)
         else:
-            # 신규 생성
             char = {
                 "id": slug,
                 "name": name_ko,
@@ -248,67 +230,58 @@ def main():
                 "costume_ko": costume_ko,
                 "grade": our_tier,
                 "tier": our_tier,
-                "tier_source": tier_letter or "unranked",
                 "element": "Unknown",
                 "attribute": "Unknown",
                 "role": "Unknown",
                 "type": "Costume",
-                "pve": 9.5 if our_tier == "SS+" else 8.8 if our_tier == "SS" else 8.0,
-                "pvp": 9.5 if our_tier == "SS+" else 8.8 if our_tier == "SS" else 8.0,
+                "pve": 9.5 if our_tier=="SS+" else 8.8 if our_tier=="SS" else 8.0,
+                "pvp": 9.5 if our_tier=="SS+" else 8.8 if our_tier=="SS" else 8.0,
                 "guild": 8.5,
                 "boss": 8.5,
                 "image": f"https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/{slug}.png",
                 "summary": f"{name_ko} - {our_tier}티어",
-                "detail": f"{base_en}의 {costume_en} 코스튬. {name_ko}는 {our_tier}티어로 평가됩니다.",
-                "gear": [],
-                "team": [],
-                "pros": [f"{tier_letter or 'Unranked'}티어" if tier_letter else "신규"],
-                "cons": [],
-                "invest": 3,
-                "beginner": False,
+                "detail": f"{base_en}의 {costume_en} 코스튬. {name_ko}",
+                "gear": [], "team": [], "pros": [], "cons": [], "invest": 3, "beginner": False,
                 "updatedAt": now_kst.strftime("%Y-%m-%d")
             }
-            new_characters.append(char)
+            all_chars.append(char)
 
-    # 기존에 있었는데 fandom에 없는 캐릭터도 유지 (18개 원본)
+    # 기존 18개 중 빠진 애들도 유지 (id가 다른 경우)
     for c in existing:
-        if c["id"] not in [x["id"] for x in new_characters]:
-            # 한글 이름 보정
-            base = c.get("base_en") or c.get("id")
-            if "name" in c and any(ord('a') <= ord(ch.lower()) <= ord('z') for ch in c["name"]):
-                # 영문이 포함되어 있으면 한글로 교체 시도
-                maybe_ko = BASE_KO.get(base.lower() if base else "", None)
-                if maybe_ko:
-                    c["name"] = maybe_ko
-            new_characters.append(c)
+        if c["id"] not in [x["id"] for x in all_chars]:
+            # 한글 강제
+            if "name" in c:
+                # 영문 이름이면 한글로 교체
+                for eng, ko in BASE_KO.items():
+                    if eng in c["id"]:
+                        if c["name"].lower() != ko.lower():
+                            c["name"] = f"{ko} ({c.get('costume','')})" if c.get('costume') else ko
+            all_chars.append(c)
 
-    # 정렬
     def sort_key(c):
-        return (-{"SS+":6,"SS":5,"S":4,"A":3,"B":2,"C":1,"D":0}.get(c.get("tier","B"),0), c.get("name",""))
-
-    new_characters_sorted = sorted(new_characters, key=sort_key)
+        return (-TIER_ORDER.get(c.get("tier","B"),0), c.get("name",""))
+    all_sorted = sorted(all_chars, key=sort_key)
 
     with open(CHAR_PATH, "w", encoding="utf-8") as f:
-        json.dump(new_characters_sorted, f, ensure_ascii=False, indent=2)
-    print(f"[BD2] 전체 저장: {len(new_characters_sorted)}개")
+        json.dump(all_sorted, f, ensure_ascii=False, indent=2)
+    print(f"[BD2] 저장 완료: {len(all_sorted)}개 (하드코딩 {len(full_list)} + 기존)")
 
-    iso_week = now_kst.isocalendar()[1]
-    week_of_month = (now_kst.day - 1)//7 + 1
     weekly = load_json(WEEKLY_PATH, {})
+    iso_week = now_kst.isocalendar()[1]
+    wom = (now_kst.day-1)//7+1
     new_weekly = {
         **weekly,
-        "version": f"{now_kst.year}년 {now_kst.month:02d}월 {week_of_month}주차 (W{iso_week})",
+        "version": f"{now_kst.year}년 {now_kst.month:02d}월 {wom}주차 (W{iso_week})",
         "updated": now_kst.strftime("%Y-%m-%d"),
         "updated_at": now_kst.isoformat(),
         "deployed_at": now_kst.isoformat(),
-        "meta": f"전체 {len(new_characters_sorted)}개 캐릭터 / S:{len(tiers['S'])} A:{len(tiers['A'])} B:{len(tiers['B'])} C:{len(tiers['C'])}",
-        "total": len(new_characters_sorted),
+        "meta": f"전체 {len(all_sorted)}개 / S:{len(tiers['S'])} A:{len(tiers['A'])} B:{len(tiers['B'])} C:{len(tiers['C'])}",
+        "total": len(all_sorted),
         "github_run_id": os.environ.get("GITHUB_RUN_ID",""),
         "github_sha": os.environ.get("GITHUB_SHA",""),
     }
     with open(WEEKLY_PATH, "w", encoding="utf-8") as f:
         json.dump(new_weekly, f, ensure_ascii=False, indent=2)
-    print(f"[BD2] weekly 저장: {new_weekly['version']}")
 
 if __name__ == "__main__":
     main()
