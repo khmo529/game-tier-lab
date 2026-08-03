@@ -1,17 +1,21 @@
-name: 니케 티어표 자동 업데이트
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * 1'
+name: Tier Update (Weekly)
 
-permissions:
-  contents: write
+on:
+  schedule:
+    - cron: '0 3 * * 1' # 매주 월요일 12시 KST (03:00 UTC)
+  workflow_dispatch:
+
+concurrency:
+  group: tier-update
+  cancel-in-progress: false
 
 jobs:
-  update-nikke:
+  update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -19,41 +23,37 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 니케 크롤러 실행 (prydwen 연동)
+      - name: Install deps
+        run: pip install requests beautifulsoup4 lxml
+
+      # FIX: working-directory 지정으로 data/characters.json 경로 문제 해결
+      - name: Run BD2 updater
+        working-directory: games/browndust2
+        run: python tier_updater.py
+
+      - name: Run NIKKE updater
+        working-directory: games/nikke
+        run: python tier_updater.py
+
+      - name: Sync JSON + Images to theme
         run: |
-          pip install requests beautifulsoup4 lxml
-          python games/nikke/crawler.py
-          echo "=== 로컬 파일 ==="
-          ls -lh games/nikke/data/
-          cat games/nikke/data/characters.json | head -20
+          mkdir -p wp-content/themes/generatepress-child/browndust2-tier/data
+          mkdir -p wp-content/themes/generatepress-child/nikke-tier/data
+          mkdir -p wp-content/themes/generatepress-child/browndust2-tier/assets/images
+          cp games/browndust2/data/*.json wp-content/themes/generatepress-child/browndust2-tier/data/ || true
+          cp games/nikke/data/*.json wp-content/themes/generatepress-child/nikke-tier/data/ || true
+          # 이미지도 같이 동기화 (기존 누락 원인)
+          cp games/browndust2/assets/images/* wp-content/themes/generatepress-child/browndust2-tier/assets/images/ 2>/dev/null || true
 
-      - name: 자동 커밋
-        uses: stefanzweifel/git-auto-commit-action@v6
-        with:
-          commit_message: "auto: nikke update from prydwen"
-          file_pattern: "games/nikke/data/*"
-
-      - name: 배포 전 원격 폴더 확인
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: nopickle
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          script: |
-            echo "--- dash 폴더 ---"
-            ls -lh /home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/data/ || echo "dash 폴더 없음"
-            echo "--- underscore 폴더 ---"
-            ls -lh /home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress_child/nikke-tier/data/ || echo "underscore 폴더 없음"
-
-      - name: 워드프레스로 SFTP 배포 (dash - 실제 사용중)
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: nopickle
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          source: "games/nikke/data/*"
-          target: "/home/nopickle/htdocs/nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/data/"
-          strip_components: 3
-          overwrite: true
+      - name: Commit & Push (rebase safe)
+        run: |
+          git config user.name "tier-bot"
+          git config user.email "bot@nopickle.co.kr"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "chore: weekly tier update $(date +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push origin main
