@@ -1,36 +1,104 @@
 name: BD2 Tier Auto
+
 on:
-  schedule: [{cron: '0 0 * * 1'}]
+  schedule:
+    - cron: '0 0 * * 1' # 매주 월요일 09:00 KST (UTC 00:00)
   workflow_dispatch:
+    inputs:
+      reason:
+        description: '수동 실행 사유'
+        required: false
+        default: 'manual'
+
+concurrency:
+  group: bd2-tier
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: {python-version: '3.11'}
-      - run: pip install requests
-      - run: python scripts/tier_updater.py
-      - id: diff
-        run: git diff --quiet browndust2-tier/data/ || echo "changed=true" >> $GITHUB_OUTPUT
-      - if: steps.diff.outputs.changed == 'true'
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install deps
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run tier updater
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          # 네가 만든 실제 경로
+          python game/browndust2/tier_updater.py
+          echo "=== updated files ==="
+          ls -R game/browndust2/browndust2-tier/data/ || ls -R game/browndust2/data/ || ls -R browndust2-tier/data/
+
+      - name: Check diff
+        id: diff
+        run: |
+          # data/*.json 변경 감지 (네 구조 3가지 모두 대응)
+          if git status --porcelain | grep -E "characters\.json|weekly-update\.json" > /dev/null; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "changes detected"
+            git status --porcelain
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "no changes"
+          fi
+
+      - name: Commit & Push
+        if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "bd2-bot"
-          git config user.email "bot@bd2"
-          git add browndust2-tier/data/*.json
-          git commit -m "auto: bd2 $(date +%Y-%m-%d) [skip ci]"
+          git config user.email "bot@browndust2.tier"
+          git add -A game/browndust2/**/data/*.json browndust2-tier/data/*.json 2>/dev/null || true
+          git commit -m "auto: bd2 tier update $(date +%Y-%m-%d) [skip ci] - run ${{ github.run_id }}"
           git push
-      - if: steps.diff.outputs.changed == 'true'
+
+      - name: Deploy to WordPress (SFTP)
+        if: steps.diff.outputs.changed == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir:./browndust2-tier/
+          # 네 실제 테마 폴더 경로 - 이 폴더가 워드프레스로 올라감
+          local-dir: ./game/browndust2/browndust2-tier/
           server-dir: /wp-content/themes/generatepress_child/browndust2-tier/
-      - if: steps.diff.outputs.changed == 'true'
+          # 배포 후 오래된 파일 정리
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/__pycache__/**
+            **/*.pyc
+
+      - name: Purge WP cache via webhook
+        if: steps.diff.outputs.changed == 'true'
         run: |
-          curl -X POST ${{ secrets.WP_WEBHOOK_URL }} \
-            -H "X-BD2-SECRET: ${{ secrets.BD2_WEBHOOK_SECRET }}" \
-            -d '{}'
+          echo "Calling webhook ${{ secrets.WP_WEBHOOK_URL }}"
+          for i in 1 2 3; do
+            if curl -sS -X POST "${{ secrets.WP_WEBHOOK_URL }}" \
+              -H "X-BD2-SECRET: ${{ secrets.BD2_WEBHOOK_SECRET }}" \
+              -H "Content-Type: application/json" \
+              -d "{\"run_id\":\"${{ github.run_id }}\",\"sha\":\"${{ github.sha }}\"}" | grep -q "ok"; then
+              echo "Purge success"
+              exit 0
+            fi
+            echo "Retry $i..."
+            sleep 3
+          done
+          echo "Webhook failed but deploy done"
+          exit 0
