@@ -1,8 +1,15 @@
 {
   "version": "2026년 08월 1주차 (W32)",
   "updated": "2026-08-03",
-  "updated_at": "2026-08-03T15:30:00+09:00",
-  "meta": "자동 업데이트 - S:25 A:24 B:9 C:7",
-  "buff": [{"id":"sylvia","name":"실비아","from":"B","to":"SS+"}],
-  "nerf": [{"id":"alec","name":"알렉","from":"B","to":"A"}]
+  "updated_at": "2026-08-03T15:30:16.223536+09:00",
+  "meta": "자동 업데이트 - S:0 A:0 B:0 C:0 / 전체 18명",
+  "buff": [],
+  "nerf": [],
+  "deployed_at": "2026-08-03T15:30:16.223536+09:00",
+  "new": [],
+  "note": "08/03 크롤링 - 신캐 0명 추가",
+  "banner": "",
+  "headline": "",
+  "github_run_id": "30790403586",
+  "github_sha": "e3c37db97dd97ce41c3548e4661496dd1a429f01"
 }
