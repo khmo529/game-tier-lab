@@ -3466,50 +3466,6 @@
     "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Phantom.jpg"
   },
   {
-    "id": 98,
-    "name": "프라이버시",
-    "en_name": "Privaty",
-    "tier": "B",
-    "rarity": "SSR",
-    "company": "미확인",
-    "weapon": "미확인",
-    "element": "미확인",
-    "burst": "III",
-    "position": "미확인",
-    "content": [
-      "스토리"
-    ],
-    "rating": 4,
-    "scores": {
-      "story": 5,
-      "boss": 4,
-      "pvp": 3,
-      "raid": 4,
-      "union": 4
-    },
-    "pros": [
-      "B 티어 - prydwen 자동 추가"
-    ],
-    "cons": [
-      "정보 업데이트 필요"
-    ],
-    "overload": [
-      "공격력 ↑"
-    ],
-    "cube": "미확인",
-    "team": [
-      "Privaty"
-    ],
-    "priority": [
-      "3스킬"
-    ],
-    "reroll": false,
-    "history": [
-      "B"
-    ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Privaty.jpg"
-  },
-  {
     "id": 23,
     "name": "프리바티",
     "tier": "B",
@@ -3560,7 +3516,8 @@
       "SS",
       "B"
     ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/.jpg"
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Privaty.jpg",
+    "en_name": "Privaty"
   },
   {
     "id": 91,
@@ -9215,50 +9172,6 @@
     "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Folkwang.jpg"
   },
   {
-    "id": 133,
-    "name": "프라이버시: 언카인드 메이드",
-    "en_name": "Privaty: Unkind Maid",
-    "tier": "C",
-    "rarity": "SSR",
-    "company": "미확인",
-    "weapon": "미확인",
-    "element": "미확인",
-    "burst": "III",
-    "position": "미확인",
-    "content": [
-      "스토리"
-    ],
-    "rating": 4,
-    "scores": {
-      "story": 5,
-      "boss": 4,
-      "pvp": 3,
-      "raid": 4,
-      "union": 4
-    },
-    "pros": [
-      "C 티어 - prydwen 자동 추가"
-    ],
-    "cons": [
-      "정보 업데이트 필요"
-    ],
-    "overload": [
-      "공격력 ↑"
-    ],
-    "cube": "미확인",
-    "team": [
-      "Privaty: Unkind Maid"
-    ],
-    "priority": [
-      "3스킬"
-    ],
-    "reroll": false,
-    "history": [
-      "C"
-    ],
-    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Privaty_Unkind_Maid.jpg"
-  },
-  {
     "id": 232,
     "name": "프로덕트 08",
     "en_name": "Product-08",
@@ -9477,6 +9390,50 @@
       "C"
     ],
     "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Frima_Treasure.jpg"
+  },
+  {
+    "id": 133,
+    "name": "프리바티: 언카인드 메이드",
+    "en_name": "Privaty: Unkind Maid",
+    "tier": "C",
+    "rarity": "SSR",
+    "company": "미확인",
+    "weapon": "미확인",
+    "element": "미확인",
+    "burst": "III",
+    "position": "미확인",
+    "content": [
+      "스토리"
+    ],
+    "rating": 4,
+    "scores": {
+      "story": 5,
+      "boss": 4,
+      "pvp": 3,
+      "raid": 4,
+      "union": 4
+    },
+    "pros": [
+      "C 티어 - prydwen 자동 추가"
+    ],
+    "cons": [
+      "정보 업데이트 필요"
+    ],
+    "overload": [
+      "공격력 ↑"
+    ],
+    "cube": "미확인",
+    "team": [
+      "Privaty: Unkind Maid"
+    ],
+    "priority": [
+      "3스킬"
+    ],
+    "reroll": false,
+    "history": [
+      "C"
+    ],
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/nikke-tier/assets/images/Privaty_Unkind_Maid.jpg"
   },
   {
     "id": 158,
