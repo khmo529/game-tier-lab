@@ -59,7 +59,7 @@ jobs:
         with:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER }}
-          key: ${{ secrets.SFTP_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           source: "games/browndust2/browndust2-tier/*"
           target: "/wp-content/themes/generatepress_child/browndust2-tier/"
