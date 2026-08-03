@@ -1,1 +1,615 @@
-
+[
+  {
+    "id": "helena",
+    "name": "헬레나",
+    "grade": "SS+",
+    "tier": "SS+",
+    "element": "Light",
+    "attribute": "Light",
+    "role": "Support",
+    "type": "Limited",
+    "costume": "B-Rank Idol",
+    "pve": 9.9,
+    "pvp": 9.7,
+    "guild": 9.9,
+    "boss": 9.8,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/b-rank-idol-helena.png",
+    "summary": "마법 덱 필수 치명 버퍼",
+    "detail": "마법력 증폭과 높은 치명타 확률/피해 버프를 동시에 제공하는 마법 덱 인권 서포터입니다.",
+    "gear": [
+      "아이돌 마이크",
+      "성광의 성물",
+      "지원 각인 4세트"
+    ],
+    "team": [
+      "이클립스",
+      "셰헤라자드",
+      "셀리아"
+    ],
+    "pros": [
+      "압도적 마법 버프",
+      "SP 수급 유틸",
+      "치명타 극대화"
+    ],
+    "cons": [
+      "물리 덱 조합 불가"
+    ],
+    "invest": 5,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "eclipse",
+    "name": "이클립스",
+    "grade": "SS+",
+    "tier": "SS+",
+    "element": "Dark",
+    "attribute": "Dark",
+    "role": "Magic DPS",
+    "type": "Limited",
+    "costume": "Summer Eclipse",
+    "pve": 9.9,
+    "pvp": 9.8,
+    "guild": 9.6,
+    "boss": 9.7,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/summer-eclipse-eclipse.png",
+    "summary": "최상위 광역 마딜러",
+    "detail": "전열 붕괴 후 광역 암속성 폭딜을 넣는 현 메타 최상위 딜러입니다.",
+    "gear": [
+      "파멸의 인장",
+      "심연 로브",
+      "암흑 각인 4세트"
+    ],
+    "team": [
+      "셀리아",
+      "라피네",
+      "유스티아"
+    ],
+    "pros": [
+      "광역 폭딜",
+      "빠른 사이클",
+      "PVP 선공 우위"
+    ],
+    "cons": [
+      "단일 딜 부족",
+      "초반 SP 수급 느림"
+    ],
+    "invest": 5,
+    "beginner": false,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "diana",
+    "name": "디아나",
+    "grade": "SS+",
+    "tier": "SS+",
+    "element": "Wind",
+    "attribute": "Wind",
+    "role": "Support",
+    "type": "Standard",
+    "costume": "Unknown Pink",
+    "pve": 10.0,
+    "pvp": 8.5,
+    "guild": 10.0,
+    "boss": 10.0,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/unknown-pink-diana.png",
+    "summary": "속성 우위 증폭 서포터",
+    "detail": "속성 우위 피해량을 파격적으로 끌어올리는 PVE/레이드 전용 종결 서포터입니다.",
+    "gear": [
+      "바람의 지팡이",
+      "바람 각인 4세트"
+    ],
+    "team": [
+      "라텔",
+      "유스티아",
+      "이클립스"
+    ],
+    "pros": [
+      "PVE 고점 극대화",
+      "속성 딜러 시너지 극상"
+    ],
+    "cons": [
+      "PVP 활용도 낮음"
+    ],
+    "invest": 5,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "lathel",
+    "name": "라텔",
+    "grade": "SS",
+    "tier": "SS",
+    "element": "Fire",
+    "attribute": "Fire",
+    "role": "Physical DPS",
+    "type": "Standard",
+    "costume": "Homunculus",
+    "pve": 9.5,
+    "pvp": 9.2,
+    "guild": 9.6,
+    "boss": 9.4,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/homunculus-lathel.png",
+    "summary": "물리 덱 핵심 공격 버퍼 겸 딜러",
+    "detail": "호문쿨루스 코스튬 기반 물리 공격력 버퍼",
+    "gear": [
+      "화염검",
+      "붉은 가죽 갑옷"
+    ],
+    "team": [
+      "디아나",
+      "루"
+    ],
+    "pros": [
+      "물리 덱 필수"
+    ],
+    "cons": [
+      "마법 덱 시너지 없음"
+    ],
+    "invest": 5,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "celia",
+    "name": "셀리아",
+    "grade": "SS",
+    "tier": "SS",
+    "element": "Light",
+    "attribute": "Light",
+    "role": "Support",
+    "type": "Standard",
+    "costume": "Holy Order",
+    "pve": 9.4,
+    "pvp": 9.0,
+    "guild": 9.5,
+    "boss": 9.3,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/holy-order-celia.png",
+    "summary": "범용 버프 서포터",
+    "detail": "범용 서포터",
+    "gear": [
+      "성광의 성물"
+    ],
+    "team": [
+      "이클립스"
+    ],
+    "pros": [
+      "범용성"
+    ],
+    "cons": [
+      "딜 기여 없음"
+    ],
+    "invest": 4,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "scheherazade",
+    "name": "셰헤라자드",
+    "grade": "SS",
+    "tier": "SS",
+    "element": "Water",
+    "attribute": "Water",
+    "role": "Magic DPS",
+    "type": "Standard",
+    "costume": "Code Name S",
+    "pve": 9.3,
+    "pvp": 9.6,
+    "guild": 9.1,
+    "boss": 9.2,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/code-name-s-scheherazade.png",
+    "summary": "버프 해제 특화",
+    "detail": "버프 해제 딜러",
+    "gear": [
+      "수호자의 지팡이"
+    ],
+    "team": [
+      "헬레나"
+    ],
+    "pros": [
+      "해제 유틸"
+    ],
+    "cons": [
+      "고투자"
+    ],
+    "invest": 4,
+    "beginner": false,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "rafine",
+    "name": "라피네",
+    "grade": "S",
+    "tier": "S",
+    "element": "Water",
+    "attribute": "Water",
+    "role": "Healer",
+    "type": "Limited",
+    "costume": "Tide Prayer",
+    "pve": 9.0,
+    "pvp": 8.4,
+    "guild": 9.2,
+    "boss": 9.0,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/tide-prayer-rafine.png",
+    "summary": "지속 회복형 힐러",
+    "detail": "광역 회복",
+    "gear": [
+      "생명의 성배"
+    ],
+    "team": [
+      "크라이"
+    ],
+    "pros": [
+      "광역 힐"
+    ],
+    "cons": [
+      "즉시 회복 낮음"
+    ],
+    "invest": 4,
+    "beginner": false,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "terisse",
+    "name": "테리스",
+    "grade": "S",
+    "tier": "S",
+    "element": "Water",
+    "attribute": "Water",
+    "role": "Support",
+    "type": "Limited",
+    "costume": "Medical Staff",
+    "pve": 8.9,
+    "pvp": 9.0,
+    "guild": 8.8,
+    "boss": 8.7,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/medical-staff-terisse.png",
+    "summary": "밀쳐내기 서포터",
+    "detail": "진형 파괴",
+    "gear": [
+      "신속의 주사기"
+    ],
+    "team": [
+      "이클립스"
+    ],
+    "pros": [
+      "위치 이동"
+    ],
+    "cons": [
+      "상황 탐"
+    ],
+    "invest": 3,
+    "beginner": false,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "rou",
+    "name": "루",
+    "grade": "S",
+    "tier": "S",
+    "element": "Wind",
+    "attribute": "Wind",
+    "role": "Physical DPS",
+    "type": "Standard",
+    "costume": "Red Hood",
+    "pve": 8.7,
+    "pvp": 9.3,
+    "guild": 8.5,
+    "boss": 8.6,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/red-hood-rou.png",
+    "summary": "회피 기반 딜러",
+    "detail": "회피 반격",
+    "gear": [
+      "바람의 단검"
+    ],
+    "team": [
+      "라텔"
+    ],
+    "pros": [
+      "PVP 변수"
+    ],
+    "cons": [
+      "운 요소"
+    ],
+    "invest": 4,
+    "beginner": false,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "kry",
+    "name": "크라이",
+    "grade": "S",
+    "tier": "S",
+    "element": "Fire",
+    "attribute": "Fire",
+    "role": "Physical DPS",
+    "type": "Standard",
+    "costume": "Demon Hunter",
+    "pve": 8.8,
+    "pvp": 8.5,
+    "guild": 8.6,
+    "boss": 8.4,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/demon-hunter-kry.webp",
+    "summary": "방어 감소 딜러",
+    "detail": "방어 감소 및 밀쳐내기",
+    "gear": [
+      "대악마의 검"
+    ],
+    "team": [
+      "라텔"
+    ],
+    "pros": [
+      "방깎"
+    ],
+    "cons": [
+      "후반 한계"
+    ],
+    "invest": 3,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "angelica",
+    "name": "안젤리카",
+    "grade": "A",
+    "tier": "A",
+    "element": "Light",
+    "attribute": "Light",
+    "role": "Magic DPS",
+    "type": "Standard",
+    "costume": "Fallen Angel",
+    "pve": 8.4,
+    "pvp": 7.8,
+    "guild": 8.5,
+    "boss": 8.3,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/fallen-angel-angelica.png",
+    "summary": "체력 비례 딜러",
+    "detail": "보스전 특화",
+    "gear": [
+      "빛의 지팡이"
+    ],
+    "team": [
+      "헬레나"
+    ],
+    "pros": [
+      "보스 고점"
+    ],
+    "cons": [
+      "쫄작 낮음"
+    ],
+    "invest": 3,
+    "beginner": false,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "justia",
+    "name": "유스티아",
+    "grade": "A",
+    "tier": "A",
+    "element": "Wind",
+    "attribute": "Wind",
+    "role": "Physical DPS",
+    "type": "Standard",
+    "costume": "Blade Dancer",
+    "pve": 8.2,
+    "pvp": 8.6,
+    "guild": 7.9,
+    "boss": 8.1,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/blade-dancer-justia.png",
+    "summary": "고정 피해 딜러",
+    "detail": "방어 무시",
+    "gear": [
+      "질풍검"
+    ],
+    "team": [
+      "셀리아"
+    ],
+    "pros": [
+      "방무 고정딜"
+    ],
+    "cons": [
+      "광역 부재"
+    ],
+    "invest": 3,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "olstein",
+    "name": "올스테인",
+    "grade": "A",
+    "tier": "A",
+    "element": "Fire",
+    "attribute": "Fire",
+    "role": "Support",
+    "type": "Standard",
+    "costume": "Archmage",
+    "pve": 8.1,
+    "pvp": 8.0,
+    "guild": 8.3,
+    "boss": 8.0,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/archmage-olstein.png",
+    "summary": "침묵 디버퍼",
+    "detail": "침묵 SP 수급",
+    "gear": [
+      "마법사의 지팡이"
+    ],
+    "team": [
+      "셰헤라자드"
+    ],
+    "pros": [
+      "침묵"
+    ],
+    "cons": [
+      "화력 낮음"
+    ],
+    "invest": 2,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "seir",
+    "name": "세이르",
+    "grade": "A",
+    "tier": "A",
+    "element": "Dark",
+    "attribute": "Dark",
+    "role": "Debuffer",
+    "type": "Standard",
+    "costume": "Night Veil",
+    "pve": 8.0,
+    "pvp": 8.3,
+    "guild": 8.1,
+    "boss": 7.8,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/night-veil-seir.png",
+    "summary": "방어 감소 디버퍼",
+    "detail": "방깎",
+    "gear": [
+      "암야의 목걸이"
+    ],
+    "team": [
+      "이클립스"
+    ],
+    "pros": [
+      "딜 증폭"
+    ],
+    "cons": [
+      "자체 딜 낮음"
+    ],
+    "invest": 2,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "elpis",
+    "name": "엘피스",
+    "grade": "B",
+    "tier": "B",
+    "element": "Light",
+    "attribute": "Light",
+    "role": "Support",
+    "type": "Standard",
+    "costume": "Acolyte",
+    "pve": 7.8,
+    "pvp": 7.0,
+    "guild": 7.6,
+    "boss": 7.5,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/acolyte-elpis.png",
+    "summary": "마법 가성비 버퍼",
+    "detail": "마법 버프",
+    "gear": [
+      "사제의 지팡이"
+    ],
+    "team": [
+      "이클립스"
+    ],
+    "pros": [
+      "접근성"
+    ],
+    "cons": [
+      "5성 대비 한계"
+    ],
+    "invest": 2,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "sylvia",
+    "name": "실비아",
+    "grade": "B",
+    "tier": "B",
+    "element": "Wind",
+    "attribute": "Wind",
+    "role": "Tank",
+    "type": "Standard",
+    "costume": "Desert Sword",
+    "pve": 7.5,
+    "pvp": 7.7,
+    "guild": 7.3,
+    "boss": 7.2,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/desert-sword-sylvia.png",
+    "summary": "반격 탱커",
+    "detail": "반격",
+    "gear": [
+      "사막의 대검"
+    ],
+    "team": [
+      "라텔"
+    ],
+    "pros": [
+      "반격"
+    ],
+    "cons": [
+      "주탱 아쉬움"
+    ],
+    "invest": 2,
+    "beginner": false,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "alec",
+    "name": "알렉",
+    "grade": "B",
+    "tier": "B",
+    "element": "Fire",
+    "attribute": "Fire",
+    "role": "Physical DPS",
+    "type": "Standard",
+    "costume": "Executioner",
+    "pve": 7.3,
+    "pvp": 7.4,
+    "guild": 7.2,
+    "boss": 7.0,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/executioner-alec.png",
+    "summary": "초반 딜러",
+    "detail": "초반 진행용",
+    "gear": [
+      "처형자의 도끼"
+    ],
+    "team": [
+      "라텔"
+    ],
+    "pros": [
+      "초반 육성"
+    ],
+    "cons": [
+      "후반 저하"
+    ],
+    "invest": 1,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  },
+  {
+    "id": "lucrezia",
+    "name": "루크레치아",
+    "grade": "B",
+    "tier": "B",
+    "element": "Dark",
+    "attribute": "Dark",
+    "role": "Support",
+    "type": "Standard",
+    "costume": "Seductive Nun",
+    "pve": 7.2,
+    "pvp": 7.0,
+    "guild": 7.3,
+    "boss": 6.8,
+    "image": "https://nopickle.co.kr/wp-content/themes/generatepress-child/browndust2-tier/assets/images/seductive-nun-lucrezia.png",
+    "summary": "SP 수급 서포터",
+    "detail": "SP 회복",
+    "gear": [
+      "암야의 지팡이"
+    ],
+    "team": [
+      "이클립스"
+    ],
+    "pros": [
+      "SP 회복"
+    ],
+    "cons": [
+      "화력 낮음"
+    ],
+    "invest": 2,
+    "beginner": true,
+    "updatedAt": "2026-08-03"
+  }
+]
