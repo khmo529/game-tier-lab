@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# games/browndust2/tier_updater.py - games 경로 통합 + 빈 파일 대응
+# games/browndust2/tier_updater.py - v4: KST 고정 + characters.json 보존
 import json
 import os
-import shutil
 from pathlib import Path
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR = SCRIPT_DIR / "data"
@@ -13,87 +13,68 @@ DATA_DIR.mkdir(parents=True, exist_ok=True)
 CHAR_PATH = DATA_DIR / "characters.json"
 WEEKLY_PATH = DATA_DIR / "weekly-update.json"
 
-print(f"[BD2] SCRIPT_DIR={SCRIPT_DIR}")
-print(f"[BD2] DATA_DIR={DATA_DIR}")
-print(f"[BD2] CHAR_PATH={CHAR_PATH} exists={CHAR_PATH.exists()} size={CHAR_PATH.stat().st_size if CHAR_PATH.exists() else 0}")
+KST = ZoneInfo("Asia/Seoul")
+now_kst = datetime.now(KST)
+
+print(f"[BD2] KST now: {now_kst.isoformat()}")
+print(f"[BD2] CHAR_PATH={CHAR_PATH} exists={CHAR_PATH.exists()}")
 
 def load_json(path, default):
     if not path.exists():
-        print(f"[BD2] {path} not found -> default 사용")
         return default
     try:
         if path.stat().st_size == 0:
-            print(f"[BD2] {path} is empty -> default 사용")
             return default
         with open(path, "r", encoding="utf-8") as f:
             content = f.read().strip()
             if not content:
-                print(f"[BD2] {path} content empty -> default 사용")
                 return default
             return json.loads(content)
-    except json.JSONDecodeError as e:
-        print(f"[BD2] JSON 오류 {path}: {e} -> default 사용")
-        # 백업
-        try:
-            backup = path.with_suffix(path.suffix + ".bak")
-            shutil.copy2(path, backup)
-            print(f"[BD2] 손상된 파일 백업: {backup}")
-        except:
-            pass
-        return default
     except Exception as e:
-        print(f"[BD2] load 실패 {path}: {e} -> default 사용")
+        print(f"[BD2] load fail {path}: {e}")
         return default
 
 def main():
-    characters = load_json(CHAR_PATH, [])
+    characters = load_json(CHAR_PATH, None)
     weekly = load_json(WEEKLY_PATH, {})
 
-    if not characters:
-        print("[BD2] characters가 비어있음 - 기존 데이터가 없으면 빈 배열로 시작 (나중에 수동으로 채워야 함)")
+    # characters.json은 절대 덮어쓰지 않음 - 없으면 에러로 알림만
+    if characters is None:
+        print(f"[BD2][ERROR] {CHAR_PATH}가 없습니다! 수동으로 복구해야 합니다.")
+        # 빈 배열로 생성하지 않고 종료해서 데이터 날라가는 것 방지
+        return
     else:
-        print(f"[BD2] Loaded {len(characters)} characters")
+        print(f"[BD2] characters.json 보존 - {len(characters)}개 유지 (덮어쓰기 안함)")
 
-    now = datetime.now()
+    # weekly-update.json만 KST 기준으로 업데이트
+    # version은 ISO 주차 기준으로 생성: 2026년 08월 32주차 형태
+    iso_year, iso_week, iso_day = now_kst.isocalendar()
+    # 월 주차 계산 (1~5주차)
+    week_of_month = (now_kst.day - 1) // 7 + 1
+
+    # 기존 weekly 값은 최대한 보존하고 시간만 갱신
     new_weekly = {
-        "version": weekly.get("version") or now.strftime("%Y년 %m월 %W주차"),
-        "updated": now.strftime("%Y-%m-%d"),
-        "updated_at": now.isoformat(),
-        "meta": weekly.get("meta", ""),
-        "buff": weekly.get("buff", []),
-        "nerf": weekly.get("nerf", []),
-        "note": weekly.get("note", ""),
-        "banner": weekly.get("banner", ""),
-        "headline": weekly.get("headline", weekly.get("banner", "")),
-        "deployed_at": now.isoformat(),
+        **weekly,  # 기존 buff/nerf/meta/banner 등 유지
+        "version": f"{now_kst.year}년 {now_kst.month:02d}월 {week_of_month}주차 (W{iso_week})",
+        "updated": now_kst.strftime("%Y-%m-%d"),
+        "updated_at": now_kst.isoformat(),  # KST +09:00 포함
+        "deployed_at": now_kst.isoformat(),
         "github_run_id": os.environ.get("GITHUB_RUN_ID", ""),
         "github_sha": os.environ.get("GITHUB_SHA", ""),
     }
 
-    # 파일이 비었으면 일단 기본값이라도 저장해서 다음 실행 안터지게
-    if not characters:
-        # 임시로 빈 배열 저장 (너가 준 18개짜리는 아래에서 복구 가능)
-        print("[BD2] 빈 파일이므로 빈 배열로 저장하고 넘어감 - characters.json을 다시 올려줘야 함")
-
-    with open(CHAR_PATH, "w", encoding="utf-8") as f:
-        json.dump(characters, f, ensure_ascii=False, indent=2)
-    print(f"[BD2] Saved {CHAR_PATH}")
+    # 빈 필드 기본값 보정
+    new_weekly.setdefault("meta", "")
+    new_weekly.setdefault("buff", [])
+    new_weekly.setdefault("nerf", [])
+    new_weekly.setdefault("note", "")
+    new_weekly.setdefault("banner", "")
+    new_weekly.setdefault("headline", new_weekly.get("banner", ""))
 
     with open(WEEKLY_PATH, "w", encoding="utf-8") as f:
         json.dump(new_weekly, f, ensure_ascii=False, indent=2)
-    print(f"[BD2] Saved {WEEKLY_PATH}")
-
-    # 배포 폴더 동기화
-    for deploy_parent in [SCRIPT_DIR / "browndust2-tier", Path.cwd() / "wordpress" / "browndust2-tier"]:
-        if deploy_parent.exists() or deploy_parent.parent.exists():
-            deploy_data = deploy_parent / "data"
-            deploy_data.mkdir(parents=True, exist_ok=True)
-            try:
-                shutil.copy2(CHAR_PATH, deploy_data / "characters.json")
-                shutil.copy2(WEEKLY_PATH, deploy_data / "weekly-update.json")
-                print(f"[BD2] Copied to {deploy_data}")
-            except Exception as e:
-                print(f"[BD2] Copy fail {deploy_data}: {e}")
+    print(f"[BD2] Saved WEEKLY: {WEEKLY_PATH}")
+    print(json.dumps(new_weekly, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
     main()
