@@ -16,7 +16,7 @@ FULL_KO_MAP = {
     "Vesti: Tactical Upgrade":"베스티: 택티컬 업그레이드","Moran (Treasure)":"모란(애장품)","Siren":"세이렌",
     "Mast: Romantic Maid":"마스트: 로맨틱 메이드","Nayuta":"나유타","Takina Inoue":"타키나 이노우에",
     "Cinderella: Crystal Wave":"신데렐라: 크리스탈 웨이브","Laplace: Ultimate Hero":"라플라스: 얼티밋 히어로",
-    "Privaty (Treasure)":"프리바티(애장품)","Scarlet: Black Shadow":"스칼렛: 블랙 섀도우","Snow White: Heavy Arms":"백설: 헤비 암즈",
+    "Privaty (Treasure)":"프리바티(애장품)","Scarlet: Black Shadow":"홍련: 블랙 섀도우","Snow White: Heavy Arms":"스노우화이트: 헤비 암즈",
     "Red Hood B1":"레드후드 B1","Anchor: Innocent Maid":"앵커: 이노센트 메이드","Mint":"민트","Prika":"프리카","Alice":"앨리스",
     "Ein":"아인","Helm (Treasure)":"헬름(애장품)","Liberalio":"리베르타리오","Milk: Blooming Bunny":"밀크: 블루밍 버니",
     "Neon: Vision Eye":"네온: 비전 아이","Red Hood B3":"레드후드 B3","D: Killer Wife":"D: 킬러 와이프",
@@ -32,13 +32,13 @@ FULL_KO_MAP = {
     "Chisato Nishikigi":"치사토 니시키기","Diesel: Winter Sweets":"디젤: 윈터 스위츠","E.H.":"E.H.","Helm":"헬름",
     "Jill Valentine":"질 발렌타인","Laplace (Treasure)":"라플라스(애장품)","Ludmilla: Winter Owner":"루드밀라: 윈터 오너",
     "Maiden: Ice Rose":"메이든: 아이스 로즈","Noir":"누아르","Phantom":"팬텀","Privaty":"프라이버시",
-    "Quency: Escape Queen":"퀀시: 이스케이프 퀸","Rei Ayanami (Tentative Name)":"레이 아야나미(가칭)","Snow White":"백설",
+    "Quency: Escape Queen":"퀀시: 이스케이프 퀸","Rei Ayanami (Tentative Name)":"레이 아야나미(가칭)","Snow White":"스노우화이트",
     "Alice: Wonderland Bunny":"앨리스: 원더랜드 버니","Mary: Bay Goddess":"메리: 베이 갓데스","Dorothy":"도로시",
     "Frima (Treasure)":"프리마(애장품)","Mica: Snow Buddy":"미카: 스노우 버디","Milk (Treasure)":"밀크(애장품)","Miranda":"미란다",
     "N102":"N102","Rapunzel":"라푼젤","Sakura":"사쿠라","Tove (Treasure)":"토브(애장품)","Zwei":"츠바이","Admi":"애드미","Anis":"아니스",
     "Arcana: Fortune Mate":"아르카나: 포츈 메이트","Centi":"센티","Centi (Treasure)":"센티(애장품)","Diesel (Treasure)":"디젤(애장품)",
     "Poli":"폴리","Poli (Treasure)":"폴리(애장품)","Rem":"렘","A2":"A2","Drake (Treasure)":"드레이크(애장품)","Emilia":"에밀리아","Eve":"이브",
-    "Guillotine":"기요틴","Guillotine: Winter Slayer":"기요틴: 윈터 슬레이어","Harran":"하란","Snow White: Innocent Days":"백설: 이노센트 데이즈",
+    "Guillotine":"기요틴","Guillotine: Winter Slayer":"기요틴: 윈터 슬레이어","Harran":"하란","Snow White: Innocent Days":"스노우화이트: 이노센트 데이즈",
     "Mana":"마나","Marciana: Marine Study":"마르차나: 마린 스터디","Privaty: Unkind Maid":"프라이버시: 언카인드 메이드",
     "Soda: Twinkling Bunny":"소다: 트윙클링 버니","Avistar":"아비스타","Exia":"엑시아","Jackal":"자칼","Kurumi":"쿠루미","Ludmilla":"루드밀라",
     "Moran":"모란","Noise":"노이즈","Pepper":"페퍼","Rapunzel: Pure Grace":"라푼젤: 퓨어 그레이스","Rumani":"루마니","Sakura Suzuhara":"사쿠라 스즈하라",
@@ -96,6 +96,32 @@ def main():
     trans_lower = {k.lower(): v for k,v in FULL_KO_MAP.items()}
 
     # 중복 제거 + 한글 강제
+
+    # [FINAL FIX v2] 이름 최종 정리
+    for c in list(dedup.values()):
+        # 백설 -> 스노우화이트 (이미 위에서 치환됐지만 방어)
+        if "백설" in c.get("name",""):
+            c["name"] = c["name"].replace("백설", "스노우화이트")
+        # 스칼렛 -> 홍련
+        if c.get("name","").startswith("스칼렛"):
+            c["name"] = c["name"].replace("스칼렛", "홍련")
+        # 태버사 제거
+        if c.get("name") == "태버사" or c.get("en_name","").lower() == "tabitha":
+            del dedup[(c.get("en_name") or c.get("name") or "").lower()]
+            continue
+        # 레드후드 B1/B2/B3 통일
+        if c.get("en_name") in ["Red Hood B1","Red Hood B2","Red Hood B3"]:
+            c["name"] = "레드후드"
+            c["image"] = f"{BASE_IMAGE_URL}Red_Hood.jpg"
+
+    # 레드후드 중복 재제거
+    dedup2 = {}
+    for c in dedup.values():
+        k = c["name"].lower()
+        if k not in dedup2 or TIER_ORDER.get(c.get("tier","C"),99) < TIER_ORDER.get(dedup2[k].get("tier","C"),99):
+            dedup2[k] = c
+    dedup = dedup2
+
     dedup={}
     for c in sorted(chars, key=lambda x: (0 if x.get("company")!="미확인" else 1)):
         key=(c.get("en_name") or c.get("name") or "").lower()
