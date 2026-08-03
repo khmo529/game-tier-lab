@@ -1,14 +1,8 @@
 {
-  "version": "2026년 08월 31주차",
+  "version": "2026년 08월 1주차 (W32)",
   "updated": "2026-08-03",
-  "updated_at": "2026-08-03T06:19:00.394933",
-  "meta": "",
-  "buff": [],
-  "nerf": [],
-  "note": "",
-  "banner": "",
-  "headline": "",
-  "deployed_at": "2026-08-03T06:19:00.394933",
-  "github_run_id": "30789780885",
-  "github_sha": "67a8bfe4865b2936e66a2c946d3e3e1b2b11bf6c"
+  "updated_at": "2026-08-03T15:30:00+09:00",
+  "meta": "자동 업데이트 - S:25 A:24 B:9 C:7",
+  "buff": [{"id":"sylvia","name":"실비아","from":"B","to":"SS+"}],
+  "nerf": [{"id":"alec","name":"알렉","from":"B","to":"A"}]
 }
