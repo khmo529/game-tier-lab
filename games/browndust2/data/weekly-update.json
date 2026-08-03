@@ -1,14 +1,14 @@
 {
   "version": "2026년 08월 31주차",
   "updated": "2026-08-03",
-  "updated_at": "2026-08-03T06:05:45.852796",
+  "updated_at": "2026-08-03T06:11:33.197749",
   "meta": "",
   "buff": [],
   "nerf": [],
   "note": "",
   "banner": "",
   "headline": "",
-  "deployed_at": "2026-08-03T06:05:45.852796",
-  "github_run_id": "30789037906",
-  "github_sha": "fadade4cd3d3165272a68d5645fa6012f20faac5"
+  "deployed_at": "2026-08-03T06:11:33.197749",
+  "github_run_id": "30789363247",
+  "github_sha": "6cfacf05ea0bedeed1b8224fa62c9f0e55000254"
 }
