@@ -1,8 +1,8 @@
 name: OW2 Weekly Auto Update
 on:
   schedule:
-    - cron: '0 2 * * 1' # 매주 월요일 11시 KST (02:00 UTC)
-  workflow_dispatch: # 수동 실행 버튼
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
 
 jobs:
   update:
@@ -14,7 +14,7 @@ jobs:
           python-version: '3.11'
       - run: pip install requests beautifulsoup4 lxml
       - name: Fetch & Build Weekly
-        run: python scripts/update_overwatch_weekly.py
+        run: python games/overwatch2/scripts/update_overwatch_weekly.py
       - name: Commit & Push
         run: |
           git config user.name "NoPickle Bot"
