@@ -1,21 +1,24 @@
-name: Sync Overwatch Tier to WP
+name: OW2 Weekly Auto Update
 on:
-  push:
-    paths: ['games/overwatch2/**']
+  schedule:
+    - cron: '0 2 * * 1' # 매주 월요일 11시 KST (02:00 UTC)
+  workflow_dispatch: # 수동 실행 버튼
+
 jobs:
-  deploy:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Copy JSON to WP theme
-        run: |
-          cp games/overwatch2/data/heroes.json wp-content/themes/generatepress-child/overwatch-tier/data/heroes.json
-          cp games/overwatch2/data/weekly/*.json wp-content/themes/generatepress-child/overwatch-tier/data/weekly-2026.json
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - uses: actions/setup-python@v5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: wp-content/themes/generatepress-child/overwatch-tier/
-          server-dir: /www/wp-content/themes/generatepress-child/overwatch-tier/
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 lxml
+      - name: Fetch & Build Weekly
+        run: python scripts/update_overwatch_weekly.py
+      - name: Commit & Push
+        run: |
+          git config user.name "NoPickle Bot"
+          git config user.email "bot@nopickle.co.kr"
+          git add games/overwatch2/data/weekly-2026.json
+          git diff --staged --quiet || git commit -m "auto: OW2 weekly $(date +%Y-W%V)"
+          git push
