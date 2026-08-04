@@ -1,8 +1,8 @@
-name: BD2 Tier Update (Weekly) - GitHub Only Source
+name: OW2 Weekly Auto Update
 
 on:
   schedule:
-    - cron: '0 3 * * 1'
+    - cron: '0 2 * * 1' # 매주 월요일 11:00 KST
   workflow_dispatch:
 
 concurrency:
@@ -26,53 +26,37 @@ jobs:
       - name: Install deps
         run: pip install requests beautifulsoup4 lxml
 
-      - name: Run BD2 updater (fix images + grades)
-        working-directory: games/browndust2
+      - name: Fetch & Build Weekly
         run: |
-          python tier_updater.py
-          ls -lh assets/images/ | wc -l
-          echo "justia count:"
-          grep -c "justia.png" data/characters.json || true
+          python games/overwatch2/scripts/update_overwatch_weekly.py
+          echo "--- build result ---"
+          ls -lh games/overwatch2/data/
+          cat games/overwatch2/data/weekly-2026.json | head -c 200
 
-      - name: Run NIKKE updater (if exists)
+      - name: Sync to WP theme (GitHub Only Source)
         run: |
-          if [ -f "games/nikke/tier_updater.py" ]; then
-            cd games/nikke
-            python tier_updater.py
-          else
-            echo "nikke updater not found, skip"
-          fi
+          echo "Syncing OW2 JSON to WP theme..."
+          mkdir -p wp-content/themes/generatepress-child/overwatch-tier/data
+          mkdir -p wp-content/themes/generatepress-child/overwatch-tier/assets/images/heroes
 
-      - name: Sync to WP theme (delete trash)
-        run: |
-          echo "Cleaning trash files..."
-          rm -f games/browndust2/assets/images/17682*.png
-          rm -f wp-content/themes/generatepress-child/browndust2-tier/assets/images/17682*.png
-          rm -f games/browndust2/assets/images/123*.png
-          
-          mkdir -p wp-content/themes/generatepress-child/browndust2-tier/data
-          mkdir -p wp-content/themes/generatepress-child/nikke-tier/data
-          mkdir -p wp-content/themes/generatepress-child/browndust2-tier/assets/images
-
-          cp games/browndust2/data/*.json wp-content/themes/generatepress-child/browndust2-tier/data/ || true
-          if [ -d "games/nikke/data" ]; then
-            cp games/nikke/data/*.json wp-content/themes/generatepress-child/nikke-tier/data/ || true
-          fi
-          cp games/browndust2/assets/images/* wp-content/themes/generatepress-child/browndust2-tier/assets/images/ 2>/dev/null || true
+          # weekly + heroes + details 3종 복사 (이미지 참고한 data 폴더)
+          cp games/overwatch2/data/weekly-2026.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
+          cp games/overwatch2/data/heroes.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
+          cp games/overwatch2/data/hero-details.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
+          cp games/overwatch2/data/en_to_ko.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
 
           echo "After sync:"
-          ls wp-content/themes/generatepress-child/browndust2-tier/assets/images/ | wc -l
-          grep -c "justia.png" wp-content/themes/generatepress-child/browndust2-tier/data/characters.json || true
+          ls -lh wp-content/themes/generatepress-child/overwatch-tier/data/
 
       - name: Commit & Push
         run: |
-          git config user.name "tier-bot"
+          git config user.name "NoPickle Bot"
           git config user.email "bot@nopickle.co.kr"
-          git add -A
+          git add games/overwatch2/data/*.json wp-content/themes/generatepress-child/overwatch-tier/data/
           if git diff --staged --quiet; then
             echo "No changes"
             exit 0
           fi
-          git commit -m "fix: auto restore images + sync to wp (justia fix)"
+          git commit -m "auto: OW2 weekly $(date +%Y-W%V) - sync to wp theme"
           git pull --rebase origin main
           git push origin main
