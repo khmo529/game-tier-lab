@@ -1,41 +1,62 @@
 name: OW2 Weekly Auto Update
+
 on:
   schedule:
     - cron: '0 2 * * 1' # 매주 월요일 11:00 KST
   workflow_dispatch:
 
+concurrency:
+  group: tier-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - run: pip install requests beautifulsoup4 lxml
+      - name: Install deps
+        run: pip install requests beautifulsoup4 lxml
 
       - name: Fetch & Build Weekly
-        run: python games/overwatch2/scripts/update_overwatch_weekly.py
+        run: |
+          python games/overwatch2/scripts/update_overwatch_weekly.py
+          echo "--- build result ---"
+          ls -lh games/overwatch2/data/
+          cat games/overwatch2/data/weekly-2026.json | head -c 200
+
+      - name: Sync to WP theme (GitHub Only Source)
+        run: |
+          echo "Syncing OW2 JSON to WP theme..."
+          mkdir -p wp-content/themes/generatepress-child/overwatch-tier/data
+          mkdir -p wp-content/themes/generatepress-child/overwatch-tier/assets/images/heroes
+
+          # weekly + heroes + details 3종 복사 (이미지 참고한 data 폴더)
+          cp games/overwatch2/data/weekly-2026.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
+          cp games/overwatch2/data/heroes.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
+          cp games/overwatch2/data/hero-details.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
+          cp games/overwatch2/data/en_to_ko.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
+
+          echo "After sync:"
+          ls -lh wp-content/themes/generatepress-child/overwatch-tier/data/
 
       - name: Commit & Push
         run: |
           git config user.name "NoPickle Bot"
           git config user.email "bot@nopickle.co.kr"
-          git add games/overwatch2/data/weekly-2026.json games/overwatch2/data/heroes.json games/overwatch2/data/hero-details.json
-          git diff --staged --quiet || git commit -m "auto: OW2 weekly $(date +%Y-W%V)"
-          git push
-
-      - name: Deploy to WordPress via SSH Key
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          source: "games/overwatch2/data/weekly-2026.json,games/overwatch2/data/heroes.json,games/overwatch2/data/hero-details.json"
-          target: "/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/"
-          strip_components: 3
-          overwrite: true
-          debug: true
+          git add games/overwatch2/data/*.json wp-content/themes/generatepress-child/overwatch-tier/data/
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "auto: OW2 weekly $(date +%Y-W%V) - sync to wp theme"
+          git pull --rebase origin main
+          git push origin main
