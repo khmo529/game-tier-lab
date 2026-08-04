@@ -1,0 +1,21 @@
+name: Sync Overwatch Tier to WP
+on:
+  push:
+    paths: ['games/overwatch2/**']
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy JSON to WP theme
+        run: |
+          cp games/overwatch2/data/heroes.json wp-content/themes/generatepress-child/overwatch-tier/data/heroes.json
+          cp games/overwatch2/data/weekly/*.json wp-content/themes/generatepress-child/overwatch-tier/data/weekly-2026.json
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: wp-content/themes/generatepress-child/overwatch-tier/
+          server-dir: /www/wp-content/themes/generatepress-child/overwatch-tier/
