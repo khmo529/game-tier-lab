@@ -1,7 +1,7 @@
 name: OW2 Weekly Auto Update
 on:
   schedule:
-    - cron: '0 2 * * 1'
+    - cron: '0 2 * * 1' # 매주 월요일 11:00 KST
   workflow_dispatch:
 
 jobs:
@@ -9,16 +9,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - run: pip install requests beautifulsoup4 lxml
+
       - name: Fetch & Build Weekly
         run: python games/overwatch2/scripts/update_overwatch_weekly.py
+
       - name: Commit & Push
         run: |
           git config user.name "NoPickle Bot"
           git config user.email "bot@nopickle.co.kr"
-          git add games/overwatch2/data/weekly-2026.json
+          git add games/overwatch2/data/weekly-2026.json games/overwatch2/data/heroes.json games/overwatch2/data/hero-details.json
           git diff --staged --quiet || git commit -m "auto: OW2 weekly $(date +%Y-W%V)"
           git push
+
+      - name: Deploy to WordPress via SSH Key
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "games/overwatch2/data/weekly-2026.json,games/overwatch2/data/heroes.json,games/overwatch2/data/hero-details.json"
+          target: "/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/"
+          strip_components: 3
+          overwrite: true
