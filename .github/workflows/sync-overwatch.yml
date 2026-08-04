@@ -1,8 +1,8 @@
-name: OW2 Tier Update (Weekly) - GitHub Only Source
+name: OW2 Tier Update (Weekly) - GitHub + Deploy
 
 on:
   schedule:
-    - cron: '0 2 * * 1' # 매주 월요일 11:00 KST
+    - cron: '0 2 * * 1' # 월요일 11:00 KST
   workflow_dispatch:
 
 concurrency:
@@ -29,14 +29,14 @@ jobs:
       - name: Fetch & Build Weekly
         run: |
           python games/overwatch2/scripts/update_overwatch_weekly.py
-          echo "=== Build result ==="
           ls -lh games/overwatch2/data/
 
-      - name: Sync to WP theme (GitHub repo 내부)
+      - name: Sync to WP theme (GitHub 내부)
         run: |
+          rm -f games/overwatch2/data/*~.json
+          rm -f wp-content/themes/generatepress-child/overwatch-tier/data/*~.json
           mkdir -p wp-content/themes/generatepress-child/overwatch-tier/data
-          cp games/overwatch2/data/*.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
-          echo "=== Synced ==="
+          cp games/overwatch2/data/*.json wp-content/themes/generatepress-child/overwatch-tier/data/
           ls -lh wp-content/themes/generatepress-child/overwatch-tier/data/
 
       - name: Commit & Push
@@ -51,3 +51,29 @@ jobs:
           git commit -m "auto: OW2 weekly $(date +%Y-W%V)"
           git pull --rebase --autostash origin main
           git push origin main
+
+      # 여기부터가 서버 배포 - 이게 있어야 파일관리자에 반영됨
+      - name: Deploy to WP Server
+        if: success()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "wp-content/themes/generatepress-child/overwatch-tier/data/*.json"
+          target: "/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/"
+          strip_components: 5
+          overwrite: true
+
+      - name: Cleanup backup files on server
+        if: success()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            rm -f /var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/*~.json
+            ls -lh /var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/
