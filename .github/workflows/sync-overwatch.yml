@@ -2,7 +2,7 @@ name: OW2 Weekly Auto Update
 
 on:
   schedule:
-    - cron: '0 2 * * 1' # 매주 월요일 11:00 KST
+    - cron: '0 2 * * 1'
   workflow_dispatch:
 
 concurrency:
@@ -27,36 +27,30 @@ jobs:
         run: pip install requests beautifulsoup4 lxml
 
       - name: Fetch & Build Weekly
-        run: |
-          python games/overwatch2/scripts/update_overwatch_weekly.py
-          echo "--- build result ---"
-          ls -lh games/overwatch2/data/
-          cat games/overwatch2/data/weekly-2026.json | head -c 200
+        run: python games/overwatch2/scripts/update_overwatch_weekly.py
 
-      - name: Sync to WP theme (GitHub Only Source)
+      - name: Sync to WP theme (GitHub repo 내부)
         run: |
-          echo "Syncing OW2 JSON to WP theme..."
           mkdir -p wp-content/themes/generatepress-child/overwatch-tier/data
-          mkdir -p wp-content/themes/generatepress-child/overwatch-tier/assets/images/heroes
-
-          # weekly + heroes + details 3종 복사 (이미지 참고한 data 폴더)
-          cp games/overwatch2/data/weekly-2026.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
-          cp games/overwatch2/data/heroes.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
-          cp games/overwatch2/data/hero-details.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
-          cp games/overwatch2/data/en_to_ko.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
-
-          echo "After sync:"
+          cp games/overwatch2/data/*.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
           ls -lh wp-content/themes/generatepress-child/overwatch-tier/data/
 
-      - name: Commit & Push
+      - name: Commit & Push to GitHub
         run: |
           git config user.name "NoPickle Bot"
           git config user.email "bot@nopickle.co.kr"
-          git add games/overwatch2/data/*.json wp-content/themes/generatepress-child/overwatch-tier/data/
-          if git diff --staged --quiet; then
-            echo "No changes"
-            exit 0
-          fi
-          git commit -m "auto: OW2 weekly $(date +%Y-W%V) - sync to wp theme"
+          git add -A
+          git diff --staged --quiet || git commit -m "auto: OW2 weekly $(date +%Y-W%V)"
           git pull --rebase origin main
           git push origin main
+
+      - name: Deploy to WordPress Server via SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+
+      - name: SCP to WP File Manager path
+        run: |
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.FTP_SERVER }} >> ~/.ssh/known_hosts
+          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no wp-content/themes/generatepress-child/overwatch-tier/data/*.json ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/
+          echo "Deployed at $(date)"
