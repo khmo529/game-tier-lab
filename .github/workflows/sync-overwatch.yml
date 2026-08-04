@@ -28,7 +28,7 @@ jobs:
           git push
 
       - name: Deploy to WordPress via SSH Key
-        uses: appleboy/scp-action@v0.1.7
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -38,3 +38,4 @@ jobs:
           target: "/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/"
           strip_components: 3
           overwrite: true
+          debug: true
