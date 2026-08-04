@@ -2,7 +2,7 @@ name: OW2 Weekly Auto Update
 
 on:
   schedule:
-    - cron: '0 2 * * 1'
+    - cron: '0 2 * * 1' # 매주 월요일 11:00 KST
   workflow_dispatch:
 
 concurrency:
@@ -27,7 +27,9 @@ jobs:
         run: pip install requests beautifulsoup4 lxml
 
       - name: Fetch & Build Weekly
-        run: python games/overwatch2/scripts/update_overwatch_weekly.py
+        run: |
+          python games/overwatch2/scripts/update_overwatch_weekly.py
+          ls -lh games/overwatch2/data/
 
       - name: Sync to WP theme (GitHub repo 내부)
         run: |
@@ -40,17 +42,24 @@ jobs:
           git config user.name "NoPickle Bot"
           git config user.email "bot@nopickle.co.kr"
           git add -A
-          git diff --staged --quiet || git commit -m "auto: OW2 weekly $(date +%Y-W%V)"
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "auto: OW2 weekly $(date +%Y-W%V)"
           git pull --rebase origin main
           git push origin main
 
-      - name: Deploy to WordPress Server via SSH
+      - name: Setup SSH Agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
 
-      - name: SCP to WP File Manager path
+      - name: SCP to WordPress Server
         run: |
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.FTP_SERVER }} >> ~/.ssh/known_hosts
-          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no wp-content/themes/generatepress-child/overwatch-tier/data/*.json ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no wp-content/themes/generatepress-child/overwatch-tier/data/weekly-2026.json ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/weekly-2026.json
+          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no wp-content/themes/generatepress-child/overwatch-tier/data/heroes.json ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/heroes.json
+          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no wp-content/themes/generatepress-child/overwatch-tier/data/hero-details.json ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/hero-details.json
           echo "Deployed at $(date)"
