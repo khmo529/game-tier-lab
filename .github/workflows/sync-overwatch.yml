@@ -1,4 +1,4 @@
-name: OW2 Weekly Auto Update
+name: OW2 Tier Update (Weekly) - GitHub Only Source
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: tier-update
+  group: ow2-tier-update
   cancel-in-progress: false
 
 jobs:
@@ -29,15 +29,17 @@ jobs:
       - name: Fetch & Build Weekly
         run: |
           python games/overwatch2/scripts/update_overwatch_weekly.py
+          echo "=== Build result ==="
           ls -lh games/overwatch2/data/
 
       - name: Sync to WP theme (GitHub repo 내부)
         run: |
           mkdir -p wp-content/themes/generatepress-child/overwatch-tier/data
           cp games/overwatch2/data/*.json wp-content/themes/generatepress-child/overwatch-tier/data/ || true
+          echo "=== Synced ==="
           ls -lh wp-content/themes/generatepress-child/overwatch-tier/data/
 
-      - name: Commit & Push to GitHub
+      - name: Commit & Push
         run: |
           git config user.name "NoPickle Bot"
           git config user.email "bot@nopickle.co.kr"
@@ -47,19 +49,5 @@ jobs:
             exit 0
           fi
           git commit -m "auto: OW2 weekly $(date +%Y-W%V)"
-          git pull --rebase origin main
+          git pull --rebase --autostash origin main
           git push origin main
-
-      - name: Setup SSH Agent
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_KEY }}
-
-      - name: SCP to WordPress Server
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no wp-content/themes/generatepress-child/overwatch-tier/data/weekly-2026.json ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/weekly-2026.json
-          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no wp-content/themes/generatepress-child/overwatch-tier/data/heroes.json ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/heroes.json
-          scp -P ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no wp-content/themes/generatepress-child/overwatch-tier/data/hero-details.json ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/overwatch-tier/data/hero-details.json
-          echo "Deployed at $(date)"
