@@ -1,11 +1,10 @@
 {
-  "last_update": "2026-08-10T17:25:23.691389",
-  "last_update_kst": "2026-08-11T02:25:23.691400",
+  "last_update": "2026-08-10T17:33:19.943151",
+  "last_update_kst": "2026-08-11T02:33:19.943158",
   "count": 6,
   "sources": [
     "mlg404/palworld-paldex-api (001.png, 012B.png)",
-    "charles8ff/palworld-assets (112+ 신팰 대응)",
-    "game8.co"
-  ],
-  "note": "123 (Eidrolon) 등 112+ 팰은 charles8ff 소스에서 보충, 대문자 B 규칙 유지"
+    "charles8ff/palworld-assets (123, 123B, 113 신팰 대응)",
+    "wiki API 제거 - ERR_NAME_NOT_RESOLVED 해결"
+  ]
 }
