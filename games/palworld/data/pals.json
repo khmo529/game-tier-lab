@@ -1,0 +1,97 @@
+[
+  {
+    "id": "001",
+    "name": "Lamball",
+    "ko": "램볼",
+    "element": [
+      "Neutral"
+    ],
+    "tier": "C",
+    "type": "거점",
+    "work": "농장1",
+    "work_level": {
+      "farming": 1
+    },
+    "max_work": 1,
+    "desc": "초반"
+  },
+  {
+    "id": "012B",
+    "name": "Jolthog Cryst",
+    "ko": "쥬르르 크리스탈",
+    "element": [
+      "Ice"
+    ],
+    "tier": "B",
+    "type": "전투",
+    "work": "냉각1",
+    "work_level": {
+      "cooling": 1
+    },
+    "max_work": 1,
+    "desc": "변이"
+  },
+  {
+    "id": "024B",
+    "name": "Mossanda Lux",
+    "ko": "모산다 럭스",
+    "element": [
+      "Electric"
+    ],
+    "tier": "B",
+    "type": "전투",
+    "work": "발전2",
+    "work_level": {
+      "generating": 2
+    },
+    "max_work": 2,
+    "desc": "변이"
+  },
+  {
+    "id": "069",
+    "name": "Anubis",
+    "ko": "아누비스",
+    "element": [
+      "Ground"
+    ],
+    "tier": "S",
+    "type": "전투",
+    "work": "수작업4",
+    "work_level": {
+      "handiwork": 4
+    },
+    "max_work": 4,
+    "desc": "중반 최강"
+  },
+  {
+    "id": "090B",
+    "name": "Jormuntide Ignis",
+    "ko": "조르문타이드 이그니스",
+    "element": [
+      "Fire",
+      "Dragon"
+    ],
+    "tier": "S",
+    "type": "전투",
+    "work": "점화4",
+    "work_level": {
+      "kindling": 4
+    },
+    "max_work": 4,
+    "desc": "화속 최강"
+  },
+  {
+    "id": "105",
+    "name": "Jetragon",
+    "ko": "제트래곤",
+    "element": [
+      "Dragon"
+    ],
+    "tier": "S+",
+    "type": "전투",
+    "work": "비행최속",
+    "work_level": {},
+    "max_work": 0,
+    "desc": "최강"
+  }
+]
