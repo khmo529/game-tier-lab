@@ -1,0 +1,80 @@
+name: Palworld Tier Update (Weekly) - GitHub + Deploy
+
+on:
+  schedule:
+    - cron: '0 2 * * 1' # 월요일 11:00 KST (UTC 02:00)
+  workflow_dispatch:
+
+concurrency:
+  group: palworld-tier-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests beautifulsoup4 lxml
+
+      - name: Fetch & Build Weekly - Palworld
+        run: |
+          python games/palworld/scripts/update_palworld_weekly.py
+          ls -lh games/palworld/data/
+          cat games/palworld/data/last_update.json
+
+      - name: Sync to WP theme (GitHub 내부)
+        run: |
+          rm -f games/palworld/data/*~.json
+          rm -f wp-content/themes/generatepress-child/palworld-tier/data/*~.json
+          mkdir -p wp-content/themes/generatepress-child/palworld-tier/data
+          cp games/palworld/data/*.json wp-content/themes/generatepress-child/palworld-tier/data/
+          ls -lh wp-content/themes/generatepress-child/palworld-tier/data/
+          ls -lh wp-content/themes/generatepress-child/overwatch2/data/ || true
+
+      - name: Commit & Push
+        run: |
+          git config user.name "NoPickle Bot"
+          git config user.email "bot@nopickle.co.kr"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "auto: Palworld weekly $(date +%Y-W%V)"
+          git pull --rebase --autostash origin main
+          git push origin main
+
+      - name: Deploy to WP Server - Palworld
+        if: success()
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "wp-content/themes/generatepress-child/palworld-tier/data/*.json"
+          target: "/var/www/nopickle.co.kr/wp-content/themes/generatepress-child/palworld-tier/data/"
+          strip_components: 5
+          overwrite: true
+
+      - name: Cleanup backup files on server
+        if: success()
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            rm -f /var/www/nopickle.co.kr/wp-content/themes/generatepress-child/palworld-tier/data/*~.json
+            ls -lh /var/www/nopickle.co.kr/wp-content/themes/generatepress-child/palworld-tier/data/
