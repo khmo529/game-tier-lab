@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
       - name: Install deps
         run: pip install requests beautifulsoup4 lxml
-      - name: Fetch & Build Weekly - Palworld V6
+      - name: Fetch & Build Weekly - Palworld V7 (no wiki API)
         run: |
           python games/palworld/scripts/update_palworld_weekly.py
           ls -lh games/palworld/data/
@@ -38,7 +38,7 @@ jobs:
           git config user.email "bot@nopickle.co.kr"
           git add -A
           if git diff --staged --quiet; then echo "No changes"; exit 0; fi
-          git commit -m "auto: Palworld weekly $(date +%Y-W%V) - fix 123B"
+          git commit -m "auto: Palworld weekly $(date +%Y-W%V) - fix wiki DNS & restore SEO"
           git pull --rebase --autostash origin main
           git push origin main
       - name: Deploy to WP Server
