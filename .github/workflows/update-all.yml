@@ -2,11 +2,11 @@ name: NIKKE Tier Update (Weekly)
 
 on:
   schedule:
-    - cron: '0 3 * * 1' # 매주 월요일 12시 KST (03:00 UTC)
+    - cron: '0 3 * * 1' # 매주 월요일 12:00 KST (03:00 UTC)
   workflow_dispatch:
 
 concurrency:
-  group: tier-update
+  group: nikke-tier-update
   cancel-in-progress: false
 
 jobs:
@@ -26,24 +26,16 @@ jobs:
       - name: Install deps
         run: pip install requests beautifulsoup4 lxml
 
-      # FIX: working-directory 지정으로 data/characters.json 경로 문제 해결
-      - name: Run BD2 updater
-        working-directory: games/browndust2
-        run: python tier_updater.py
-
       - name: Run NIKKE updater
         working-directory: games/nikke
-        run: python tier_updater.py
+        run: python crawler.py
 
       - name: Sync JSON + Images to theme
         run: |
-          mkdir -p wp-content/themes/generatepress-child/browndust2-tier/data
           mkdir -p wp-content/themes/generatepress-child/nikke-tier/data
-          mkdir -p wp-content/themes/generatepress-child/browndust2-tier/assets/images
-          cp games/browndust2/data/*.json wp-content/themes/generatepress-child/browndust2-tier/data/ || true
+          mkdir -p wp-content/themes/generatepress-child/nikke-tier/assets/images
           cp games/nikke/data/*.json wp-content/themes/generatepress-child/nikke-tier/data/ || true
-          # 이미지도 같이 동기화 (기존 누락 원인)
-          cp games/browndust2/assets/images/* wp-content/themes/generatepress-child/browndust2-tier/assets/images/ 2>/dev/null || true
+          cp games/nikke/assets/images/* wp-content/themes/generatepress-child/nikke-tier/assets/images/ 2>/dev/null || true
 
       - name: Commit & Push (rebase safe)
         run: |
@@ -54,6 +46,6 @@ jobs:
             echo "No changes"
             exit 0
           fi
-          git commit -m "chore: weekly tier update $(date +%Y-%m-%d)"
+          git commit -m "chore: nikke weekly tier update $(date +%Y-%m-%d)"
           git pull --rebase origin main
           git push origin main
