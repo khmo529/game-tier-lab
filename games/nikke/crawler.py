@@ -3,7 +3,9 @@ from pathlib import Path
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
-DATA_DIR = Path("games/nikke/data")
+# 스크립트 파일 위치를 기준으로 data 디렉토리 경로 지정 (어느 위치에서 실행해도 정상 동작)
+SCRIPT_DIR = Path(__file__).resolve().parent
+DATA_DIR = SCRIPT_DIR / "data"
 CHAR_FILE = DATA_DIR / "characters.json"
 WEEKLY_FILE = DATA_DIR / "weekly-update.json"
 RAW_FILE = DATA_DIR / "prydwen_raw.json"
